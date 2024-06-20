@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#particles canvas{
+  z-index: -1;
+  position:absolute !important;
+  background: linear-gradient(#00032c,#004173);
+  top: 2rem;
+  height: 100px !important;
+}
