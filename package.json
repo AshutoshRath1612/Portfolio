@@ -15,7 +15,9 @@
     "@tsparticles/slim": "^3.4.0",
     "aos": "^3.0.0-beta.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-tilt": "^1.0.2",
+    "react-typed": "^2.0.12"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

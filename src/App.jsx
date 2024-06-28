@@ -8,10 +8,15 @@ import Hero from './components/Hero/Hero';
 
 function App() {
 
+  const Gap = () => {
+    return <div style={{height: '10vh'}}></div>
+  }
+
   return (
     <>
      <AnimationBackground />
      <Nav />
+     <Gap />
      <Hero />
     </>
   )

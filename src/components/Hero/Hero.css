@@ -1,0 +1,36 @@
+.HeroContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 40%;
+    margin: auto;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    height: 280px;
+}
+.Herotext{
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 4rem;
+}
+.imageContainer{
+    background-color: #26f7fd;
+    border-radius: 200px;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+}
+.imageContainer:hover{
+    box-shadow: 0px 0px 8px 3px black;
+
+}
+.tiltedImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
