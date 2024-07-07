@@ -10,3 +10,11 @@
   top: 2rem;
   height: 100px !important;
 }
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #2013c9, skyblue);
+  border-radius: 20px;
+}

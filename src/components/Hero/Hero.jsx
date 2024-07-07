@@ -7,7 +7,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import MyPhoto from "../../assets/images/MyPhoto.png";
 import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons/faArrowCircleDown";
 
-const Hero = () => {
+const Hero = React.forwardRef((props,ref) => {
   const defaultOptions = {
     reverse: false, // reverse the tilt direction
     max: 35, // max tilt rotation (degrees)
@@ -20,13 +20,14 @@ const Hero = () => {
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
 
   };
-  const domain = ['Front End Developement...' , 'Back End Developement...' ,'App Developement...']
+  const domain = ['Full-Stack Development...' ,'App Developement...' , 'Machine Learning...'];
 
   return (
-    <div className="HeroContainer">
+    <div ref={ref} className="HeroContainer">
       <div className="info">
         <h1 className="Herotext">Hi There,</h1>
         <h1 className="Herotext">I&apos;m <span style={{color:'#81dbdb'}}>Ashutosh</span> <span style={{color:'yellow'}}>Rath</span></h1>
+        <h1 className="Herotext" style={{fontSize:'1.5rem'}}>System Engineer - <span style={{color:'#bf77f6'}}>IBM</span></h1>
         <h1 className="Herotext" style={{fontSize:'2.5rem'}}>I am into <ReactTyped strings={domain} style={{color:'#ea6676'}}  loop typeSpeed={50} backSpeed={25} backDelay={500} /></h1>
         <button className="btn">
         <h3 style={{fontSize:'1.1rem',fontWeight:'bold'}}>
@@ -34,8 +35,11 @@ const Hero = () => {
         </h3>  
         <FontAwesomeIcon icon={faArrowCircleDown} color="#1f242d" fontSize="20px"/>
         </button>
-        <div>
-          <div><FontAwesomeIcon icon="fa-linkedin" /></div>
+        <div className="iconContainer">
+          <div className="icons"><i className="fa-brands fa-linkedin"></i></div>
+          <div className="icons"><i className="fa-brands fa-github"></i></div>
+          <div className="icons"><i className="fa-brands fa-instagram"></i></div>
+          <div className="icons"><i className="fa-brands fa-twitter"></i></div>
         </div>
       </div>
       <Tilt options={defaultOptions} className="imageContainer">
@@ -43,6 +47,7 @@ const Hero = () => {
       </Tilt>
     </div>
   );
-};
+});
+Hero.displayName = 'Hero';
 
 export default Hero;

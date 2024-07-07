@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    height: 40%;
+    height: 90vh;
     margin: auto;
 }
 .info{
@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
-    height: 280px;
+    height: 450px;
 }
 .Herotext{
     color: white;
@@ -22,7 +22,6 @@
     background-color: #01ecff;
     border-radius: 200px;
     width: 20%;
-    height: 20%;
     overflow: hidden;
     box-shadow: 1px 8px 13px 5px #01ecff;
 }
@@ -37,7 +36,7 @@
     background-color: #01ecff;
     display: flex;
     width: 17%;
-    height: 19%;
+    height: 13%;
     border-radius: 20px;
     align-items: center;
     justify-content: space-evenly;
@@ -45,4 +44,22 @@
 }
 .btn:hover{
     box-shadow: 0px 1px 15px 2px #01ecff;
+}
+.iconContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    cursor: pointer;
+}
+.icons i{
+    border: 1px solid #01ecff;
+    border-radius: 45px;
+    padding: 20px;
+    font-size: 1.7rem;
+    color: aliceblue;
+}
+.icons i:hover{
+    box-shadow: 0px 1px 15px 2px #01ecff;
+    background-color: aliceblue;
+    color: black;
 }

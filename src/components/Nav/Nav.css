@@ -6,6 +6,9 @@
     align-items: center;
     background-color: #002b5a;
     box-shadow: -2px 1px 6px #a79494;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 .headerName{
     font-family: "Ubuntu", sans-serif;
@@ -36,6 +39,10 @@ li{
     color: white;
 }
 li:hover{
+    border-bottom: 2px #92dff3 solid;
+    text-shadow: -3px 3px 20px white;
+}
+.active{
     border-bottom: 2px #92dff3 solid;
     text-shadow: -3px 3px 20px white;
 }
