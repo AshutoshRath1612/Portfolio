@@ -7,7 +7,8 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import MyPhoto from "../../assets/images/MyPhoto.png";
 import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons/faArrowCircleDown";
 
-const Hero = React.forwardRef((props,ref) => {
+const Hero = React.forwardRef((props, ref) => {
+  console.log(ref.aboutRef);
   const defaultOptions = {
     reverse: false, // reverse the tilt direction
     max: 35, // max tilt rotation (degrees)
@@ -18,22 +19,27 @@ const Hero = React.forwardRef((props,ref) => {
     axis: null, // What axis should be disabled. Can be X or Y.
     reset: true, // If the tilt effect has to be reset on exit.
     easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
-
   };
-  const domain = ['Full-Stack Development...' ,'App Developement...' , 'Machine Learning...'];
+  const domain = ['Full-Stack Development...', 'App Development...', 'Machine Learning...'];
+
+  const scrollToAbout = () => {
+    if (ref && ref.aboutRef && ref.aboutRef.current) {
+      ref.aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <div ref={ref} className="HeroContainer">
+    <div ref={ref.homeRef} className="HeroContainer">
       <div className="info">
         <h1 className="Herotext">Hi There,</h1>
-        <h1 className="Herotext">I&apos;m <span style={{color:'#81dbdb'}}>Ashutosh</span> <span style={{color:'yellow'}}>Rath</span></h1>
-        <h1 className="Herotext" style={{fontSize:'1.5rem'}}>System Engineer - <span style={{color:'#bf77f6'}}>IBM</span></h1>
-        <h1 className="Herotext" style={{fontSize:'2.5rem'}}>I am into <ReactTyped strings={domain} style={{color:'#ea6676'}}  loop typeSpeed={50} backSpeed={25} backDelay={500} /></h1>
-        <button className="btn">
-        <h3 style={{fontSize:'1.1rem',fontWeight:'bold'}}>
-        About Me
-        </h3>  
-        <FontAwesomeIcon icon={faArrowCircleDown} color="#1f242d" fontSize="20px"/>
+        <h1 className="Herotext">I&apos;m <span style={{ color: '#81dbdb' }}>Ashutosh</span> <span style={{ color: 'yellow' }}>Rath</span></h1>
+        <h1 className="Herotext" style={{ fontSize: '1.5rem' }}>System Engineer - <span style={{ color: '#bf77f6' }}>IBM</span></h1>
+        <h1 className="Herotext" style={{ fontSize: '2.5rem' }}>I am into <ReactTyped strings={domain} style={{ color: '#ea6676' }} loop typeSpeed={50} backSpeed={25} backDelay={500} /></h1>
+        <button onClick={scrollToAbout} className="btn">
+          <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
+            About Me
+          </h3>
+          <FontAwesomeIcon icon={faArrowCircleDown} color="#1f242d" fontSize="20px" />
         </button>
         <div className="iconContainer">
           <div className="icons"><i className="fa-brands fa-linkedin"></i></div>
