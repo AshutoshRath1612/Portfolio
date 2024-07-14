@@ -7,6 +7,8 @@ import About from './components/About/About';
 import Skill from './components/Skill/Skill';
 import Education from './components/Education/Education';
 import Project from './components/Project/Project';
+import Contact from './components/Contact/Contact';
+import Experience from './components/Experience/Experience';
 
 function App() {
   const homeRef = useRef(null);
@@ -67,6 +69,8 @@ function App() {
       <div id="skill" ref={skillRef}><Skill ref={skillRef} /></div>
       <div id="education" ref={eduRef}><Education ref={eduRef} /></div>
       <div id="project" ref={projectRef}><Project ref={projectRef} /></div>
+      <div id="experience" ref={expRef}><Experience ref={expRef} /></div>
+      <div id="contact" ref={contactRef}><Contact ref={contactRef} /></div>
     </>
   );
 }

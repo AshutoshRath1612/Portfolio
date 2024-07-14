@@ -52,7 +52,7 @@ const Project = ({props,ref}) => {
     return (
         <div ref={ref} className='projectContainer'>
           <div className="title">
-            <i className="fa-solid fa-laptop-code" style={{ color: 'white' }}></i>
+            <i className="fa-solid fa-code" style={{ color: 'white' }}></i>
             <h1 style={{ color: 'white' }}>Projects</h1>
           </div>
           <div className="projectBox">
