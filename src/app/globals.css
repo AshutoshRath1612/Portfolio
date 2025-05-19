@@ -1,16 +1,30 @@
 :root {
-  --bg-dark: #222222;
-  --blue-accent: #455CE9;
-  --blue-hover: #5D75FF;
-  --text-light: #EEEEEE;
-  --text-muted: #BBBBBB;
-  --border-line: #333333;
-  --blue-shadow: rgba(69, 92, 233, 0.4);
+  /* Base Colors */
+  --color-background: #222222;
+  --color-surface: #1C1C1C;
+  --color-input-bg: #1A1A1A;
+  --color-border: #333333;
+
+  /* Text Colors */
+  --color-text-primary: #EEEEEE;
+  --color-text-secondary: #AAAAAA;
+
+  /* Accent Colors */
+  --color-accent: #455CE9;
+  --color-accent-hover: #5E70F5;
+
+  /* Feedback Colors */
+  --color-error: #4E2020;
+  --color-error-hover: #6C2A2A;
+  --color-success: #2EB67D;
+
+  /* Image or Avatar Background */
+  --color-image-bg: #1B223C;         /* Muted dark blue, complements #455CE9 */
+
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--color-background);
 }
 
 /* button {

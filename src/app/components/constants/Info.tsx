@@ -24,8 +24,8 @@ export const contactFormQuestions = [
   export const socials = [
      { name: "Linkedin", icon: faLinkedin , link: 'https://www.linkedin.com/in/ashutosh-rath-52370621a/' },
      { name: "Github", icon: faGithub, link: 'https://github.com/AshutoshRath1612' },
-     { name: "Twitter", icon: faTwitter, link: '' },
-     { name: "Instagram", icon: faInstagram, link: '' },
+     { name: "Twitter", icon: faTwitter, link: 'https://x.com/iam_doomaf' },
+     { name: "Instagram", icon: faInstagram, link: 'https://www.instagram.com/_i.am_doomaf_/' },
    ];
   
 // "Hi, I am Ashutosh Rath,

@@ -13,12 +13,13 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  color: var(--color-text-primary);
 }
 
 .contactAvatar {
   width: 20%;
   height: 100%;
-  background-color: #455ce9;
+  background-color: var(--color-accent-hover);
   border-radius: 50%;
 }
 
@@ -35,7 +36,7 @@
 }
 
 .formContainer {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -44,7 +45,7 @@
 .contactDetailsContainer {
   width: 100%;
   display: flex;
-  height: 55vh;
+  height: 50vh;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -64,14 +65,14 @@
 }
 
 .serialContainer {
-  color: #455ce9;
+  color: var(--color-text-secondary);
   font-weight: bold;
 }
 
 .questions {
   font-size: 1.4rem;
   font-weight: 500;
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .contactFormInputContainer input.contactInput {
@@ -87,12 +88,12 @@
 }
 
 .contactInput::placeholder {
-  color: #aaa;
+  color: var(--color-text-secondary);
   font-style: italic;
 }
 
 .contactInput:focus {
-  border-bottom: 2px solid #455ce9;
+  border-bottom: 2px solid var(--color-accent);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -114,6 +115,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: var(--color-text-primary);
 }
 
 .contactsSocialsContainer {
@@ -122,4 +124,5 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: var(--color-text-primary);
 }

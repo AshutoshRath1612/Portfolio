@@ -54,7 +54,7 @@ const Contacts = () => {
               </div>
             ))}
           </div>
-          <div style={{ width: "30%" }}>
+          <div style={{ width: "30%", display:'flex', alignItems:"center", flexDirection:'column' }}>
             <div className={style.contactDetailsContainer}>
               <div className={style.contactDetailsButtonContainer}>
                 <div className={style.contactDetailsHeading}>Contact Details</div>

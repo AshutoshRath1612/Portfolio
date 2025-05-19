@@ -15,6 +15,7 @@
     "@lottiefiles/dotlottie-react": "^0.13.5",
     "animejs": "^4.0.2",
     "next": "14.2.28",
+    "portfolio": "file:",
     "react": "^18",
     "react-dom": "^18"
   },
