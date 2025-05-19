@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
+import RouteTransitionWrapper from "./components/RouteWrapper/RouteTransitionWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
       <body className={ubuntu.className}>
-        {children}
+       <RouteTransitionWrapper>{children}</RouteTransitionWrapper> 
       </body>
     </html>
   );

@@ -15,7 +15,7 @@ interface GiggleButtonProps {
   isIcon: boolean;
   icon?: FontAwesomeIconProps["icon"];
   onClick: {
-    event: "toggle" | "link" | "navigate";
+    event: "toggle" | "link" | "navigate" | "none";
     data: unknown;
   };
   isIconAnimated: boolean;
