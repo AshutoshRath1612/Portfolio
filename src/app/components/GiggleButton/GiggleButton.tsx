@@ -127,10 +127,10 @@ const GiggleButton = ({
   const runEventHandler = () => {
     if (onClick.event === "toggle") {
       const data = onClick.data as {
-        setState: (val: boolean) => void;
+        setState: (value: boolean) => void;
         state: boolean;
       };
-      data.setState(!data.state);
+      data?.setState(!data.state);
     } else if (
       onClick.event === "link" &&
       (typeof onClick.data === "string" || onClick.data instanceof URL)

@@ -3,6 +3,7 @@
 import { animate } from "animejs";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
+import NavBar from "./components/Navbar/Navbar";
 
 export default function Home() {
   const squareRef = useRef(null);
@@ -80,6 +81,7 @@ sessionStorage.setItem("initialLoading", "true");
   // Main render
   return (
     <div ref={contentRef} className={styles.container}>
+      <NavBar />
       <div className={styles.square} ref={squareRef}></div>
       <div className={styles.text} ref={textRef}>Here is some text</div>
       <div className={styles.spacer} />
