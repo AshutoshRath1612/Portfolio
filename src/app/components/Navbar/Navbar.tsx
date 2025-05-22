@@ -1,21 +1,20 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import style from "./navbar.module.css";
 import { waapi } from "animejs";
-import { faX } from "@fortawesome/free-solid-svg-icons/faX";
-import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faX, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GiggleButton from "../GiggleButton/GiggleButton";
 import { getRandomColour, navItems } from "../constants/Functions";
 import Socials from "../Socials/Socials";
 import { usePathname, useRouter } from "next/navigation";
 
-const Sidebar = () => {
+const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const [showCircleNav, setShowCircleNav] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [randomColour, setRandomColour] = useState("#455ce9");
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [positionTop, setPositionTop] = useState(0);
@@ -23,28 +22,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (sidebarOpen) {
-      // Capture scroll position when sidebar is opened
       setPositionTop(window.scrollY);
-    }
-  }, [sidebarOpen]);
-
-  useEffect(() => {
-    setRandomColour(getRandomColour());
-  }, []);
-
-  const setRandomColourForHover = (index: number) => {
-    const color = getRandomColour();
-    setCurrentIndex(index);
-    setRandomColour(color);
-  };
-
-  const resetColour = () => {
-    setRandomColour("#111");
-    setCurrentIndex(-1);
-  };
-
-  useEffect(() => {
-    if (sidebarOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -55,13 +33,16 @@ const Sidebar = () => {
   }, [sidebarOpen]);
 
   useEffect(() => {
+    setActiveColour(getRandomColour());
+  }, [pathname]);
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
+      const target = event.target as HTMLElement;
       if (
         sidebarOpen &&
         sidebarRef.current &&
-        target &&
-        !(sidebarRef.current as HTMLElement).contains(target) &&
+        !sidebarRef.current.contains(target) &&
         !target.closest(".circle-nav")
       ) {
         setSidebarOpen(false);
@@ -69,9 +50,7 @@ const Sidebar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [sidebarOpen]);
 
   useEffect(() => {
@@ -92,45 +71,43 @@ const Sidebar = () => {
         translateX: ["0%", "-100%"],
         duration: 700,
         ease: "inOut(2)",
-        onComplete: () => {
-          el.style.display = "none";
-        },
+        onComplete: () => (el.style.display = "none"),
       });
     }
   }, [sidebarOpen]);
 
-    const handleNavigate = (path: string) => {
+  const handleNavigate = (path: string) => {
     setSidebarOpen(false);
     router.push(path);
   };
 
-  // useEffect(() => {
-  //   const onScroll = () => setShowCircleNav(window.scrollY > 100);
-  //   window.addEventListener("scroll", onScroll);
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
+  const setRandomColourForHover = (index: number) => {
+    setCurrentIndex(index);
+    setRandomColour(getRandomColour());
+  };
 
-  useEffect(() => {
-    // Change active color when route changes
-    setActiveColour(getRandomColour());
-  }, [pathname]);
+  const resetColour = () => {
+    setCurrentIndex(-1);
+    setRandomColour("#111");
+  };
 
   return (
     <>
-      {showCircleNav && (
-        <GiggleButton
+    <div onClick={() => setSidebarOpen(prev => !prev)} className={`circle-nav ${style.aboutButton} ${style.circleNav}`}>
+
+      <GiggleButton
         text=""
         overlayname=""
-          isIcon={true}
-          icon={sidebarOpen ? faX : faBars}
-          isIconAnimated={true}
-          name="circleNav"
-          onClick={{
-            event: "toggle",
-            data: {state: sidebarOpen , setState: setSidebarOpen},
-          }}
-        />
-      )}
+        isIcon
+        icon={sidebarOpen ? faX : faBars}
+        isIconAnimated
+        name="circleNav"
+        onClick={{
+          event: "none",
+          data: "",
+        }}
+      />
+    </div>
 
       <div
         className={`${style.sidebar} ${sidebarOpen ? style.open : ""}`}
@@ -141,47 +118,34 @@ const Sidebar = () => {
           <div className={style.sidebarHeading}>Navigation</div>
           <div className={style.line}></div>
           <ul className={style.sidebarNavigations}>
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <button
-                  onMouseEnter={() => setRandomColourForHover(index)}
-                  onClick={()=>handleNavigate(item.path)}
-                  onMouseLeave={resetColour}
-                  className={`${style.sidebarButtons} ${
-                    location.pathname === item.path ? style.active : ""
-                  }`}
-                  style={{
-                    backgroundColor:
-                      location.pathname === item.path
-                        ? activeColour
-                        : currentIndex === index
-                        ? randomColour
-                        : "#111",
-                    color:
-                      location.pathname === item.path || currentIndex === index
-                        ? "black"
-                        : "white",
-                    boxShadow:
-                      currentIndex === index ? "0px 0px 8px 1px white" : "",
-                  }}
-                >
-                  <span
-                    style={{
-                      width: "24px",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
+            {navItems.map((item, index) => {
+              const isActive = pathname === item.path;
+              const isHovered = currentIndex === index;
+              const bgColor = isActive ? activeColour : isHovered ? randomColour : "#111";
+              const textColor = isActive || isHovered ? "black" : "white";
+              const boxShadow = isHovered ? "0px 0px 8px 1px white" : "";
+
+              return (
+                <li key={index}>
+                  <button
+                    onMouseEnter={() => setRandomColourForHover(index)}
+                    onMouseLeave={resetColour}
+                    onClick={() => handleNavigate(item.path)}
+                    className={`${style.sidebarButtons} ${isActive ? style.active : ""}`}
+                    style={{ backgroundColor: bgColor, color: textColor, boxShadow }}
                   >
-                    <FontAwesomeIcon icon={item.icon} />
-                  </span>
-                  <span style={{ flex: 1 }}>{item.label}</span>
-                </button>
-              </li>
-            ))}
+                    <span style={{ width: "24px", display: "flex", justifyContent: "center" }}>
+                      <FontAwesomeIcon icon={item.icon} />
+                    </span>
+                    <span style={{ flex: 1 }}>{item.label}</span>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
 
           <div className={style.sidebarSocialContainer}>
-            <Socials isHeader={true} />
+            <Socials isHeader />
           </div>
         </div>
       </div>
@@ -189,4 +153,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

@@ -75,7 +75,7 @@
   }
 
   .circleNav {
-    position: sticky; /* Must be fixed */
+    position: fixed;
     top: 2rem;
     left: 2rem;
     z-index: 10000;

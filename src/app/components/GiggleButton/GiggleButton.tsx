@@ -1,6 +1,6 @@
 "use client";
 import { animate } from "animejs";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./gigglebutton.module.css";
 import {
   FontAwesomeIcon,
@@ -33,6 +33,7 @@ const GiggleButton = ({
   const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const iconRef = useRef<SVGSVGElement | null>(null);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     if (isIconAnimated && iconRef.current) {
@@ -126,11 +127,9 @@ const GiggleButton = ({
 
   const runEventHandler = () => {
     if (onClick.event === "toggle") {
-      const data = onClick.data as {
-        setState: (value: boolean) => void;
-        state: boolean;
-      };
-      data?.setState(!data.state);
+      // onClick.data.setState(() => !onClick.data.state);
+      // // onClick.data.setState(toggle)
+      // setToggle(!toggle);
     } else if (
       onClick.event === "link" &&
       (typeof onClick.data === "string" || onClick.data instanceof URL)
