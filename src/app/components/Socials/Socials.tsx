@@ -2,9 +2,7 @@ import React from "react";
 import { connectText,socials } from "../constants/Info";
 import GiggleButton from "../GiggleButton/GiggleButton";
 import style from './socials.module.css';
-interface SocialsProps {
-  isHeader: boolean;
-}
+import { SocialsProps } from "@/app/models/social.model";
 
 const Socials: React.FC<SocialsProps> = ({ isHeader }) => {
   return (
