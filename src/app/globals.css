@@ -1,10 +1,9 @@
 :root {
   /* Base Colors */
-  --color-background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgb(92, 131, 180) 100%);
+  --color-background: #222222;
   --color-surface: #1C1C1C;
   --color-input-bg: #1A1A1A;
   --color-border: #333333;
-  --color-primary-dark: #222222;
 
   /* Text Colors */
   --color-text-primary: #EEEEEE;
@@ -25,8 +24,7 @@
 }
 
 body {
-  background: #020024;
-  background: var(--color-background);
+  background-color: var(--color-background);
   overflow: auto;
   margin: 0;
   padding: 0;

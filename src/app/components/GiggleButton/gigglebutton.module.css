@@ -1,101 +1,96 @@
 .aboutButton {
-  z-index: 1;
-  position: absolute;
-  right: 5rem;
-  bottom: 1rem;
-  width: 10rem;
-  display: flex;
-  height: 10rem;
-  border-radius: 50%;
-  background: linear-gradient(to top, #222 0%, #4e2020 0%);
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  background-size: 100% 200%;
-  align-items: center;
-  overflow: hidden;
-  justify-content: center;
-}
+    z-index: 1;
+    position: absolute;
+    right: 5rem;
+    bottom: 1rem;
+    width: 10rem;
+    display: flex;
+    height: 10rem;
+    border-radius: 50%;
+    background: linear-gradient(to top, #222 0%, #4e2020 0%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-size: 100% 200%;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+  }
+  
+  .aboutButton .buttonOverlay {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #5E70F5;
+    border-radius: 50%;
+    transform: translateY(100%);
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .aboutText {
+    z-index: 3;
+    position: relative;
+  }
+  .aboutButton span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .getintouch{
+    right: 20vw !important;
+    bottom: 40vh !important;
+    font-size: 1.2rem !important;
+  }
 
-.aboutButton .buttonOverlay {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #5e70f5;
-  border-radius: 50%;
-  transform: translateY(100%);
-  z-index: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.aboutText {
-  z-index: 3;
-  position: relative;
-}
-.aboutButton span {
-  position: relative;
-  z-index: 2;
-}
+  .contactDetails{
+    position: relative;
+    height: 100%;
+    right: 0px !important;
+    bottom: 0px !important;
+    font-size: 1.1rem;
+    font-weight: normal;
+    background: none;
+    border: 1px solid white;
+    border-radius: 2rem;
+    width: auto;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
 
-.getintouch {
-  right: 20vw !important;
-  bottom: 40vh !important;
-  font-size: 1.2rem !important;
-}
+  .contactOverlay{
+    border-radius: 2rem !important;
+  }
 
-.contactDetails {
-  position: relative;
-  height: 100%;
-  right: 0px !important;
-  bottom: 0px !important;
-  font-size: 1.1rem;
-  font-weight: normal;
-  background: none;
-  border: 1px solid white;
-  border-radius: 2rem;
-  width: auto;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background: var(--color-primary-dark);
-  box-shadow: 0px 0px 10px 5px #222222;
-}
+  .iconButtons{
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid white;
+  }
 
-.contactOverlay {
-  border-radius: 2rem !important;
-}
-
-.iconButtons {
-  position: relative;
-  right: 0px;
-  bottom: 0px;
-  height: 3rem;
-  width: 3rem;
-  border: 1px solid white;
-  background: var(--color-primary-dark);
-  box-shadow: 0px 0px 10px 5px #222222;
-}
-.circleNav {
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
-  z-index: 10000;
-  width: 4rem;
-  height: 4rem;
-  background-color: #333;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-.sendButton {
-  position: relative;
-  top: 1rem;
-  left: 0;
-  right: 0;
-}
+  .circleNav {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10000;
+    width: 4rem;
+    height: 4rem;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  .sendButton{
+    position: relative;
+    top: 1rem;
+    left: 0;
+    right: 0;
+  }

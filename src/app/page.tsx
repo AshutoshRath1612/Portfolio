@@ -4,9 +4,6 @@ import { animate } from "animejs";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import NavBar from "./components/Navbar/Navbar";
-import Image from "next/image";
-import Avatar from "./assets/Avatar.png";
-import Header from "./components/Header/Header";
 
 export default function Home() {
   const squareRef = useRef(null);
@@ -15,9 +12,9 @@ export default function Home() {
 
   const [scrolledDown, setScrolledDown] = useState(false);
 
-  useEffect(() => {
-    sessionStorage.setItem("initialLoading", "true");
-  }, []);
+  useEffect(()=>{
+sessionStorage.setItem("initialLoading", "true");
+  },[])
 
   // Scroll trigger animation
   useEffect(() => {
@@ -42,10 +39,8 @@ export default function Home() {
     if (squareRef.current) {
       animate(squareRef.current, {
         translateX: "-40vw",
-        translateY: "-20vh",
-        position: "fixed",
-        width: "25%",
-        height: "50%",
+        width: "200px",
+        height: "100px",
         ease: "inOut(4)",
         duration: 800,
       });
@@ -65,10 +60,9 @@ export default function Home() {
   const animateBackward = () => {
     if (squareRef.current) {
       animate(squareRef.current, {
-        transform: "none", 
-        position: "static",
-        width: "20%",
-        height: "100%",
+        translateX: "0",
+        width: "150px",
+        height: "150px",
         ease: "inOut(4)",
         duration: 800,
       });
@@ -86,28 +80,11 @@ export default function Home() {
 
   // Main render
   return (
-    <>
+    <div ref={contentRef} className={styles.container}>
       <NavBar />
-      <div ref={contentRef} className={styles.container}>
-        <Header />
-
-        <div className={styles.heroSection}>
-          <div className={styles.heroText}>
-            This is a hero section with some text that will animate
-            when you scroll down. The square will move and the text will
-          </div>
-          <Image
-            src={Avatar}
-            alt=""
-            className={styles.heroImage}
-            ref={squareRef}
-          />
-        </div>
-          <div className={styles.text} ref={textRef}>
-            Here is some text
-          </div>
-        {/* <div className={styles.spacer} /> */}
-      </div>
-    </>
+      <div className={styles.square} ref={squareRef}></div>
+      <div className={styles.text} ref={textRef}>Here is some text</div>
+      <div className={styles.spacer} />
+    </div>
   );
 }

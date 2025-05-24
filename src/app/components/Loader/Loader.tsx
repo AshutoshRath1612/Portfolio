@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createTimeline, stagger, utils, waapi } from "animejs";
-import { LoaderProps } from "@/app/models/loader.model";
+
+interface LoaderProps {
+  text: string;
+  onComplete: () => void;
+}
 
 export default function Loader({ text, onComplete }: LoaderProps) {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -8,7 +8,7 @@
   color: white;
   padding: 1rem;
   z-index: 9999; /* Increased z-index to be higher than any other element */
-  overflow-y: none;
+  overflow-y: auto;
   display: none;
   opacity: 0;
   pointer-events: none;

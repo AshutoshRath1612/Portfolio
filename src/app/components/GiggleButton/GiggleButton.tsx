@@ -1,12 +1,25 @@
 "use client";
 import { animate } from "animejs";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./gigglebutton.module.css";
 import {
   FontAwesomeIcon,
+  FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
-import { GiggleButtonProps } from "@/app/models/gigglebutton.model";
+
+interface GiggleButtonProps {
+  text: string;
+  name: string;
+  overlayname: string;
+  isIcon: boolean;
+  icon?: FontAwesomeIconProps["icon"];
+  onClick: {
+    event: "toggle" | "link" | "navigate" | "none";
+    data: unknown;
+  };
+  isIconAnimated: boolean;
+}
 
 const GiggleButton = ({
   text,
@@ -20,6 +33,7 @@ const GiggleButton = ({
   const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const iconRef = useRef<SVGSVGElement | null>(null);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     if (isIconAnimated && iconRef.current) {

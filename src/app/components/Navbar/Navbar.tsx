@@ -8,14 +8,13 @@ import GiggleButton from "../GiggleButton/GiggleButton";
 import { getRandomColour, navItems } from "../constants/Functions";
 import Socials from "../Socials/Socials";
 import { usePathname, useRouter } from "next/navigation";
-import { SidebarProps } from "@/app/models/sidebar.model";
 
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [randomColour, setRandomColour] = useState("#455ce9");
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [positionTop, setPositionTop] = useState(0);
