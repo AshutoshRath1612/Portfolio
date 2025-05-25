@@ -11,6 +11,7 @@ import { GiggleButtonProps } from "@/app/models/gigglebutton.model";
 const GiggleButton = ({
   text,
   name,
+  name2,
   overlayname,
   isIcon,
   icon,
@@ -24,7 +25,6 @@ const GiggleButton = ({
   useEffect(() => {
     if (isIconAnimated && iconRef.current) {
       animate(iconRef.current, {
-        rotate: [0, 180],
         scale: [1, 1.3, 1],
         duration: 500,
         ease: "easeInOutQuart",
@@ -131,7 +131,7 @@ const GiggleButton = ({
 
   return (
     <button
-      className={`${style.aboutButton} ${style[name]}`}
+      className={`${style.aboutButton} ${style[name]} ${style[name2]}`}
       ref={buttonRef}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
