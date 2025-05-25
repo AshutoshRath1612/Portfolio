@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import style from "./navbar.module.css";
+import styles from "./navbar.module.css";
 import { waapi } from "animejs";
 import { faX, faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GiggleButton from "../GiggleButton/GiggleButton";
 import { getRandomColour, navItems } from "../constants/Functions";
 import Socials from "../Socials/Socials";
 import { usePathname, useRouter } from "next/navigation";
-import { SidebarProps } from "@/app/models/sidebar.model";
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -94,7 +93,7 @@ const Navbar = () => {
 
   return (
     <>
-    <div onClick={() => setSidebarOpen(prev => !prev)} className={`circle-nav ${style.aboutButton} ${style.circleNav}`}>
+    <div onClick={() => setSidebarOpen(prev => !prev)} className={`circle-nav ${styles.aboutButton} ${styles.circleNav}`}>
 
       <GiggleButton
         text=""
@@ -110,48 +109,226 @@ const Navbar = () => {
       />
     </div>
 
-      <div
-        className={`${style.sidebar} ${sidebarOpen ? style.open : ""}`}
-        style={{ top: `${positionTop}px` }}
-        ref={sidebarRef}
-      >
-        <div className={style.content}>
-          <div className={style.sidebarHeading}>Navigation</div>
-          <div className={style.line}></div>
-          <ul className={style.sidebarNavigations}>
-            {navItems.map((item, index) => {
-              const isActive = pathname === item.path;
-              const isHovered = currentIndex === index;
-              const bgColor = isActive ? activeColour : isHovered ? randomColour : "#111";
-              const textColor = isActive || isHovered ? "black" : "white";
-              const boxShadow = isHovered ? "0px 0px 8px 1px white" : "";
+      <AnimatePresence>
+         {sidebarOpen && (
+          <motion.div 
+            ref={sidebarRef}
+            className={styles.navbar}
+            initial={{ x: '-100%', opacity: 0 }}
+            animate={{ x: '0%', opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          >
+            <div className={styles.navContent}>
+              <motion.h2 
+                className={styles.navTitle}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Navigation
+              </motion.h2>
 
-              return (
-                <li key={index}>
-                  <button
-                    onMouseEnter={() => setRandomColourForHover(index)}
-                    onMouseLeave={resetColour}
-                    onClick={() => handleNavigate(item.path)}
-                    className={`${style.sidebarButtons} ${isActive ? style.active : ""}`}
-                    style={{ backgroundColor: bgColor, color: textColor, boxShadow }}
+              <motion.div 
+                className={styles.navDivider}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.25 }}
+              />
+
+              <nav className={styles.navLinks}>
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.path}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
                   >
-                    <span style={{ width: "24px", display: "flex", justifyContent: "center" }}>
-                      <FontAwesomeIcon icon={item.icon} />
-                    </span>
-                    <span style={{ flex: 1 }}>{item.label}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+                    <button
+                      onClick={() => handleNavigate(item.path)}
+                      className={`${styles.navLink} ${
+                        pathname === item.path ? styles.active : ''
+                      }`}
+                    >
+                      <span className={styles.linkText}>{item.label}</span>
+                      {pathname === item.path && (
+                        <motion.span
+                          className={styles.activeIndicator}
+                          layoutId="activeIndicator"
+                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  </motion.div>
+                ))}
+              </nav>
 
-          <div className={style.sidebarSocialContainer}>
-            <Socials isHeader />
-          </div>
-        </div>
-      </div>
+              <motion.div 
+                className={styles.socialLinks}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+              >
+                {/* Add your social links here */}
+          <motion.div className={styles.sidebarSocialContainer}>
+            <Socials isHeader={true} />
+          </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
 export default Navbar;
+
+
+// import React, { useEffect, useRef, useState } from 'react';
+// import { faX, faBars } from '@fortawesome/free-solid-svg-icons';
+// import { usePathname, useRouter } from 'next/navigation';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import styles from './Navbar.module.css';
+// import GiggleButton from '../GiggleButton/GiggleButton';
+
+// const Navbar = () => {
+//   const pathname = usePathname();
+//   const router = useRouter();
+//   const [isOpen, setIsOpen] = useState(false);
+//   const navbarRef = useRef<HTMLDivElement>(null);
+
+//   // Navigation items
+//   const navItems = [
+//     { path: '/', label: 'Home' },
+//     { path: '/about', label: 'About' },
+//     { path: '/projects', label: 'Projects' },
+//     { path: '/contact', label: 'Contact' },
+//   ];
+
+//   // Toggle menu
+//   const toggleMenu = () => {
+//     setIsOpen(prev => !prev);
+//   };
+
+//   // Close menu when clicking outside
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (
+//         navbarRef.current &&
+//         !navbarRef.current.contains(event.target as Node) &&
+//         !(event.target as HTMLElement).closest(`.${styles.giggleButtonWrapper}`)
+//       ) {
+//         setIsOpen(false);
+//       }
+//     };
+
+//     document.addEventListener('mousedown', handleClickOutside);
+//     return () => document.removeEventListener('mousedown', handleClickOutside);
+//   }, []);
+
+//   // Lock body scroll when menu is open
+//   useEffect(() => {
+//     if (isOpen) {
+//       document.body.style.overflow = 'hidden';
+//     } else {
+//       document.body.style.overflow = 'auto';
+//     }
+//   }, [isOpen]);
+
+//   // Navigation handler
+//   const handleNavigate = (path: string) => {
+//     setIsOpen(false);
+//     router.push(path);
+//   };
+
+//   return (
+//     <>
+//       {/* GiggleButton for Menu Toggle */}
+//       <div className={styles.giggleButtonWrapper} onClick={()=> toggleMenu()}>
+//         <GiggleButton
+//           text=""
+//           overlayname=""
+//           isIcon
+//           icon={isOpen ? faX : faBars}
+//           isIconAnimated
+//           name="circleNav"
+//           onClick={{
+//             event: "none",
+//             data: "",
+//           }}
+//         />
+//       </div>
+
+//       {/* Navigation Panel with AnimatePresence */}
+//       <AnimatePresence>
+//         {isOpen && (
+//           <motion.div 
+//             ref={navbarRef}
+//             className={styles.navbar}
+//             initial={{ x: '-100%', opacity: 0 }}
+//             animate={{ x: '0%', opacity: 1 }}
+//             exit={{ x: '-100%', opacity: 0 }}
+//             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+//           >
+//             <div className={styles.navContent}>
+//               <motion.h2 
+//                 className={styles.navTitle}
+//                 initial={{ opacity: 0, y: -20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ delay: 0.2 }}
+//               >
+//                 Navigation
+//               </motion.h2>
+
+//               <motion.div 
+//                 className={styles.navDivider}
+//                 initial={{ scaleX: 0 }}
+//                 animate={{ scaleX: 1 }}
+//                 transition={{ delay: 0.25 }}
+//               />
+
+//               <nav className={styles.navLinks}>
+//                 {navItems.map((item, index) => (
+//                   <motion.div
+//                     key={item.path}
+//                     initial={{ opacity: 0, x: -30 }}
+//                     animate={{ opacity: 1, x: 0 }}
+//                     transition={{ delay: 0.3 + index * 0.1 }}
+//                   >
+//                     <button
+//                       onClick={() => handleNavigate(item.path)}
+//                       className={`${styles.navLink} ${
+//                         pathname === item.path ? styles.active : ''
+//                       }`}
+//                     >
+//                       <span className={styles.linkText}>{item.label}</span>
+//                       {pathname === item.path && (
+//                         <motion.span
+//                           className={styles.activeIndicator}
+//                           layoutId="activeIndicator"
+//                           transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+//                         />
+//                       )}
+//                     </button>
+//                   </motion.div>
+//                 ))}
+//               </nav>
+
+//               <motion.div 
+//                 className={styles.socialLinks}
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 transition={{ delay: 0.7 }}
+//               >
+//                 {/* Add your social links here */}
+//               </motion.div>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
+
+// export default Navbar;

@@ -2,11 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Avatar from "../assets/Avatar.png";
 import style from "./contact.module.css";
-import {
-  contactFormQuestions,
-  email,
-  phone,
-} from "../components/constants/Info";
+import { contactFormQuestions, email, phone } from "../components/constants/Info";
 import { checkValidator } from "../components/constants/Functions";
 import GiggleButton from "../components/GiggleButton/GiggleButton";
 import Socials from "../components/Socials/Socials";
@@ -15,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons/faDotCircle";
 import { animate, stagger } from "animejs";
 import Navbar from "../components/Navbar/Navbar";
-
+import { motion } from "framer-motion";
 const Contacts = () => {
   const contactContainerRef = useRef<HTMLDivElement | null>(null);
   const contactDetailContainerRef = useRef<HTMLDivElement | null>(null);
@@ -36,7 +32,7 @@ const Contacts = () => {
       });
     }
     if (contactFormFieldRef) {
-      animate(contactFormFieldRef, {
+      animate(Array.from(contactFormFieldRef), {
         translateX: ["-100vw", "0px"],
         opacity: [0, 1],
         duration: 1200,
@@ -45,21 +41,42 @@ const Contacts = () => {
       });
     }
   }, []);
+
   return (
     <>
+    <motion.div
+  className={style.contactPageWrapper}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
       <div className={style.contactContainer}>
         <Navbar />
         <div className={style.contactHeaderContainer}>
-          <div style={{ fontSize: "2.5rem" }}>
+          <motion.h1 
+            className={style.contactTitle}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             Let&apos;s start a project together
-          </div>
-          <Image
-            src={Avatar}
-            alt=""
-            className={style.contactAvatar}
-            style={{ width: "15%" }}
-          />
+          </motion.h1>
+          <motion.div
+            className={style.avatarWrapper}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <Image
+              src={Avatar}
+              alt="Profile Avatar"
+              className={style.contactAvatar}
+              width={150}
+              height={150}
+            />
+          </motion.div>
         </div>
+        
         <div className={style.contactContentContainer}>
           <div className={style.formContainer} ref={contactContainerRef}>
             {contactFormQuestions.map((question, index) => (
@@ -88,72 +105,57 @@ const Contacts = () => {
               </div>
             ))}
           </div>
-          <div
-            style={{
-              width: "30%",
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "column",
-            }}
-          >
-            <div
+          
+          <div className={style.contactDetailsWrapper}>
+            <motion.div
               className={style.contactDetailsContainer}
               ref={contactDetailContainerRef}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
             >
               <div className={style.contactDetailsButtonContainer}>
-                <div className={style.contactDetailsHeading}>
-                  Contact Details
-                </div>
-                <div className="">
-                  <GiggleButton
-                    text={phone}
-                    name="contactDetails"
-                    overlayname={"contactOverlay"}
-                    isIcon={false}
-                    icon={undefined}
-                    isIconAnimated={false}
-                    onClick={{
-                      event: "none",
-                      data: null,
-                    }}
-                  />
-                </div>
-                <div className="">
-                  <GiggleButton
-                    text={email}
-                    name="contactDetails"
-                    overlayname={"contactOverlay"}
-                    isIcon={false}
-                    icon={undefined}
-                    isIconAnimated={false}
-                    onClick={{
-                      event: "none",
-                      data: null,
-                    }}
-                  />
-                </div>
+                <h3 className={style.contactDetailsHeading}>Contact Details</h3>
+                <GiggleButton
+                  text={phone}
+                  name="contactDetails"
+                  overlayname="contactOverlay"
+                  isIcon={false}
+                  isIconAnimated={false}
+                  onClick={{ event: "none", data: null }}
+                />
+                <GiggleButton
+                  text={email}
+                  name="contactDetails"
+                  overlayname="contactOverlay"
+                  isIcon={false}
+                  isIconAnimated={false}
+                  onClick={{ event: "none", data: null }}
+                />
               </div>
               <div className={style.contactsSocialsContainer}>
                 <Socials isHeader={false} />
               </div>
-            </div>
-            <div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+            >
               <GiggleButton
-                text={"Send it!"}
+                text="Send it!"
                 name="sendButton"
-                overlayname=""
+                overlayname="sendOverlay"
                 isIcon={false}
-                icon={undefined}
-                isIconAnimated={false}
-                onClick={{
-                  event: "none",
-                  data: null,
-                }}
+                  isIconAnimated={false}
+                onClick={{ event: "none", data: null }}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
+    </motion.div>
     </>
   );
 };

@@ -15,7 +15,7 @@
   --color-accent-hover: #5E70F5;
 
   /* Feedback Colors */
-  --color-error: #4E2020;
+  --color-error: red;
   --color-error-hover: #6C2A2A;
   --color-success: #2EB67D;
 
@@ -31,6 +31,7 @@ body {
   margin: 0;
   padding: 0;
   -ms-overflow-style: none;
+  overflow-x: none;
 }
 
 body::-webkit-scrollbar {
