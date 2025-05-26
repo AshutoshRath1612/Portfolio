@@ -42,6 +42,7 @@
   box-shadow: 0px 0px 10px 5px #222222;
 }
 
+
 .heroTextContainer {
       width: 50%;
     color: white;
@@ -57,14 +58,15 @@
 }
 
 .text {
-  /* position: fixed;
-  top: 50%;
-  right: 10%; */
   transform: translateY(-50%);
   opacity: 0;
   font-size: 24px;
   color: #333;
   z-index: 5;
+  position: fixed;
+  width: 50%;
+  right: 5rem;
+  top: 25%;
 }
 
 .spacer {
@@ -162,22 +164,22 @@
 }
 
 .aboutCard {
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  color: #111;
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.8;
-  transition: all 0.3s ease;
-  position: absolute;
-  width: 50%;
-  right: 2rem;
-  top: 5rem;
+     /* max-width: 900px; */
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: #111;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.8;
+    transition: all 0.3s ease;
+    position: fixed;
+    /* width: 98%; */
+    /* right: 0rem; */
+    /* top: -30rem; */
 }
 
 .aboutCard:hover {
@@ -203,6 +205,7 @@
 .aboutFooter {
   font-style: italic;
   color: #007cf0;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

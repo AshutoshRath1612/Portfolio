@@ -58,7 +58,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const triggerPoint = 200;
+      const triggerPoint = 150;
       console.log(scrollY);
       if (scrollY > triggerPoint && !scrolledDown) {
         setScrolledDown(true);
@@ -132,18 +132,6 @@ export default function Home() {
         duration: 2000,
         delay: stagger(100),
         ease: "inOut(4)",
-        onComplete: () => {
-          const aboutTextEl = textRef.current?.querySelectorAll(`.${styles.aboutText}`);
-          if (aboutTextEl) {
-            animate(aboutTextEl, {
-              translateX: ["-100vw", "0px"],
-              opacity: [0, 1],
-              duration: 1000,
-              delay: stagger(200),
-              ease: "inOut(4)",
-            });
-          }
-        }
       });
     }
   };
