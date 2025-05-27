@@ -5,21 +5,21 @@ import styles from "./socials.module.css";
 import { SocialsProps } from "@/app/models/social.model";
 import { motion } from "framer-motion";
 
-const Socials: React.FC<SocialsProps> = ({ isHeader }) => {
+const Socials: React.FC<SocialsProps> = ({ isHeader, isHomePage }) => {
   return (
-    <div className={styles.socialsWrapper}>
+    <div className={!isHomePage ? styles.socialsWrapper : ""}>
       <motion.h3
         className={styles.contactTitle}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        {isHeader ? connectText : "Connect With Me"}
+        {isHomePage ? "" : isHeader ? connectText : "Connect With Me"}
       </motion.h3>
 
       <div
         className={
-          isHeader ? styles.headerSocialsContainer : styles.socialsContainer
+          isHomePage? styles.homeSocialContainer : isHeader ? styles.headerSocialsContainer : styles.socialsContainer
         }
       >
         {socials.map((social, index) => (
@@ -40,6 +40,7 @@ const Socials: React.FC<SocialsProps> = ({ isHeader }) => {
                 data: social.link,
               }}
               name="iconButtons"
+              name2={isHomePage ? "homeSocials" : ""}
               text={social.name || ""}
               overlayname="socialOverlay"
               isIconAnimated={true}

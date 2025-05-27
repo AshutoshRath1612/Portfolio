@@ -1,20 +1,20 @@
 .container {
   height: 400vh;
   position: relative;
-   /* background: radial-gradient(
+  /* background: radial-gradient(
     circle at 30% 50%,
     rgba(255, 255, 255, 0.9) 0%,
     rgba(220, 235, 255, 0.5) 50%,
     rgba(210, 240, 255, 0.3) 100%
   ); */
-   background: radial-gradient(
+  background: radial-gradient(
     circle at 30% 50%,
     rgba(255, 255, 255, 0.9) 0%,
     rgba(220, 235, 255, 0.5) 50%,
     rgb(3, 5, 117) 100%
   );
 }
-.headerContainer{
+.headerContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,19 +42,22 @@
   box-shadow: 0px 0px 10px 5px #222222;
 }
 
-
 .heroTextContainer {
-      width: 50%;
-    color: white;
-    font-size: 1.5rem;
-    text-shadow: -2px 4px 5px black;
-    font-weight: bold;
+  width: 50%;
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: -2px 4px 5px black;
+  font-weight: bold;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
 }
 
-.heroTextHeadingName{
+.heroTextHeadingName {
   font-size: 3rem;
-    margin: 1rem 0;
-    font-weight: bolder;
+  margin: 1rem 0;
+  font-weight: bolder;
 }
 
 .text {
@@ -107,7 +110,6 @@
   opacity: 0;
 }
 
-
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -153,8 +155,6 @@
   user-select: none;
 }
 
-
-
 .aboutSection {
   width: 100%;
   padding: 4rem 1rem;
@@ -164,22 +164,22 @@
 }
 
 .aboutCard {
-     /* max-width: 900px; */
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    color: #111;
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.8;
-    transition: all 0.3s ease;
-    position: fixed;
-    /* width: 98%; */
-    /* right: 0rem; */
-    /* top: -30rem; */
+  /* max-width: 900px; */
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #111;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.8;
+  transition: all 0.3s ease;
+  position: fixed;
+  /* width: 98%; */
+  /* right: 0rem; */
+  /* top: -30rem; */
 }
 
 .aboutCard:hover {
@@ -221,4 +221,3 @@
     font-size: 1rem;
   }
 }
-

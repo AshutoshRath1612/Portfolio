@@ -16,6 +16,11 @@
   margin: 0 auto;
 }
 
+.homeSocialContainer{
+  display: flex;
+  gap: 1rem;
+}
+
 .socials {
   display: flex;
   border-radius: 2rem;

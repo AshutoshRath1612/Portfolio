@@ -119,6 +119,7 @@ const Contacts = () => {
                 <GiggleButton
                   text={phone}
                   name="contactDetails"
+                  name2=""
                   overlayname="contactOverlay"
                   isIcon={false}
                   isIconAnimated={false}
@@ -127,6 +128,7 @@ const Contacts = () => {
                 <GiggleButton
                   text={email}
                   name="contactDetails"
+                  name2=""
                   overlayname="contactOverlay"
                   isIcon={false}
                   isIconAnimated={false}

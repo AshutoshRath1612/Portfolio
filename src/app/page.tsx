@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import GiggleButton from "./components/GiggleButton/GiggleButton";
 import { faFile } from "@fortawesome/free-solid-svg-icons/faFile";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import Socials from "./components/Socials/Socials";
 
 export default function Home() {
   const imageRef = useRef(null);
@@ -204,6 +205,18 @@ export default function Home() {
             <div className={styles.heroTextHeadingName}>Ashutosh Rath</div>
             <div className={styles.heroTextHeadingIntro}>
               and I&apos;m a Full Stack Developer
+            </div>
+            <div>
+              <GiggleButton
+                text={"Contact Me"}
+                name="contactDetails"
+                name2="homeSocials"
+                overlayname="contactOverlay"
+                isIcon={false}
+                isIconAnimated={false}
+                onClick={{ event: "navigate", data: "/contact" }}
+              />
+              <Socials isHeader={false} isHomePage={true} />
             </div>
           </div>
           <Image
