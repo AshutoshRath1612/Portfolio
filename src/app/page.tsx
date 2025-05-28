@@ -116,7 +116,7 @@ export default function Home() {
     if (imageRef.current) {
       waapi.animate(imageRef.current, {
         translateX: ["0", "-40vw"],
-        translateY: ["0", "-20vh"],
+        translateY: ["0", "-25vh"],
         position: "fixed",
         width: "25%",
         height: "50%",
@@ -226,7 +226,7 @@ export default function Home() {
             ref={imageRef}
           />
         </div>
-        <div className={styles.text} ref={textRef}>
+        <div className={styles.text} ref={textRef} style={{top: window.scrollY}}>
           <div className={styles.aboutCard}>
             <p className={styles.aboutText}>
               Hey there! I&apos;m <strong>Ashutosh Rath</strong> — a Full Stack
