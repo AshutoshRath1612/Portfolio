@@ -69,7 +69,9 @@
   position: fixed;
   width: 50%;
   right: 5rem;
-  top: 25%;
+  top: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .spacer {

@@ -226,7 +226,7 @@ export default function Home() {
             ref={imageRef}
           />
         </div>
-        <div className={styles.text} ref={textRef} style={{top: window.scrollY}}>
+        <div className={styles.text} ref={textRef}>
           <div className={styles.aboutCard}>
             <p className={styles.aboutText}>
               Hey there! I&apos;m <strong>Ashutosh Rath</strong> — a Full Stack
