@@ -1,12 +1,6 @@
 .container {
   height: 400vh;
   position: relative;
-  /* background: radial-gradient(
-    circle at 30% 50%,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(220, 235, 255, 0.5) 50%,
-    rgba(210, 240, 255, 0.3) 100%
-  ); */
   background: radial-gradient(
     circle at 30% 50%,
     rgba(255, 255, 255, 0.9) 0%,
@@ -18,46 +12,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.heroSection {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  height: 15%;
-  justify-content: space-around;
-  margin: auto;
-  padding: 2rem;
-}
-.heroImage {
-  /* position: fixed; */
-  top: 50%;
-  left: 50%;
-  width: 20%;
-  height: 55%;
-  /* background-color: #3498db; */
-  /* transform: translate(-50%, -50%); */
-  border-radius: 12px;
-  z-index: 8;
-  background: linear-gradient(45deg, pink, blue);
-  box-shadow: 0px 0px 10px 5px #222222;
-}
-
-.heroTextContainer {
-  width: 50%;
-  color: white;
-  font-size: 1.5rem;
-  text-shadow: -2px 4px 5px black;
-  font-weight: bold;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
-}
-
-.heroTextHeadingName {
-  font-size: 3rem;
-  margin: 1rem 0;
-  font-weight: bolder;
 }
 
 .text {
@@ -77,149 +31,9 @@
 .spacer {
   height: 150vh;
 }
-
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 2rem;
-}
-
-.greeting {
-  flex: 1;
-  z-index: 1;
-}
-
-.photoWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40vh;
-  transition: height 0.5s ease;
-}
-
-.photo {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.aboutWrapper {
-  padding: 4rem 2rem;
+.skillContainer{
+  position: fixed;
+  top: 3rem;
   opacity: 0;
-}
-
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  flex-direction: column;
-}
-
-.modalContent {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 90vw;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.resumeViewer {
-  width: 70vw;
-  height: 70vh;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.modalClose {
-  margin-top: 1rem;
-  cursor: pointer;
-  color: white;
-  font-size: 1.5rem;
-  user-select: none;
-}
-
-.aboutSection {
   width: 100%;
-  padding: 4rem 1rem;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
-}
-
-.aboutCard {
-  /* max-width: 900px; */
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  color: #111;
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.8;
-  transition: all 0.3s ease;
-  position: fixed;
-  /* width: 98%; */
-  /* right: 0rem; */
-  /* top: -30rem; */
-}
-
-.aboutCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
-}
-
-.aboutHeading {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #007cf0, #00dfd8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.aboutText {
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-  color: #333;
-}
-
-.aboutFooter {
-  font-style: italic;
-  color: #007cf0;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .aboutCard {
-    padding: 2rem 1.5rem;
-  }
-
-  .aboutHeading {
-    font-size: 1.8rem;
-  }
-
-  .aboutText {
-    font-size: 1rem;
-  }
 }

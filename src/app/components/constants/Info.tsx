@@ -3,6 +3,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faReact } from "@fortawesome/free-brands-svg-icons/faReact";
 
 export const introText =
   "Hi, I am Ashutosh Rath, a designer and full-stack developer.";
@@ -28,6 +29,13 @@ export const contactFormQuestions = [
      { name: "Instagram", icon: faInstagram, link: 'https://www.instagram.com/_i.am_doomaf_/' },
    ];
   
+   export const skills = [
+    {name: "ReactJs" , icon: faReact},
+    {name: "NodeJs" , icon: faReact},
+    {name: "ExpressJs" , icon: faReact},
+    {name: "MongoDB" , icon: faReact},
+    {name: "NextJs" , icon: faReact},
+   ]
 // "Hi, I am Ashutosh Rath,
 // a passionate software engineer with a knack for creating innovative solutions.
 // I thrive on challenges and love to push the boundaries of technology. ]

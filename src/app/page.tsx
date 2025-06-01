@@ -10,14 +10,17 @@ import { faFile } from "@fortawesome/free-solid-svg-icons/faFile";
 import ResumeModal from "./components/Resume/ResumeModal";
 import AboutCard from "./components/About/AboutCard";
 import HeroSection from "./components/Hero/HeroSection";
+import Skills from "./components/Skill/Skills";
 
 export default function Home() {
   const imageRef = useRef(null);
   const textRef = useRef<HTMLDivElement | null>(null);
+  const skillRef = useRef<HTMLDivElement | null>(null);
   const resumeButtonRef = useRef(null);
   const heroTextRef = useRef<HTMLDivElement | null>(null);
 
   const [scrollHero, setscrollHero] = useState(false);
+  const [scrollAbout, setScrollAbout] = useState(false);
   const [isResumeBtnNotHover, setIsResumeBtnNotHover] = useState(true);
   const [showResumeModal, setShowResumeModal] = useState(false);
 
@@ -58,22 +61,32 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const triggerPoint = 150;
+      const triggerHero = 150;
+      const triggerAbout = 800;
+      const triggerContact = 1500;
       console.log(scrollY);
-      if (scrollY > triggerPoint && !scrollHero) {
+      if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);
-        animateForward();
+        animateToAbout();
         slideOut();
-      } else if (scrollY <= triggerPoint && scrollHero) {
+      } else if (scrollY <= triggerHero && scrollHero) {
         setscrollHero(false);
-        animateBackward();
+        animateToHero();
         slideIn();
       }
+
+      if (scrollY > triggerAbout && !scrollAbout) {
+      setScrollAbout(true);
+      animateToSkills();
+    } else if (scrollY <= triggerAbout && scrollAbout) {
+      setScrollAbout(false);
+      animateToAbout();
+    }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollHero]);
+  }, [scrollHero,scrollAbout]);
 
   const slideOut = () => {
     if (!imageRef.current || !textRef.current) return;
@@ -111,7 +124,17 @@ export default function Home() {
     }
   };
 
-  const animateForward = () => {
+  const animateToAbout = () => {
+
+    if (skillRef.current) {
+          animate(skillRef.current, {
+            translateX: ["0", "100vw"],
+            duration: 2000,
+            delay: stagger(100),
+            ease: "inOut(4)",
+          }
+          )
+        }
     if (imageRef.current) {
       waapi.animate(imageRef.current, {
         translateX: ["0", "-40vw"],
@@ -136,7 +159,7 @@ export default function Home() {
     }
   };
 
-  const animateBackward = () => {
+  const animateToHero = () => {
     const aboutTextEl = textRef.current?.querySelectorAll(".aboutText");
     if (imageRef.current) {
       waapi.animate(imageRef.current, {
@@ -169,6 +192,30 @@ export default function Home() {
       });
     }
   };
+
+  const animateToSkills = () => {
+      if (textRef.current) {
+      animate(textRef.current, {
+        opacity: [1,0],
+        translateX: ["0", "100vw"],
+        duration: 500,
+        delay: stagger(100),
+        ease: "inOut(4)",
+        onComplete: () => {
+          if (skillRef.current) {
+          animate(skillRef.current, {
+            opacity: [0, 1],
+            translateX: ["100vw", "0px"],
+            duration: 500,
+            delay: stagger(100),
+            ease: "inOut(4)",
+          }
+          )
+        }
+      }
+      });
+    }
+  }
 
   // Main render
   return (
@@ -203,6 +250,9 @@ export default function Home() {
             name2=""
             onClick={{ event: "none", data: "" }}
           />
+    </div>
+    <div ref={skillRef} className={styles.skillContainer}>
+      <Skills />
     </div>
 
     {showResumeModal && <ResumeModal onClose={() => setShowResumeModal(false)} />}

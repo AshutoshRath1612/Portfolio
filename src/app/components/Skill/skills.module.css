@@ -1,0 +1,49 @@
+.glassSection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.tileContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillTile {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+.skillTile:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.skillIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.skillName {
+  font-size: 1rem;
+  color: #fff;
+}
