@@ -56,12 +56,14 @@ const GiggleButton = ({
     if (!buttonRef.current) return;
 
     const textElem = buttonRef.current.querySelector(`.${style.aboutText}`);
+    const iconElem = iconRef.current;
     const bounds = buttonRef.current.getBoundingClientRect();
     const offsetX = e.clientX - bounds.left - bounds.width / 2;
     const offsetY = e.clientY - bounds.top - bounds.height / 2;
 
-    if (textElem) {
-      animate(textElem, {
+    const targetElem = textElem || iconElem;
+    if (targetElem) {
+      animate(targetElem, {
         translateX: name === "contactDetails" ? offsetX * 0.1 : offsetX * 0.2,
         translateY: offsetY * 0.2,
         duration: 200,
@@ -93,8 +95,9 @@ const GiggleButton = ({
     const aboutTextElem = buttonRef.current.querySelector(
       `.${style.aboutText}`
     );
-    if (aboutTextElem) {
-      animate(aboutTextElem, {
+    const targetElem = aboutTextElem || iconRef.current;
+    if (targetElem) {
+      animate(targetElem, {
         translateX: 0,
         translateY: 0,
         duration: 300,
