@@ -17,7 +17,7 @@ export default function Home() {
   const resumeButtonRef = useRef(null);
   const heroTextRef = useRef<HTMLDivElement | null>(null);
 
-  const [scrolledDown, setScrolledDown] = useState(false);
+  const [scrollHero, setscrollHero] = useState(false);
   const [isResumeBtnNotHover, setIsResumeBtnNotHover] = useState(true);
   const [showResumeModal, setShowResumeModal] = useState(false);
 
@@ -60,12 +60,12 @@ export default function Home() {
       const scrollY = window.scrollY;
       const triggerPoint = 150;
       console.log(scrollY);
-      if (scrollY > triggerPoint && !scrolledDown) {
-        setScrolledDown(true);
+      if (scrollY > triggerPoint && !scrollHero) {
+        setscrollHero(true);
         animateForward();
         slideOut();
-      } else if (scrollY <= triggerPoint && scrolledDown) {
-        setScrolledDown(false);
+      } else if (scrollY <= triggerPoint && scrollHero) {
+        setscrollHero(false);
         animateBackward();
         slideIn();
       }
@@ -73,7 +73,7 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolledDown]);
+  }, [scrollHero]);
 
   const slideOut = () => {
     if (!imageRef.current || !textRef.current) return;
