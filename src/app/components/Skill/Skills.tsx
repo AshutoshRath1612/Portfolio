@@ -25,7 +25,7 @@ export default function Skills() {
       <h2 className={styles.title}>What I Know</h2>
       <div className={styles.tileContainer} ref={tileRef}>
         {skills.map((skill, idx) => (
-          <SkillTile key={idx} icon={skill.icon} name={skill.name} />
+          <SkillTile key={idx} icon={skill.img} name={skill.name} />
         ))}
       </div>
     </div>

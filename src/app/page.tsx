@@ -80,6 +80,7 @@ export default function Home() {
       animateToSkills();
     } else if (scrollY <= triggerAbout && scrollAbout) {
       setScrollAbout(false);
+      slideSkillOut();
       animateToAbout();
     }
     };
@@ -124,21 +125,23 @@ export default function Home() {
     }
   };
 
-  const animateToAbout = () => {
+  const slideSkillOut = () => {
+    if (!skillRef.current) return;
+    animate(skillRef.current, {
+      translateX: ["0", "-100vw"],
+      opacity: [1, 0],
+      duration: 1000,
+      delay: stagger(100),
+      ease: "inOut(4)",
+    });
+  }
 
-    if (skillRef.current) {
-          animate(skillRef.current, {
-            translateX: ["0", "100vw"],
-            duration: 2000,
-            delay: stagger(100),
-            ease: "inOut(4)",
-          }
-          )
-        }
+  const animateToAbout = () => {
     if (imageRef.current) {
       waapi.animate(imageRef.current, {
         translateX: ["0", "-40vw"],
         translateY: ["0", "-25vh"],
+        opacity: [0,1],
         position: "fixed",
         width: "25%",
         height: "50%",
@@ -151,10 +154,22 @@ export default function Home() {
     if (textRef.current) {
       animate(textRef.current, {
         opacity: [0, 1],
-        translateX: ["100vw", "0px"],
+        translateX: ["100vw", "0px"], 
         duration: 2000,
         delay: stagger(100),
         ease: "inOut(4)",
+        onBegin: () => {
+          const aboutTextEl = textRef.current?.querySelectorAll(".aboutText");
+          if (aboutTextEl) {
+            animate(aboutTextEl, {
+              translateX: ["100vw", "0px"],
+              opacity: [0, 1],
+              duration: 2000,
+              delay: stagger(200),
+              ease: "inOut(4)",
+            });
+          }
+        },
       });
     }
   };
@@ -209,11 +224,31 @@ export default function Home() {
             duration: 500,
             delay: stagger(100),
             ease: "inOut(4)",
+            onBegin: () => {
+              const skillTileEl = skillRef.current?.querySelectorAll(".skillTile");
+              if (skillTileEl)
+              animate(skillTileEl, {
+                opacity: [0, 1],
+                scale: [0.5, 1],
+                rotateY: ["-180deg", "0deg"],
+                duration: 500,
+                delay: stagger(100),
+                ease: "inOut(3)",
+                });
+            }
           }
           )
         }
       }
-      });
+    });
+    if(imageRef.current){
+      waapi.animate(imageRef.current,{
+        opacity: [1, 0],
+        duration: 500,
+        delay: stagger(100),
+        ease: "inOut(4)",
+      })
+    }
     }
   }
 
