@@ -11,6 +11,7 @@ import ResumeModal from "./components/Resume/ResumeModal";
 import AboutCard from "./components/About/AboutCard";
 import HeroSection from "./components/Hero/HeroSection";
 import Skills from "./components/Skill/Skills";
+import Projects from "./components/Projects/Projects";
 
 export default function Home() {
   const imageRef = useRef(null);
@@ -130,6 +131,7 @@ export default function Home() {
     animate(skillRef.current, {
       translateX: ["0", "-100vw"],
       opacity: [1, 0],
+      position: "static",
       duration: 1000,
       delay: stagger(100),
       ease: "inOut(4)",
@@ -220,6 +222,7 @@ export default function Home() {
           if (skillRef.current) {
           animate(skillRef.current, {
             opacity: [0, 1],
+            position: "fixed",
             translateX: ["100vw", "0px"],
             duration: 500,
             delay: stagger(100),
@@ -289,7 +292,9 @@ export default function Home() {
     <div ref={skillRef} className={styles.skillContainer}>
       <Skills />
     </div>
-
+    <div className={styles.projectContainer}>
+      <Projects />
+    </div>
     {showResumeModal && <ResumeModal onClose={() => setShowResumeModal(false)} />}
   </div>
 );

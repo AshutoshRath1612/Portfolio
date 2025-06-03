@@ -32,7 +32,7 @@
   height: 150vh;
 }
 .skillContainer {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
@@ -44,4 +44,8 @@
 
 .skillContainer::-webkit-scrollbar{
   display: none;
+}
+
+.projectContainer{
+  top: 0;
 }
