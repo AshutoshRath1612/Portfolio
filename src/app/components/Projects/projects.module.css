@@ -1,0 +1,103 @@
+.container {
+  position: relative;
+  color: white;
+  background-color: #8f9ccc;
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: -2px 4px 5px black;
+}
+
+.trackWrapper {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.track {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  height: 80vh;
+}
+
+.card {
+  width: 80%;
+  height: 70%;
+  margin: 2rem 10%;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 0px 10px 2px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image {
+  border-radius: 8px;
+  width: 45%;
+  height: 80%;
+  background-color: black;
+}
+.projectInfo {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* background-color: black; */
+}
+.projectName {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: -1px 2px 6px black;
+}
+.projectTechs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: auto;
+  margin: 0 auto;
+}
+.techs,
+.links {
+  border-radius: 0.5rem;
+  background-color: black;
+  padding: 1rem;
+}
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.links {
+  cursor: pointer;
+}
+.projectDescription {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: inset 0px 0px 4px 1px white;
+  color: black;
+}
+.potraitImageCard{
+  object-fit: contain;
+  width: 35%;
+}
