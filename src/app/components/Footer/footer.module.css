@@ -1,0 +1,62 @@
+.footer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lottie {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.thankYou {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  display: flex;
+  gap: 0.3em;
+  margin-bottom: 1rem;
+}
+
+.letter {
+  opacity: 0;
+  display: inline-block;
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #00ffd0;
+  text-decoration: none;
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: auto;
+}

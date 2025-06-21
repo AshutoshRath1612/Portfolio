@@ -12,18 +12,21 @@ import AboutCard from "./components/About/AboutCard";
 import HeroSection from "./components/Hero/HeroSection";
 import Skills from "./components/Skill/Skills";
 import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
   const skillRef = useRef<HTMLDivElement | null>(null);
   const projectRef = useRef<HTMLDivElement | null>(null);
+  const footerRef = useRef<HTMLDivElement | null>(null);
   const resumeButtonRef = useRef(null);
   const heroTextRef = useRef<HTMLDivElement | null>(null);
 
   const [scrollHero, setscrollHero] = useState(false);
   const [scrollAbout, setScrollAbout] = useState(false);
   const [scrollProject, setScrollProject] = useState(false);
+  const [scrollFooter, setScrollFooter] = useState(false);
   const [isResumeBtnNotHover, setIsResumeBtnNotHover] = useState(true);
   const [showResumeModal, setShowResumeModal] = useState(false);
 
@@ -67,6 +70,7 @@ export default function Home() {
       const triggerHero = 150;
       const triggerAbout = 800;
       const triggerSkills = 1500;
+      const triggerProject = 13000;
       console.log(scrollY);
       if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);
@@ -89,18 +93,25 @@ export default function Home() {
 
       if (scrollY > triggerSkills && !scrollProject) {
         setScrollProject(true);
-        animateToProjects();
+        animateToProjects(true);
       } else if (scrollY <= triggerSkills && scrollProject) {
         setScrollProject(false);
         slideProjectOut();
         animateToSkills(false);
       }
-
+      if (scrollY > triggerProject && !scrollFooter) {
+        setScrollFooter(true);
+        animateToFooter();
+      } else if (scrollY <= triggerProject && scrollFooter) {
+        setScrollFooter(false);
+        slideFooterOut();
+        animateToProjects(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollHero, scrollAbout, scrollProject]);
+  }, [scrollHero, scrollAbout, scrollProject, scrollFooter]);
 
   const slideOut = () => {
     if (!imageRef.current || !textRef.current) return;
@@ -150,7 +161,7 @@ export default function Home() {
       ease: "inOut(4)",
       onComplete: () => {
         skillRef.current?.style.setProperty("display", "none");
-      }
+      },
     });
   };
   const slideProjectOut = () => {
@@ -165,7 +176,29 @@ export default function Home() {
       ease: "inOut(4)",
       onComplete: () => {
         projectRef.current?.style.setProperty("display", "none");
-      }
+      },
+    });
+  };
+  const slideFooterOut = () => {
+    if (!footerRef.current) return;
+    animate(footerRef.current, {
+      translateX: ["0", "-100vw"],
+      opacity: [1, 0],
+      // position: "static",
+      // display:"none",
+      duration: 1000,
+      delay: stagger(100),
+      ease: "inOut(4)",
+      onComplete: () => {
+        footerRef.current?.style.setProperty("display", "none");
+        const footerContainer = footerRef.current?.querySelector(".footerContainerDiv");
+        if (footerContainer && footerContainer instanceof HTMLElement) {
+          footerContainer.style.setProperty("border-radius", "50%");
+          footerContainer.style.setProperty("height", "20rem");
+          footerContainer.style.setProperty("width", "20rem");
+          footerContainer.style.setProperty("opacity", "0");
+        }
+      },
     });
   };
 
@@ -176,7 +209,7 @@ export default function Home() {
         translateY: ["0", "-25vh"],
         opacity: [0, 1],
         position: "fixed",
-        display:"block",
+        display: "block",
         width: "25%",
         height: "50%",
         ease: "inOut(4)",
@@ -190,7 +223,7 @@ export default function Home() {
         opacity: [0, 1],
         translateX: ["100vw", "0px"],
         duration: 2000,
-        display:"flex",
+        display: "flex",
         delay: stagger(100),
         ease: "inOut(4)",
         onBegin: () => {
@@ -261,56 +294,94 @@ export default function Home() {
           ease: "inOut(4)",
           onComplete: () => {
             imageRef.current?.style.setProperty("display", "none");
-          }
+          },
         });
       }
     }
     if (skillRef.current) {
-          animate(skillRef.current, {
-            opacity: [0, 1],
-            // position: "fixed",
-            display: "block",
-            translateX: ["100vw", "0px"],
-            duration: 1500,
-            delay: stagger(100),
-            ease: "inOut(4)",
-            onBegin: () => {
-              const skillTileEl =
-                skillRef.current?.querySelectorAll(".skillTile");
-              if (skillTileEl)
-                animate(skillTileEl, {
-                  opacity: [0, 1],
-                  scale: [0.5, 1],
-                  rotateY: ["-180deg", "0deg"],
-                  duration: 500,
-                  delay: stagger(100),
-                  ease: "inOut(3)",
-                });
-            },
-          });
-        }
+      animate(skillRef.current, {
+        opacity: [0, 1],
+        // position: "fixed",
+        display: "block",
+        translateX: ["100vw", "0px"],
+        duration: 1500,
+        delay: stagger(100),
+        ease: "inOut(4)",
+        onBegin: () => {
+          const skillTileEl = skillRef.current?.querySelectorAll(".skillTile");
+          if (skillTileEl)
+            animate(skillTileEl, {
+              opacity: [0, 1],
+              scale: [0.5, 1],
+              rotateY: ["-180deg", "0deg"],
+              duration: 500,
+              delay: stagger(100),
+              ease: "inOut(3)",
+            });
+        },
+      });
+    }
   };
 
-  const animateToProjects = () => {
-    if (skillRef.current) {
+  const animateToProjects = (forwards: boolean) => {
+    if (skillRef.current && forwards) {
       animate(skillRef.current, {
         opacity: [1, 0],
         translateX: ["0px", "-100vw"],
         duration: 500,
         delay: stagger(100),
         ease: "inOut(4)",
+      });
+    }
+    if (projectRef.current) {
+      animate(projectRef.current, {
+        opacity: [0, 1],
+        position: "fixed",
+        display: "block",
+        translateX: ["-100vw", "0px"],
+        duration: 500,
+        delay: stagger(100),
+        ease: "inOut(4)",
+      });
+    }
+  };
+  const animateToFooter = () => {
+    if (projectRef.current) {
+      animate(projectRef.current, {
+        opacity: [1, 0],
+        translateX: ["0px", "-100vw"],
+        duration: 500,
+        delay: stagger(100),
+        ease: "inOut(4)",
+      });
+    }
+    if (footerRef.current) {
+      animate(footerRef.current, {
+        opacity: [0, 1],
+        position: "fixed",
+        display: "block",
+        translateX: ["-100vw", "0px"],
+        duration: 500,
+        delay: stagger(100),
+        ease: "inOut(4)",
         onComplete: () => {
-          if (projectRef.current) {
-            animate(projectRef.current, {
-              opacity: [0, 1],
-              position: "fixed",
-              display: "block",
-              translateX: ["-100vw", "0px"],
-              duration: 500,
-              delay: stagger(100),
-              ease: "inOut(4)",
-            });
-          }
+          const footerEl = footerRef.current?.querySelector("div");
+          console.log(footerEl);
+          if (!footerEl) return;
+          animate(footerEl,{
+              opacity: 1,
+              translateY: ["50vh", "0px"],
+              duration: 1000,
+              easing: 'easeInOutSine',
+              onComplete:() =>{
+                  animate(footerEl,{
+                      borderRadius: 0,
+                      width: "30rem",
+                      height: "30rem",
+                      duration: 200,
+                  })
+              }
+          })
         },
       });
     }
@@ -360,6 +431,9 @@ export default function Home() {
       </div>
       <div ref={projectRef} className={styles.projectContainer}>
         <Projects />
+      </div>
+      <div ref={footerRef} className={styles.footerContainer}>
+        <Footer />
       </div>
       {showResumeModal && (
         <ResumeModal onClose={() => setShowResumeModal(false)} />

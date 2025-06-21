@@ -12,7 +12,7 @@ export default function Projects() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const startScroll = 1700;
+      const startScroll = 1900;
       const scrollY = window.scrollY;
 
       if (scrollY < startScroll) return;
