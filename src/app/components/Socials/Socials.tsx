@@ -13,6 +13,7 @@ const Socials: React.FC<SocialsProps> = ({ isHeader, isHomePage }) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
+        style={{ color: isHeader ? "#fff" : "#000" }}
       >
         {isHomePage ? "" : isHeader ? connectText : "Connect With Me"}
       </motion.h3>

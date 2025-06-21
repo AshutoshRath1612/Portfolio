@@ -119,15 +119,15 @@ export const skills = [
   },
   {
     name: "Express.js",
-    img: "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000",
   },
   {
     name: "Flask",
-    img: "https://img.icons8.com/?size=100&id=AqYCfGyGXlO7&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=AqYCfGyGXlO7&format=png&color=000000",
   },
   {
     name: "Redux",
-    img: "https://img.icons8.com/?size=100&id=A6r5yddU9uA0&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=A6r5yddU9uA0&format=png&color=000000",
   },
   {
     name: "MongoDB",
@@ -135,7 +135,7 @@ export const skills = [
   },
   {
     name: "MySQL",
-    img: "https://img.icons8.com/?size=100&id=w0gLt4XNjxKm&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=w0gLt4XNjxKm&format=png&color=000000",
   },
   {
     name: "PostgreeSQL",
@@ -171,7 +171,7 @@ export const skills = [
   },
   {
     name: "GitHub",
-    img: "https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000",
   },
   {
     name: "VSCode",
@@ -187,7 +187,7 @@ export const skills = [
   },
   {
     name: "Expo",
-    img: "https://img.icons8.com/?size=100&id=IpN1evivrDWO&format=png&color=ffffff",
+    img: "https://img.icons8.com/?size=100&id=IpN1evivrDWO&format=png&color=000000",
   },
   {
     name: "Figma",

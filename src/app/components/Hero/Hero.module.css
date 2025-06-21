@@ -14,15 +14,14 @@
   height: 55%;
   border-radius: 12px;
   z-index: 8;
-  background: linear-gradient(45deg, pink, blue);
-  box-shadow: 0px 0px 10px 5px #222222;
+  box-shadow: 0 0 10px rgba(25, 118, 210, 0.4), 0 0 20px rgba(25, 118, 210, 0.3);
+  background: var(--bg-primary);
 }
 
 .heroTextContainer {
   width: 50%;
-  color: white;
   font-size: 1.5rem;
-  text-shadow: -2px 4px 5px black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   gap: 1rem;
   display: flex;
@@ -34,4 +33,5 @@
   font-size: 3rem;
   margin: 1rem 0;
   font-weight: bolder;
+  color: var(--btn-bg);
 }

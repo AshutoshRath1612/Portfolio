@@ -7,12 +7,12 @@
     rgba(220, 235, 255, 0.5) 50%,
     rgba(210, 240, 255, 0.3) 100%
   ); */
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 30% 50%,
     rgba(255, 255, 255, 0.9) 0%,
     rgba(220, 235, 255, 0.5) 50%,
     rgb(3, 5, 117) 100%
-  );
+  ); */
   padding: 2rem 0;
 }
 
@@ -39,10 +39,10 @@
 .contactTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(to right, #ffffff, #a7c7ff);
+  /* background: linear-gradient(to right, #ffffff, #a7c7ff); */
+  color: var(--text-main);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
   max-width: 60%;
   line-height: 1.2;
 }
@@ -56,8 +56,8 @@
   height: 9.5rem;
   border-radius: 50%;
   object-fit: cover;
-  background: linear-gradient(45deg, pink, blue);
-  box-shadow: 0 0 20px rgba(69, 92, 233, 0.6), 0 0 40px rgba(69, 92, 233, 0.3);
+  box-shadow: var(--btn-shadow);
+  background: var(--bg-primary);
   transition: transform 0.3s ease;
 }
 
@@ -95,8 +95,9 @@
 
 /* Glassmorphism Form */
 .contactFormContainer {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: (--card-shadow);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 12px;
@@ -132,7 +133,7 @@
 
 .questions {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: bold;
   color: #111;
 }
 
@@ -164,13 +165,13 @@
 /* Glassmorphism Contact Details */
 .contactDetailsContainer {
   width: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
 }
 
 /* Details Head */

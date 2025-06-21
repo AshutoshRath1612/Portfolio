@@ -55,7 +55,7 @@ const GiggleButton = ({
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!buttonRef.current) return;
 
-    const textElem = buttonRef.current.querySelector(`.${style.aboutText}`);
+    const textElem = buttonRef.current.querySelector(`.${style.giggleButtonText}`);
     const iconElem = iconRef.current;
     const bounds = buttonRef.current.getBoundingClientRect();
     const offsetX = e.clientX - bounds.left - bounds.width / 2;
@@ -92,10 +92,10 @@ const GiggleButton = ({
       });
     }
 
-    const aboutTextElem = buttonRef.current.querySelector(
-      `.${style.aboutText}`
+    const giggleButtonTextElem = buttonRef.current.querySelector(
+      `.${style.giggleButtonText}`
     );
-    const targetElem = aboutTextElem || iconRef.current;
+    const targetElem = giggleButtonTextElem || iconRef.current;
     if (targetElem) {
       animate(targetElem, {
         translateX: 0,
@@ -134,7 +134,7 @@ const GiggleButton = ({
 
   return (
     <button
-      className={`${style.aboutButton} ${style[name]} ${style[name2]}`}
+      className={`${style.giggleButton} ${style[name]} ${style[name2]}`}
       ref={buttonRef}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
@@ -149,7 +149,7 @@ const GiggleButton = ({
           style={{ zIndex: 1 }}
         />
       ) : (
-        <div className={style.aboutText}>{text}</div>
+        <div className={style.giggleButtonText}>{text}</div>
       )}
       <span
         ref={overlayRef}

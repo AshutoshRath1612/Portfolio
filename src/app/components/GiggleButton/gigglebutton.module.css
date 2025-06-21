@@ -1,4 +1,4 @@
-.aboutButton {
+.giggleButton {
   z-index: 1;
   position: absolute;
   right: 5rem;
@@ -8,8 +8,9 @@
   height: 10rem;
   border-radius: 50%;
   /* background: linear-gradient(to top, #222 0%, #4e2020 0%); */
-  background: black;
-  color: white;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: var(--btn-shadow);
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
@@ -18,25 +19,26 @@
   align-items: center;
   overflow: hidden;
   justify-content: center;
+  backdrop-filter: blur(7px);
 }
-
-.aboutButton .buttonOverlay {
+.giggleButton .buttonOverlay {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #5e70f5;
+  background-color: var(--btn-bg-hover);
   border-radius: 50%;
   transform: translateY(100%);
   z-index: 0;
   opacity: 0;
   pointer-events: none;
+  box-shadow: 0 0 24px rgba(14, 118, 255, 0.8), 0 0 64px rgba(14, 118, 255, 0.6);
 }
-.aboutText {
+.giggleButtonText {
   z-index: 3;
   position: relative;
 }
-.aboutButton span {
+.giggleButton span {
   position: relative;
   z-index: 2;
 }
@@ -54,15 +56,12 @@
   bottom: 0px !important;
   font-size: 1.1rem;
   font-weight: normal;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   border-radius: 2rem;
   width: auto;
   padding: 1rem 1.5rem;
   text-align: center;
-  color: white;
   font-weight: bold;
-  background: var(--color-primary-dark);
-  box-shadow: 0px 0px 10px 5px #222222;
 }
 
 .contactOverlay {
@@ -75,9 +74,7 @@
   bottom: 0px;
   height: 3rem;
   width: 3rem;
-  border: 1px solid white;
-  background: var(--color-primary-dark);
-  box-shadow: 0px 0px 8px 1px #222222;
+  /* border: 1px solid white; */
 }
 .circleNav {
   position: fixed;
@@ -86,8 +83,6 @@
   z-index: 10;
   width: 4rem;
   height: 4rem;
-  background-color: black;
-  color: white;
   padding: 10px 15px;
   border-radius: 50%;
   cursor: pointer;
@@ -105,7 +100,6 @@
 }
 .resumeBtn{
   right: 2rem !important;
-  background-color: black;
 }
 .homeSocials{
   border: none !important;

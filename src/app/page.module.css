@@ -1,12 +1,12 @@
 .container {
   height: 2000vh;
   position: relative;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 30% 50%,
     rgba(255, 255, 255, 0.9) 0%,
     rgba(220, 235, 255, 0.5) 80%,
     rgb(3, 5, 117) 100%
-  );
+  ); */
 }
 .headerContainer {
   display: flex;

@@ -1,32 +1,70 @@
-:root {
-  /* Base Colors */
+/* :root {
   --color-background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgb(92, 131, 180) 100%);
   --color-surface: #1C1C1C;
   --color-input-bg: #1A1A1A;
   --color-border: #333333;
   --color-primary-dark: #222222;
 
-  /* Text Colors */
   --color-text-primary: #EEEEEE;
   --color-text-secondary: #AAAAAA;
 
-  /* Accent Colors */
   --color-accent: #455CE9;
   --color-accent-hover: #5E70F5;
 
-  /* Feedback Colors */
   --color-error: red;
   --color-error-hover: #6C2A2A;
   --color-success: #2EB67D;
 
-  /* Image or Avatar Background */
-  --color-image-bg: #1B223C;         /* Muted dark blue, complements #455CE9 */
+  --color-image-bg: #1B223C;    
 
+} */
+
+:root {
+  /* Base Backgrounds */
+  --bg-primary: linear-gradient(to right, #ffffff, #a7c7ff);
+  --bg-secondary: #121212;
+
+  /* Buttons */
+  --btn-bg: #1976d2;
+  --btn-bg-hover: #1565c0;
+  --btn-text: #ffffff;
+  --btn-shadow: 0 4px 20px rgba(30, 136, 229, 0.3);
+
+  /* Accent Colors */
+  --accent-primary: #00fff7; /* Neon Aqua */
+  --accent-secondary: #ff6b6b; /* Coral Red */
+  --accent-tertiary: #ffd166; /* Warm Yellow */
+
+  /* Text Colors */
+  --text-main: black;
+  --text-muted: #aaaaaa;
+  --text-inverse: #ffffff;
+
+   /* Outer Card */
+  --card-bg: rgba(255, 255, 255, 0.3);
+  --card-border: 1px solid rgba(255, 255, 255, 0.4);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(12px);
+
+  /* Inner Cards */
+  --inner-card-bg: rgba(255, 255, 255, 0.35);
+  --inner-card-border: rgba(255, 255, 255, 0.4);
+  --inner-card-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --inner-card-blur: blur(8px);
+  --inner-card-text: #111;
+
+  /* Shadows & Effects */
+  --shadow-soft: 0 0 20px rgba(255, 255, 255, 0.05);
+  --shadow-strong: 0 0 40px rgba(0, 255, 247, 0.4);
+
+  /* Transitions */
+  --transition-fast: 0.3s ease-in-out;
+  --transition-smooth: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 body {
-  background: #020024;
-  background: var(--color-background);
+  background: var(--bg-primary);
+  /* background: var(--color-background); */
   overflow: auto;
   margin: 0;
   padding: 0;
