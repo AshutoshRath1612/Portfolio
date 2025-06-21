@@ -1,5 +1,6 @@
 .aboutCard {
-  background: rgba(255, 255, 255, 0.15);
+  /* background: rgba(255, 255, 255, 0.15); */
+  background: rgb(255 255 255 / 52%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
