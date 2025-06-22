@@ -1,0 +1,239 @@
+.aboutPage {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Main Container */
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+.profileImage {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 300px;
+}
+
+.name {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.location, .email {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.socialLinks {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.socialLinks a:hover {
+  color: #3182ce;
+}
+
+/* Bio Section */
+.bioSection {
+  margin: 4rem 0;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background: #6e8efb;
+}
+
+.bioText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+/* Education & Certifications */
+.educationSection, .certificationsSection {
+  margin: 4rem 0;
+}
+
+.educationList, .certificationsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.educationItem, .certificationItem {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.educationItem:hover, .certificationItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.degree, .certName {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.university, .issuer {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.year {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* Skills Section */
+.skillsSection {
+  margin: 4rem 0;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skillItem {
+  background: #ebf4ff;
+  color: #4299e1;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  margin: 5rem 0;
+  padding: 3rem;
+  background: #f7fafc;
+  border-radius: 15px;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.ctaText {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.contactButton {
+  background: #6e8efb;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contactButton:hover {
+  background: #5b7ce7;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .profileSection {
+    flex-direction: column;
+  }
+  
+  .educationList, .certificationsList {
+    grid-template-columns: 1fr;
+  }
+}
