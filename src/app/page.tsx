@@ -70,7 +70,7 @@ export default function Home() {
       const triggerHero = 150;
       const triggerAbout = 800;
       const triggerSkills = 1200;
-      const triggerProject = 8500;
+      const triggerProject = 4300;
       console.log(scrollY);
       if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);

@@ -1,6 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { animate, stagger } from 'animejs';
-import styles from './Footer.module.css';
+import React, { useEffect, useRef } from "react";
+import { animate, stagger } from "animejs";
+import styles from "./Footer.module.css";
+import { socials } from "../constants/Info";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GiggleButton from "../GiggleButton/GiggleButton";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -9,15 +12,14 @@ const Footer = () => {
   const socialRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-
-    if(!contentRef.current) return;
+    if (!contentRef.current) return;
     // Background shapes animation
     animate(shapeRefs.current, {
       translateY: [50, 0],
       opacity: [0, 0.15],
       duration: 1500,
       delay: stagger(200),
-      easing: 'easeOutExpo'
+      easing: "easeOutExpo",
     });
 
     // Content animation
@@ -26,7 +28,7 @@ const Footer = () => {
       opacity: [0, 1],
       duration: 1000,
       delay: 800,
-      easing: 'easeOutExpo'
+      easing: "easeOutExpo",
     });
 
     // Social links animation
@@ -34,16 +36,18 @@ const Footer = () => {
       scale: [0.8, 1],
       opacity: [0, 1],
       duration: 600,
-      delay: stagger(100, {start: 1000}),
-      easing: 'easeOutElastic(1, .6)'
+      delay: stagger(100, { start: 1000 }),
+      easing: "easeOutElastic(1, .6)",
     });
   }, []);
 
   // Decorative shapes
   const shapes = Array.from({ length: 8 }).map((_, i) => (
-    <div 
+    <div
       key={i}
-      ref={el => { shapeRefs.current[i] = el; }}
+      ref={(el) => {
+        shapeRefs.current[i] = el;
+      }}
       className={styles.shape}
       style={{
         backgroundColor: `hsl(${200 + i * 15}, 80%, 70%)`,
@@ -51,62 +55,78 @@ const Footer = () => {
         height: `${100 + i * 20}px`,
         left: `${i * 12}%`,
         top: `${80 - i * 5}%`,
-        opacity: 0
+        opacity: 0,
       }}
     />
   ));
 
-  const socialLinks = [
-    { name: "GitHub", icon: "github", url: "#" },
-    { name: "LinkedIn", icon: "linkedin", url: "#" },
-    { name: "Twitter", icon: "twitter", url: "#" },
-    { name: "Email", icon: "mail", url: "mailto:hello@example.com" }
-  ];
-
   return (
     <footer className={styles.footer} ref={footerRef}>
       {/* Decorative background shapes */}
-      <div className={styles.shapesContainer}>
-        {shapes}
-      </div>
+      <div className={styles.shapesContainer}>{shapes}</div>
 
       {/* Main content */}
       <div className={styles.content} ref={contentRef}>
+        <GiggleButton
+          text="Know More"
+          name="footerKnowMore"
+          name2="footerButtons"
+          overlayname="footerOverlay"
+          isIcon={false}
+          isIconAnimated={false}
+          onClick={{ event: "navigate", data: "/about" }}
+        />
         <h2 className={styles.title}>
-          Let&apos;s create<br />something wonderful
+          Let&apos;s create
+          <br />
+          something wonderful
         </h2>
-        
+        <GiggleButton
+          text="Contact Me"
+          name="footerContactMe"
+          name2="footerButtons"
+          overlayname="footerOverlay"
+          isIcon={false}
+          isIconAnimated={false}
+          onClick={{ event: "navigate", data: "/contact" }}
+        />
         <div className={styles.socialLinks}>
-          {socialLinks.map((link, index) => (
+          {socials.map((social, index) => (
             <a
               key={index}
-              href={link.url}
-              ref={el => {socialRefs.current[index] = el;}}
+              href={social.link}
+              target="_blank"
+              ref={(el) => {
+                socialRefs.current[index] = el;
+              }}
               className={styles.socialLink}
-              aria-label={link.name}
+              aria-label={social.name}
               onMouseEnter={(e) => {
                 animate(e.currentTarget, {
                   translateY: -5,
                   duration: 300,
-                  easing: 'easeOutExpo'
+                  easing: "easeOutExpo",
                 });
               }}
               onMouseLeave={(e) => {
                 animate(e.currentTarget, {
                   translateY: 0,
                   duration: 300,
-                  easing: 'easeOutExpo'
+                  easing: "easeOutExpo",
                 });
               }}
             >
-              <span className={`${styles.socialIcon} ${styles[link.icon]}`}></span>
-              <span className={styles.socialText}>{link.name}</span>
+              <FontAwesomeIcon
+                className={`${styles.socialIcon}`}
+                icon={social.icon}
+              />
+              <span className={styles.socialText}>{social.name}</span>
             </a>
           ))}
         </div>
 
         <p className={styles.copyright}>
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Ashutosh Rath. All rights reserved.
         </p>
       </div>
     </footer>

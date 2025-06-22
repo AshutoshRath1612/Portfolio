@@ -88,16 +88,16 @@
   cursor: pointer;
   font-size: 1.2rem;
 }
-.knowMore{
+.knowMore {
   right: -6rem !important;
   bottom: -19.5rem !important;
   background-color: rgba(255, 255, 255, 0) !important;
   color: black !important;
 }
-.knowMoreOverlay{
+.knowMoreOverlay {
   background-color: black !important;
 }
-.knowMore:hover{
+.knowMore:hover {
   color: white !important;
 }
 .sendButton {
@@ -111,12 +111,30 @@
 .sendButton:hover {
   color: white !important;
 }
-.sendOverlay{
+.sendOverlay {
   background-color: black !important;
 }
-.resumeBtn{
+.resumeBtn {
   right: 2rem !important;
 }
-.homeSocials{
+.homeSocials {
   border: none !important;
+}
+.footerButtons{
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: black !important;
+}
+.footerKnowMore {
+  left: -15rem;
+  top: 5rem;
+}
+.footerContactMe {
+  right: -15rem;
+  top: 5rem;
+}
+.footerContactMe:hover, .footerKnowMore:hover {
+  color: white !important;
+}
+.footerOverlay {
+  background-color: black !important;
 }
