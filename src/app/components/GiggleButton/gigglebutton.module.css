@@ -89,14 +89,30 @@
   font-size: 1.2rem;
 }
 .knowMore{
-  right: -2rem !important;
-  bottom: -20rem !important;
+  right: -6rem !important;
+  bottom: -19.5rem !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: black !important;
+}
+.knowMoreOverlay{
+  background-color: black !important;
+}
+.knowMore:hover{
+  color: white !important;
 }
 .sendButton {
   position: relative;
   top: 1rem;
   left: 0;
   right: 0;
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: black !important;
+}
+.sendButton:hover {
+  color: white !important;
+}
+.sendOverlay{
+  background-color: black !important;
 }
 .resumeBtn{
   right: 2rem !important;

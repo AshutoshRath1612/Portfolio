@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Head from 'next/head';
 import {animate, stagger} from 'animejs';
 import styles from './About.module.css';
+import Navbar from '../components/Navbar/Navbar';
+import Avatar from "../assets/Avatar.png"
+import AWSCertificate from "../assets/certificate/aws-certified-cloud-practitioner.png"
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -52,7 +55,7 @@ const About = () => {
         name: "AWS Certified Developer",
         issuer: "Amazon Web Services",
         year: "2021",
-        image: "/aws-cert.png", // Replace with your image path
+        image: AWSCertificate,
         details: [
           "Validation of technical expertise in developing AWS applications",
           "Skills in AWS SDK, CI/CD pipelines, and serverless applications",
@@ -158,6 +161,7 @@ const About = () => {
 
   return (
     <div className={styles.aboutPage} ref={aboutRef}>
+      <Navbar />
       <Head>
         <title>About Me | My Portfolio</title>
         <meta name="description" content="Learn more about my background, skills, and experience" />
@@ -175,7 +179,7 @@ const About = () => {
         <div className={styles.profileSection} ref={profileRef}>
           <div className={styles.profileImage}>
             <Image
-              src="/profile.jpg" // Replace with your image path
+              src={Avatar}
               alt="Profile picture"
               width={400}
               height={400}

@@ -69,7 +69,7 @@ export default function Home() {
       const scrollY = window.scrollY;
       const triggerHero = 150;
       const triggerAbout = 800;
-      const triggerSkills = 1500;
+      const triggerSkills = 1200;
       const triggerProject = 8500;
       console.log(scrollY);
       if (scrollY > triggerHero && !scrollHero) {
@@ -221,7 +221,7 @@ export default function Home() {
     if (textRef.current) {
       animate(textRef.current, {
         opacity: [0, 1],
-        translateX: ["100vw", "0px"],
+        translateX: ["100vw", "-30px"],
         duration: 2000,
         display: "flex",
         delay: stagger(100),
@@ -290,6 +290,7 @@ export default function Home() {
         waapi.animate(imageRef.current, {
           opacity: [1, 0],
           duration: 500,
+          display: "none",
           delay: stagger(100),
           ease: "inOut(4)",
           onComplete: () => {
@@ -417,7 +418,7 @@ export default function Home() {
         <AboutCard />
         <GiggleButton
           text="Know More"
-          overlayname=""
+          overlayname="knowMoreOverlay"
           isIcon={false}
           icon={faFile}
           isIconAnimated={false}

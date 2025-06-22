@@ -28,7 +28,8 @@
   --btn-bg: #1976d2;
   --btn-bg-hover: #1565c0;
   --btn-text: #ffffff;
-  --btn-shadow: 0 4px 20px rgba(30, 136, 229, 0.3);
+  --btn-shadow: 0 4px 20px rgb(8 0 90);
+  /* --btn-shadow: 0 4px 20px rgba(30, 136, 229, 0.3); */
 
   /* Accent Colors */
   --accent-primary: #00fff7; /* Neon Aqua */

@@ -148,6 +148,7 @@ const Contacts = () => {
               <GiggleButton
                 text="Send it!"
                 name="sendButton"
+                name2=""
                 overlayname="sendOverlay"
                 isIcon={false}
                   isIconAnimated={false}

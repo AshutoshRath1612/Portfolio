@@ -12,22 +12,14 @@ export default function Projects() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Center the first card on load
-    if (trackRef.current && containerRef.current) {
-      const containerWidth = containerRef.current.clientWidth;
-      const cardWidth = 450; // Larger card width
-      trackRef.current.style.transform = `translateX(${(containerWidth - cardWidth) / 2}px)`;
-    }
-
     // Title animation
-    if (titleRef.current) {
-      animate(titleRef.current, {
-        translateY: [-30, 0],
-        opacity: [0, 1],
-        duration: 800,
-        easing: "easeOutExpo"
-      });
-    }
+    if (!titleRef.current) return;
+    animate(titleRef.current, {
+      translateY: [-30, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: "easeOutExpo",
+    });
 
     // Card entrance animation
     animate(cardsRef.current, {
@@ -35,50 +27,64 @@ export default function Projects() {
       opacity: [0, 1],
       duration: 1000,
       delay: stagger(150),
-      easing: "easeOutExpo"
+      easing: "easeOutExpo",
     });
 
     // Continuous subtle floating animation
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
-      animate(card,{
+      animate(card, {
         translateY: ["-5%", "5%"],
         duration: 3000 + index * 300,
         direction: "alternate",
         loop: true,
-        easing: "easeInOutSine"
+        easing: "easeInOutSine",
       });
     });
 
-    const handleScroll = () => {
-      const startScroll = window.innerHeight * 0.7;
-      const scrollY = window.scrollY;
+   let ticking = false;
 
-      if (scrollY < startScroll) return;
+  const handleScroll = () => {
+    const startScroll = 1400;
+    const scrollY = window.scrollY;
+    if (scrollY < startScroll) return;
 
-      const scrollProgress = (scrollY - startScroll) * 0.5;
-      if (trackRef.current && containerRef.current) {
-        const containerWidth = containerRef.current.clientWidth;
-        const initialOffset = (containerWidth - 450) / 2;
-        trackRef.current.style.transform = `translateX(${initialOffset - scrollProgress}px)`;
-      }
-    };
+    const relativeScroll = scrollY - startScroll;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (trackRef.current) {
+          trackRef.current.style.transform = `translateX(-${relativeScroll}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+    // const handleResize = () => updateTrackPosition();
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
     <section ref={containerRef} className={styles.container}>
       <div className={styles.stickyWrapper}>
-        <h2 ref={titleRef} className={styles.title}>Featured Projects</h2>
+        <h2 ref={titleRef} className={styles.title}>
+          Featured Projects
+        </h2>
         <div className={styles.trackWrapper}>
           <div ref={trackRef} className={styles.track}>
             {projects.map((proj, index) => (
-              <ProjectCard 
-                key={index} 
-                project={proj} 
-                ref={el => { cardsRef.current[index] = el; }}
+              <ProjectCard
+                key={index}
+                project={proj}
+                ref={(el) => { cardsRef.current[index] = el; }}
               />
             ))}
           </div>

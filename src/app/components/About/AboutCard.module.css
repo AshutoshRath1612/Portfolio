@@ -12,6 +12,8 @@
   line-height: 1.8;
   transition: all 0.3s ease;
   position: fixed;
+  height: 30rem;
+  width: 100%;
 }
 
 .aboutCard:hover {
