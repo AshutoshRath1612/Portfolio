@@ -1,82 +1,49 @@
+"use client";
 import Image from "next/image";
+import { forwardRef } from "react";
 import styles from "./projects.module.css";
-import { useEffect, useRef } from "react";
-import { animate, waapi } from "animejs";
 import { Project } from "@/app/models/project.model";
 
-export default function ProjectCard({ project }: { project: Project }) {
-  const projectCardRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (projectCardRef.current)
-      waapi.animate(projectCardRef.current, {
-        translateY: ["0", "0.5rem"],
-        loop: true,
-        ease: "inOut(4)",
-        alternate: true,
-      });
-  }, []);
-
-  const mouseEnter = () => {
-    if (projectCardRef.current)
-      animate(projectCardRef.current, {
-        scale: [1, 1.1],
-        ease: "inOut(4)",
-        duration: 500,
-      });
-  };
-  const mouseOut = () => {
-    if (projectCardRef.current)
-      animate(projectCardRef.current, {
-        scale: [1.1, 1],
-        ease: "inOut(4)",
-        duration: 500,
-      });
-  };
-  return (
-    <div
-      className={styles.card}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseOut}
-      ref={projectCardRef}
-      style={{
-        justifyContent:
-          project.name === "IoT Car Controller" ? "space-around" : "",
-      }}
-    >
-      <Image
-        src={project.image}
-        alt={project.name}
-        width={250}
-        height={150}
-        quality={100}
-        sizes="(max-width: 768px) 100vw, 500px"
-        className={`${styles.image}  ${
-          project.name === "IoT Car Controller" ? styles.potraitImageCard : ""
-        }`}
-      />
-      <div className={styles.projectInfo}>
-        <div className={styles.projectName}>{project.name}</div>
-        <div className={styles.projectTechs}>
-          {project.tech.map((tech, index) => (
-            <div className={styles.techs} key={index}>
-              {tech}
-            </div>
-          ))}
-        </div>
-        <div className={styles.projectDescription}>{project.description}</div>
-        <div className={styles.projectLinks}>
-          {project.links.map((link, index) => (
-            <div
-              className={styles.links}
-              key={index}
-              onClick={() => window.open(link.url, "_blank")}
-            >
-              {link.name}
-            </div>
-          ))}
+const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(
+  ({ project }, ref) => {
+    return (
+      <div ref={ref} className={styles.card}>
+        <Image
+          src={project.image}
+          alt={project.name}
+          width={450}
+          height={220}
+          className={`${styles.image} ${
+            project.name === "IoT Car Controller" ? styles.potraitImageCard : ""
+          }`}
+        />
+        <div className={styles.projectInfo}>
+          <h3 className={styles.projectName}>{project.name}</h3>
+          <div className={styles.projectTechs}>
+            {project.tech.map((tech, index) => (
+              <span key={index} className={styles.techs}>
+                {tech}
+              </span>
+            ))}
+          </div>
+          <p className={styles.projectDescription}>{project.description}</p>
+          <div className={styles.projectLinks}>
+            {project.links.map((link, index) => (
+              <button
+                key={index}
+                className={styles.links}
+                onClick={() => window.open(link.url, "_blank")}
+              >
+                {link.name}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+);
+
+ProjectCard.displayName = "ProjectCard";
+
+export default ProjectCard;

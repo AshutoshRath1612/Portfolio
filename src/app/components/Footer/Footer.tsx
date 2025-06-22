@@ -1,105 +1,113 @@
 import React, { useEffect, useRef } from 'react';
-import { animate, utils } from 'animejs';
+import { animate, stagger } from 'animejs';
 import styles from './Footer.module.css';
 
 const Footer = () => {
   const footerRef = useRef(null);
-  const particlesRef = useRef([]);
+  const shapeRefs = useRef<(HTMLDivElement | null)[]>([]);
   const contentRef = useRef(null);
-  const yearRef = useRef(null);
+  const socialRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
-  // Create particle elements
-  const particles = Array.from({ length: 30 }).map((_, i) => (
+  useEffect(() => {
+
+    if(!contentRef.current) return;
+    // Background shapes animation
+    animate(shapeRefs.current, {
+      translateY: [50, 0],
+      opacity: [0, 0.15],
+      duration: 1500,
+      delay: stagger(200),
+      easing: 'easeOutExpo'
+    });
+
+    // Content animation
+    animate(contentRef.current, {
+      translateY: [30, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      delay: 800,
+      easing: 'easeOutExpo'
+    });
+
+    // Social links animation
+    animate(socialRefs.current, {
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 600,
+      delay: stagger(100, {start: 1000}),
+      easing: 'easeOutElastic(1, .6)'
+    });
+  }, []);
+
+  // Decorative shapes
+  const shapes = Array.from({ length: 8 }).map((_, i) => (
     <div 
       key={i}
-      ref={el => particlesRef.current[i] = el}
-      className={styles.particle}
+      ref={el => { shapeRefs.current[i] = el; }}
+      className={styles.shape}
       style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        width: `${5 + Math.random() * 10}px`,
-        height: `${5 + Math.random() * 10}px`,
+        backgroundColor: `hsl(${200 + i * 15}, 80%, 70%)`,
+        width: `${100 + i * 20}px`,
+        height: `${100 + i * 20}px`,
+        left: `${i * 12}%`,
+        top: `${80 - i * 5}%`,
         opacity: 0
       }}
     />
   ));
 
-  useEffect(() => {
-    // Background fade-in
-    animate(footerRef.current, {
-      opacity: [0, 1],
-      duration: 1500,
-      easing: 'easeOutExpo'
-    });
-
-    // Particle animations
-    particlesRef.current.forEach(particle => {
-      animate(particle, {
-        opacity: [0, 0.6],
-        translateX: [utils.random(-100, 100), 0],
-        translateY: [utils.random(-100, 100), 0],
-        duration: utils.random(1000, 2000),
-        delay: utils.random(0, 500),
-        easing: 'easeOutExpo'
-      });
-
-      // Continuous floating
-      animate(particle,{
-        translateY: [0, utils.random(-20, 20)],
-        duration: utils.random(3000, 6000),
-        direction: 'alternate',
-        loop: true,
-        easing: 'easeInOutSine'
-      });
-    });
-
-    // Content animation
-    animate(contentRef.current, {
-      translateY: [50, 0],
-      opacity: [0, 1],
-      duration: 1200,
-      delay: 800,
-      easing: 'easeOutExpo'
-    });
-
-    // Year animation
-    animate(yearRef.current, {
-      scale: [0.5, 1],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: 1200,
-      easing: 'easeOutElastic(1, .8)'
-    });
-  }, []);
+  const socialLinks = [
+    { name: "GitHub", icon: "github", url: "#" },
+    { name: "LinkedIn", icon: "linkedin", url: "#" },
+    { name: "Twitter", icon: "twitter", url: "#" },
+    { name: "Email", icon: "mail", url: "mailto:hello@example.com" }
+  ];
 
   return (
     <footer className={styles.footer} ref={footerRef}>
-      {/* Animated background particles */}
-      <div className={styles.particlesContainer}>
-        {particles}
+      {/* Decorative background shapes */}
+      <div className={styles.shapesContainer}>
+        {shapes}
       </div>
 
-      {/* Content container */}
+      {/* Main content */}
       <div className={styles.content} ref={contentRef}>
-        <h2 className={styles.title}>Let&apos;s Build Something Amazing</h2>
+        <h2 className={styles.title}>
+          Let&apos;s create<br />something wonderful
+        </h2>
         
-        <div className={styles.contactInfo}>
-          <a href="mailto:hello@example.com" className={styles.email}>
-            hello@example.com
-          </a>
-          <p className={styles.location}>Based in San Francisco, CA</p>
-        </div>
-
         <div className={styles.socialLinks}>
-          <a href="#" className={styles.socialLink}>GitHub</a>
-          <a href="#" className={styles.socialLink}>LinkedIn</a>
-          <a href="#" className={styles.socialLink}>Twitter</a>
-          <a href="#" className={styles.socialLink}>Dribbble</a>
+          {socialLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              ref={el => {socialRefs.current[index] = el;}}
+              className={styles.socialLink}
+              aria-label={link.name}
+              onMouseEnter={(e) => {
+                animate(e.currentTarget, {
+                  translateY: -5,
+                  duration: 300,
+                  easing: 'easeOutExpo'
+                });
+              }}
+              onMouseLeave={(e) => {
+                animate(e.currentTarget, {
+                  translateY: 0,
+                  duration: 300,
+                  easing: 'easeOutExpo'
+                });
+              }}
+            >
+              <span className={`${styles.socialIcon} ${styles[link.icon]}`}></span>
+              <span className={styles.socialText}>{link.name}</span>
+            </a>
+          ))}
         </div>
 
-        <div className={styles.copyright} ref={yearRef}>
+        <p className={styles.copyright}>
           © {new Date().getFullYear()} Your Name. All rights reserved.
-        </div>
+        </p>
       </div>
     </footer>
   );
