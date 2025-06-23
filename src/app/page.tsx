@@ -13,6 +13,7 @@ import HeroSection from "./components/Hero/HeroSection";
 import Skills from "./components/Skill/Skills";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
+import { projects } from "./components/constants/Info";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -70,7 +71,7 @@ export default function Home() {
       const triggerHero = 150;
       const triggerAbout = 800;
       const triggerSkills = 1200;
-      const triggerProject = 4300;
+      const triggerProject = 1500 + window.innerHeight * projects.length;
       console.log(scrollY);
       if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);
