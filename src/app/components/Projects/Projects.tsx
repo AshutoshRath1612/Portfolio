@@ -79,7 +79,7 @@ export default function Projects() {
           Featured Projects
         </h2>
         <div className={styles.trackWrapper}>
-          <div ref={trackRef} className={styles.track}>
+          <div ref={trackRef} className={styles.track} id="projects-section">
             {projects.map((proj, index) => (
               <ProjectCard
                 key={index}

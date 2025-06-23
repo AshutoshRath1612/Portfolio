@@ -183,13 +183,14 @@ const About = () => {
           <div className={styles.certificationsList}>
             {personalInfo.certifications.map((cert, index) => (
               <div key={index} className={`${styles.certificationItem} certificationItem`}>
-                <div className={styles.certImage}>
+                <div className={styles.certImage} onClick={()=> window.open(cert.link, "_blank")}>
                   <Image
                     src={cert.image}
                     alt={`${cert.name} certification`}
                     width={120}
                     height={90}
                     className={styles.certLogo}
+                    quality={100}
                   />
                 </div>
                 <div className={styles.certInfo}>

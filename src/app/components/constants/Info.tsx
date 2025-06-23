@@ -339,6 +339,7 @@ export const personalInfo = {
       issuer: "Amazon Web Services",
       year: "2025",
       image: AWSCertificate,
+      link: "https://www.credly.com/badges/bc8acf44-dabd-468c-97ee-bddbe65798ba/public_url",
       details: ["Validation of foundational AWS cloud knowledge"],
     },
     {
@@ -346,6 +347,7 @@ export const personalInfo = {
       issuer: "Microsoft",
       year: "2024",
       image: MicrosoftAZ900,
+      link: "https://learn.microsoft.com/api/credentials/share/en-us/AshutoshRath-6412/69FEF9744845F89D?sharingId=78CBEC71D7443BE",
       details: [
         "Validated knowledge of Microsoft Azure services and cloud concepts",
       ],
@@ -355,6 +357,7 @@ export const personalInfo = {
       issuer: "Google Cloud",
       year: "2024",
       image: GoogleCloudDigitalLeader,
+      link: "https://www.credly.com/badges/f77a0128-f945-4e39-88e2-41b512ea59c7/public_url",
       details: [
         "Demonstrated understanding of Google Cloud services and applications",
       ],
@@ -364,6 +367,7 @@ export const personalInfo = {
       issuer: "IBM",
       year: "2024",
       image: IBMTraining,
+      link: "https://drive.google.com/file/d/1uLd-XsOHU2c51S-8JOTq25YXI7ysk5Vd/view?usp=sharing",
       details: ["Completed enterprise-level full stack Java training"],
     },
     {
@@ -371,6 +375,7 @@ export const personalInfo = {
       issuer: "EY GDS",
       year: "2023",
       image: EYGDSCertificate,
+      link: "https://drive.google.com/file/d/1aYWDbolQA-FoTv_O4VieISzhhBemPcT_/view?usp=sharing",
       details: [
         "Fundamentals of cybersecurity and secure development practices",
       ],
@@ -387,6 +392,7 @@ export const personalInfo = {
       issuer: "TATA (Forage)",
       year: "2022",
       image: DataVisualisationTataForage,
+      link:"https://drive.google.com/file/d/1eIcAU0MojD_uV9jd5mCqHy7NeJdcFMat/view?usp=sharing",
       details: ["Built dashboards and practiced real-world data visualization"],
     },
     {
@@ -394,6 +400,7 @@ export const personalInfo = {
       issuer: "Google Cloud",
       year: "2021",
       image: GoogleCloudDatascienceAndMachineLearning,
+      link:"https://drive.google.com/file/d/1lFelH5dOnErNNTy7IoL3_gf8swoE9yyP/view?usp=sharing",
       details: ["Introduction to ML workflows, modeling, and cloud deployment"],
     },
   ],

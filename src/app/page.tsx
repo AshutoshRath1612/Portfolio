@@ -67,12 +67,18 @@ export default function Home() {
   // Scroll trigger animation
   useEffect(() => {
     const handleScroll = () => {
+      const projectSection = document.getElementById('projects-section');
       const scrollY = window.scrollY;
       const triggerHero = 150;
       const triggerAbout = 800;
       const triggerSkills = 1200;
-      const triggerProject = 1500 + window.innerHeight * projects.length;
-      console.log(scrollY);
+      const projectSectionScrollWidth = projectSection?.scrollWidth ?? 0;
+      const triggerProject = projectSectionScrollWidth === 0
+        ? 1400 + window.innerHeight * projects.length
+        : (window.innerHeight + projectSectionScrollWidth);
+      console.log(scrollY, window.innerHeight);
+      console.log(projectSection?.scrollWidth)
+      
       if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);
         animateToAbout();
