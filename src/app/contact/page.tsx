@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Avatar from "../assets/Avatar.png";
 import style from "./contact.module.css";
 import { contactFormQuestions, email, phone } from "../components/constants/Info";
-import { checkValidator } from "../components/constants/Functions";
+import { checkValidator, sendFormData } from "../components/constants/Functions";
 import GiggleButton from "../components/GiggleButton/GiggleButton";
 import Socials from "../components/Socials/Socials";
 import Image from "next/image";
@@ -12,7 +12,15 @@ import { faDotCircle } from "@fortawesome/free-solid-svg-icons/faDotCircle";
 import { animate, stagger } from "animejs";
 import Navbar from "../components/Navbar/Navbar";
 import { motion } from "framer-motion";
+import { ToastContainer } from "react-toastify";
 const Contacts = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    services: "",
+    message: "",
+  });
   const contactContainerRef = useRef<HTMLDivElement | null>(null);
   const contactDetailContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -42,8 +50,19 @@ const Contacts = () => {
     }
   }, []);
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    fieldName: string
+  ) => {
+    setFormData({
+      ...formData,
+      [fieldName]: e.target.value,
+    });
+  };
+
   return (
     <>
+    <ToastContainer />
     <motion.div
   className={style.contactPageWrapper}
   initial={{ opacity: 0 }}
@@ -91,17 +110,19 @@ const Contacts = () => {
                 <div className={style.contactFormInputContainer}>
                   <input
                     type={question.type}
+                    name={question.name}
                     placeholder={question.placeholder}
                     className={style.contactInput}
                     onBlur={(e) => checkValidator(e, question.validate)}
+                    onChange={(e) =>handleChange(e, question.name)}
                   />
                 </div>
-                <div className={style.contactFormBottomContainer}>
+                {/* <div className={style.contactFormBottomContainer}>
                   <div className={`${style.errorDot} errorDot`}>
                     <FontAwesomeIcon icon={faDotCircle} />
                   </div>
                   <div className={`${style.errorText} errorText`}></div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -152,7 +173,7 @@ const Contacts = () => {
                 overlayname="sendOverlay"
                 isIcon={false}
                   isIconAnimated={false}
-                onClick={{ event: "none", data: null }}
+                onClick={{ event: "function", data: {name: sendFormData , data: formData} }}
               />
             </motion.div>
           </div>

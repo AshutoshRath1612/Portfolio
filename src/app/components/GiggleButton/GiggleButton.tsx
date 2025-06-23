@@ -130,6 +130,10 @@ const GiggleButton = ({
     ) {
       router.push(onClick.data);
     }
+    else if (onClick.event === "function") {
+      const functionData = onClick.data as { name: (data: unknown) => void; data: unknown };
+      functionData.name(functionData.data);
+    } 
   };
 
   return (

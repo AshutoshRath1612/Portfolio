@@ -8,8 +8,8 @@ export interface GiggleButtonProps {
   isIcon: boolean;
   icon?: FontAwesomeIconProps["icon"];
   onClick: {
-    event: "toggle" | "link" | "navigate" | "none";
-    data: unknown;
+    event: "toggle" | "link" | "navigate" | "function" | "none";
+    data: { name: (data: unknown) => void; data: unknown } | unknown | string | URL | null;
   };
   isIconAnimated: boolean;
 }
