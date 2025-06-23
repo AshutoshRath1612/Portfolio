@@ -149,6 +149,7 @@
   margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .socialLinks a {
@@ -284,7 +285,7 @@
   background: #f7fafc;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
 }
 
@@ -311,6 +312,7 @@
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid #e2e8f0;
+  cursor: pointer;
 }
 
 .certLogo {
@@ -402,6 +404,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .skillItem:hover {
@@ -482,6 +485,7 @@
   
   .profileSection {
     flex-direction: column;
+    align-items: flex-start;
   }
   
   .educationList, .certificationsList, .skillsContainer {

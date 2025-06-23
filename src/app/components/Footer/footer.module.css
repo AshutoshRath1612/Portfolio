@@ -88,21 +88,52 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .footer {
-    padding: 2rem 1rem;
+    padding: 1rem;
+  }
+  
+  .title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
   }
   
   .socialLinks {
     gap: 1rem;
+    margin-bottom: 2rem;
   }
   
   .socialLink {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
   
-  .title {
-    margin-bottom: 2rem;
+  .content {
+    padding: 1rem;
+  }
+  
+  .socialLinks {
+    gap: 0.8rem;
+  }
+  
+  .socialLink {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
   }
 }

@@ -211,6 +211,7 @@
 
   .contactDetailsWrapper {
     width: 100%;
+    flex-direction: column-reverse;
   }
 
   .contactTitle {

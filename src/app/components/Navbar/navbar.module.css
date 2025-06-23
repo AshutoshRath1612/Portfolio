@@ -198,9 +198,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navbar {
-    width: 100%;
-  }
   
   .menuButton {
     top: 1rem;

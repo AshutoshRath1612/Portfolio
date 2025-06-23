@@ -1,17 +1,16 @@
 .giggleButton {
   z-index: 1;
   position: absolute;
-  right: 5rem;
-  bottom: 1rem;
-  width: 10rem;
+  right: clamp(1rem, 5vw, 5rem);
+  bottom: clamp(0.5rem, 1vh, 1rem);
+  width: clamp(6rem, 10vw, 10rem);
+  height: clamp(6rem, 10vw, 10rem);
   display: flex;
-  height: 10rem;
   border-radius: 50%;
-  /* background: linear-gradient(to top, #222 0%, #4e2020 0%); */
   background: var(--btn-bg);
   color: var(--btn-text);
   box-shadow: var(--btn-shadow);
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -21,6 +20,51 @@
   justify-content: center;
   backdrop-filter: blur(7px);
 }
+
+/* Responsive modifications for specific button types */
+.getintouch {
+  right: clamp(5vw, 20vw, 25vw) !important;
+  bottom: clamp(10vh, 40vh, 45vh) !important;
+  font-size: clamp(1rem, 1.2vw, 1.2rem) !important;
+}
+
+.contactDetails {
+  position: relative;
+  height: 100%;
+  right: 0 !important;
+  bottom: 0 !important;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  font-weight: normal;
+  border-radius: 2rem;
+  width: auto;
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(0.75rem, 1.5vw, 1.5rem);
+  text-align: center;
+  font-weight: bold;
+}
+
+.iconButtons {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  height: clamp(4rem, 3vw, 3rem) !important;
+  width: clamp(4rem, 3vw, 3rem) !important;
+  font-size: 1.5rem !important;
+}
+
+.circleNav {
+  position: fixed;
+  top: clamp(1rem, 3vh, 2rem);
+  left: clamp(1rem, 3vw, 2rem);
+  z-index: 10;
+  width: clamp(3rem, 5vw, 4rem);
+  height: clamp(3rem, 5vw, 4rem);
+  padding: clamp(5px, 1vw, 10px) clamp(10px, 1.5vw, 15px);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+}
+
+/* The rest of your existing styles remain the same */
 .giggleButton .buttonOverlay {
   content: "";
   position: absolute;
@@ -32,74 +76,40 @@
   z-index: 0;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0 0 24px rgba(14, 118, 255, 0.8), 0 0 64px rgba(14, 118, 255, 0.6);
+  box-shadow:
+    0 0 24px rgba(14, 118, 255, 0.8),
+    0 0 64px rgba(14, 118, 255, 0.6);
 }
+
 .giggleButtonText {
   z-index: 3;
   position: relative;
 }
+
 .giggleButton span {
   position: relative;
   z-index: 2;
-}
-
-.getintouch {
-  right: 20vw !important;
-  bottom: 40vh !important;
-  font-size: 1.2rem !important;
-}
-
-.contactDetails {
-  position: relative;
-  height: 100%;
-  right: 0px !important;
-  bottom: 0px !important;
-  font-size: 1.1rem;
-  font-weight: normal;
-  /* border: 1px solid white; */
-  border-radius: 2rem;
-  width: auto;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  font-weight: bold;
 }
 
 .contactOverlay {
   border-radius: 2rem !important;
 }
 
-.iconButtons {
-  position: relative;
-  right: 0px;
-  bottom: 0px;
-  height: 3rem;
-  width: 3rem;
-  /* border: 1px solid white; */
-}
-.circleNav {
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
-  z-index: 10;
-  width: 4rem;
-  height: 4rem;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
 .knowMore {
   right: -6rem !important;
   bottom: -19.5rem !important;
   background-color: rgba(255, 255, 255, 0) !important;
   color: black !important;
 }
+
 .knowMoreOverlay {
   background-color: black !important;
 }
+
 .knowMore:hover {
   color: white !important;
 }
+
 .sendButton {
   position: relative;
   top: 1rem;
@@ -108,33 +118,112 @@
   background-color: rgba(255, 255, 255, 0) !important;
   color: black !important;
 }
+
 .sendButton:hover {
   color: white !important;
 }
+
 .sendOverlay {
   background-color: black !important;
 }
+
 .resumeBtn {
   right: 2rem !important;
 }
+
 .homeSocials {
   border: none !important;
 }
-.footerButtons{
+
+.footerButtons {
   background-color: rgba(255, 255, 255, 0) !important;
+  width: 7rem !important;
+  height: 7rem !important;
   color: black !important;
 }
+
 .footerKnowMore {
   left: -15rem;
   top: 5rem;
 }
+
 .footerContactMe {
   right: -15rem;
   top: 5rem;
 }
-.footerContactMe:hover, .footerKnowMore:hover {
+
+.footerButtons:hover {
   color: white !important;
 }
+
 .footerOverlay {
   background-color: black !important;
+}
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* .giggleButton {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  } */
+
+  .getintouch {
+    right: 10vw !important;
+    bottom: 30vh !important;
+  }
+
+  .knowMore {
+    right: -3rem !important;
+    bottom: -10rem !important;
+  }
+
+  .footerKnowMore {
+    left: 0rem !important;
+    bottom: auto !important;
+    top: -5rem !important;
+  }
+
+  .footerContactMe {
+    right: 0rem !important;
+    bottom: auto !important;
+    top: -5rem !important;
+  }
+/* 
+  .circleNav {
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  } */
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  /* .giggleButton {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+  } */
+
+  .getintouch {
+    right: 5vw !important;
+    bottom: 25vh !important;
+    font-size: 0.8rem !important;
+  }
+
+  .contactDetails {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .iconButtons {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  .knowMore {
+    right: -2rem !important;
+    bottom: -8rem !important;
+  }
 }
