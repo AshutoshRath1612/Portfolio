@@ -4,107 +4,24 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import {animate, stagger} from 'animejs';
-import styles from './About.module.css';
+import styles from './about.module.css';
 import Navbar from '../components/Navbar/Navbar';
 import Avatar from "../assets/Avatar.png"
-import AWSCertificate from "../assets/certificate/aws-certified-cloud-practitioner.png"
+import { personalInfo, socials } from '../components/constants/Info';
+import { useRouter } from 'next/navigation';
 
 const About = () => {
-  const aboutRef = useRef(null);
-  const titleRef = useRef(null);
-  const profileRef = useRef(null);
-  const educationRef = useRef(null);
-  const certRef = useRef(null);
-  const skillRef = useRef(null);
+  const router = useRouter();
 
-  // Sample data - replace with your actual information
-  const personalInfo = {
-    name: "John Doe",
-    title: "Full Stack Developer",
-    location: "San Francisco, CA",
-    email: "john.doe@example.com",
-    bio: [
-      "I'm a passionate developer with 5+ years of experience building web applications. I specialize in JavaScript frameworks and have a strong background in both frontend and backend development.",
-      "My journey in tech began when I built my first website at 15, and I've been hooked ever since. I love solving complex problems with elegant solutions that delight users.",
-      "When I'm not coding, I enjoy hiking, photography, and contributing to open source projects. I also mentor aspiring developers through local coding bootcamps."
-    ],
-    education: [
-      {
-        degree: "Master of Computer Science",
-        university: "Stanford University",
-        year: "2018-2020",
-        details: [
-          "Specialized in Artificial Intelligence",
-          "Thesis on 'Neural Networks for Image Recognition'",
-          "GPA: 3.9/4.0"
-        ]
-      },
-      {
-        degree: "Bachelor of Engineering",
-        university: "University of California",
-        year: "2014-2018",
-        details: [
-          "Major in Computer Science",
-          "Minor in Mathematics",
-          "Dean's List all semesters"
-        ]
-      }
-    ],
-    certifications: [
-      {
-        name: "AWS Certified Developer",
-        issuer: "Amazon Web Services",
-        year: "2021",
-        image: AWSCertificate,
-        details: [
-          "Validation of technical expertise in developing AWS applications",
-          "Skills in AWS SDK, CI/CD pipelines, and serverless applications",
-          "Certification ID: AWS-123456789"
-        ]
-      },
-      {
-        name: "Google Professional Data Engineer",
-        issuer: "Google Cloud",
-        year: "2020",
-        image: "/google-cert.png", // Replace with your image path
-        details: [
-          "Designing data processing systems",
-          "Building and operationalizing ML models",
-          "Certification ID: GCP-987654321"
-        ]
-      }
-    ],
-    skills: {
-      "Frontend": ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-      "Backend": ["Node.js", "Express", "GraphQL", "REST APIs", "MongoDB"],
-      "DevOps": ["AWS", "Docker", "CI/CD", "Kubernetes", "Terraform"],
-      "Other": ["UI/UX Design", "Python", "Machine Learning", "Blockchain"]
-    },
-    experience: [
-      {
-        role: "Senior Developer",
-        company: "Tech Solutions Inc.",
-        period: "2020-Present",
-        achievements: [
-          "Led team of 5 developers to build enterprise SaaS platform",
-          "Reduced API response time by 40% through optimization",
-          "Implemented CI/CD pipeline reducing deployment time by 70%"
-        ]
-      },
-      {
-        role: "Software Engineer",
-        company: "Digital Innovations",
-        period: "2018-2020",
-        achievements: [
-          "Developed customer portal used by 50,000+ users",
-          "Created reusable component library saving 300+ dev hours",
-          "Mentored 3 junior developers"
-        ]
-      }
-    ]
-  };
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const titleRef = useRef<HTMLDivElement | null>(null);
+  const profileRef = useRef<HTMLDivElement | null>(null);
+  const educationRef = useRef<HTMLDivElement | null>(null);
+  const certRef = useRef<HTMLDivElement | null>(null);
+  const skillRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (!titleRef.current || !profileRef.current) return;
     // Title animation
     animate(titleRef.current,{
       translateY: [-50, 0],
@@ -123,31 +40,40 @@ const About = () => {
     });
 
     // Education section animation
-    animate(educationRef.current.querySelectorAll('.educationItem'), {
-      translateY: [50, 0],
-      opacity: [0, 1],
-      duration: 800,
-      delay: stagger(100),
-      easing: 'easeOutExpo'
-    });
+    const educationItems = educationRef.current?.querySelectorAll('.educationItem');
+    if (educationItems) {
+      animate(educationItems, {
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 800,
+        delay: stagger(100),
+        easing: 'easeOutExpo'
+      });
+    }
 
     // Certifications animation
-    animate(certRef.current.querySelectorAll('.certificationItem'), {
-      scale: [0.8, 1],
-      opacity: [0, 1],
-      duration: 800,
-      delay: stagger(100),
-      easing: 'spring(1, 80, 10, 0)'
-    });
+    const certItems = certRef.current?.querySelectorAll('.certificationItem');
+    if (certItems) {
+      animate(certItems, {
+        scale: [0.8, 1],
+        opacity: [0, 1],
+        duration: 800,
+        delay: stagger(100),
+        easing: 'spring(1, 80, 10, 0)'
+      });
+    }
 
     // Skills animation
-    animate(skillRef.current.querySelectorAll('.skillCategory'), {
-      translateX: [-50, 0],
-      opacity: [0, 1],
-      duration: 600,
-      delay: stagger(100),
-      easing: 'easeOutExpo'
-    });
+    const skillItems = skillRef.current?.querySelectorAll('.skillCategory');
+    if (skillItems) {
+      animate(skillItems, {
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        duration: 600,
+        delay: stagger(100),
+        easing: 'easeOutExpo'
+      });
+    }
 
     // Experience animation
     animate('.experienceItem', {    
@@ -194,15 +120,11 @@ const About = () => {
             <p className={styles.email}>{personalInfo.email}</p>
             
             <div className={styles.socialLinks}>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                Twitter
-              </a>
+              {socials.map((social, index) => (
+                <a key={index} href={social.link} target="_blank" rel="noopener noreferrer">
+                  {social.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -314,7 +236,7 @@ const About = () => {
                 duration: 600,
                 easing: 'easeOutElastic(1, .5)'
               });
-              // Add your contact logic here
+              router.push('/contact');
             }}
           >
             Contact Me

@@ -3,13 +3,19 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Project } from "@/app/models/project.model";
-import Portfolio from "../../assets/projects/Portfolio.jpeg"
-import HungerHub from "../../assets/projects/HungerHub.jpeg"
-import Medkit from "../../assets/projects/Medkit.jpeg"
-import IOT_APP from "../../assets/projects/IOT_APP.png"
-import CarPrice from "../../assets/projects/CarPrice.jpeg"
-import ChatApp from "../../assets/projects/ChatApp.gif"
-
+import Portfolio from "../../assets/projects/Portfolio.jpeg";
+import HungerHub from "../../assets/projects/HungerHub.jpeg";
+import Medkit from "../../assets/projects/Medkit.jpeg";
+import IOT_APP from "../../assets/projects/IOT_APP.png";
+import CarPrice from "../../assets/projects/CarPrice.jpeg";
+import ChatApp from "../../assets/projects/ChatApp.gif";
+import AWSCertificate from "../../assets/certificate/aws-certified-cloud-practitioner.png";
+import MicrosoftAZ900 from "../../assets/certificate/Microsoft-AZ900.png";
+import IBMTraining from "../../assets/certificate/IBM Training.jpeg";
+import GoogleCloudDigitalLeader from "../../assets/certificate/cloud-digital-leader-certification.png";
+import EYGDSCertificate from "../../assets/certificate/EY GDS CERTIFICATE.jpg";
+import DataVisualisationTataForage from "../../assets/certificate/Data-Visualisation-Tata-Forage.png";
+import GoogleCloudDatascienceAndMachineLearning from "../../assets/certificate/Google Cloud- Datascience and Machine Learning.png";
 
 export const introText =
   "Hi, I am Ashutosh Rath, a designer and full-stack developer.";
@@ -24,30 +30,42 @@ export const contactFormQuestions = [
   {
     question: "What's your name?",
     type: "text",
+    name: "name",
     placeholder: "John Doe *",
     validate: true,
   },
   {
     question: "What's your email?",
     type: "email",
+    name: "email",
     placeholder: "john@doe.com *",
+    validate: true,
+  },
+  {
+    question: "What's your Phone Number?",
+    type: "tel",
+    name: "phone",
+    placeholder: "+91 12345 67890",
     validate: true,
   },
   {
     question: "What's the name of your organization?",
     type: "text",
+    name: "organization",
     placeholder: "John & Doe",
     validate: false,
   },
   {
     question: "What services are you looking for?",
     type: "text",
-    placeholder: "Web Design, Web Development, App devlopment...",
+    name: "services",
+    placeholder: "Web Design, Web Development, App development...",
     validate: false,
   },
   {
     question: "Your message",
     type: "text",
+    name: "message",
     placeholder: "Hey Ashutosh, can you help me with... *",
     validate: true,
   },
@@ -203,61 +221,250 @@ export const projects: Project[] = [
   {
     name: "My Portfolio",
     tech: ["Next.js"],
-    description: "You're looking at it! Built with Next.js after 17 redesigns and 34 cups of coffee. Still fixing that one padding bug.",
+    description:
+      "You're looking at it! Built with Next.js after 17 redesigns and 34 cups of coffee. Still fixing that one padding bug.",
     image: Portfolio,
     links: [
       { name: "Live Site", url: "https://google.com" },
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Portfolio-Nextjs" }
-    ]
+      {
+        name: "GitHub",
+        url: "https://github.com/AshutoshRath1612/Portfolio-Nextjs",
+      },
+    ],
   },
   {
     name: "Hunger Hub",
-    tech: ["React Native", "Node.js", "Express", "MongoDB", "Razorpay", "Twilio"],
-    description: "A student cafeteria food ordering app allowing users to browse the menu, place orders, and make payments via Razorpay. Includes OTP verification via Twilio.",
+    tech: [
+      "React Native",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Razorpay",
+      "Twilio",
+    ],
+    description:
+      "A student cafeteria food ordering app allowing users to browse the menu, place orders, and make payments via Razorpay. Includes OTP verification via Twilio.",
     image: HungerHub,
     links: [
-      { name: "Live Demo", url: "https://drive.google.com/drive/folders/17qU7j-gzcn2P8nCNdjzZK2l3AHYhKksd?usp=sharing" },
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Hungry-Hub" }
-    ]
+      {
+        name: "Live Demo",
+        url: "https://drive.google.com/drive/folders/17qU7j-gzcn2P8nCNdjzZK2l3AHYhKksd?usp=sharing",
+      },
+      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Hungry-Hub" },
+    ],
   },
   {
     name: "Chat App",
     tech: ["React.js", "Socket.io", "Node.js", "Express", "MongoDB"],
-    description: "A real-time chat application that allows users to create accounts and chat with others using WebSockets.",
+    description:
+      "A real-time chat application that allows users to create accounts and chat with others using WebSockets.",
     image: ChatApp,
     links: [
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Chat-App" }
-    ]
+      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Chat-App" },
+    ],
   },
   {
     name: "MedKit",
     tech: ["React.js", "Spring Boot", "MySQL"],
-    description: "A health-tech web app for finding nearby medical stores, buying medicines online, and consulting doctors in emergencies.",
+    description:
+      "A health-tech web app for finding nearby medical stores, buying medicines online, and consulting doctors in emergencies.",
     image: Medkit,
     links: [
-      { name: "Live Demo", url: "https://medkit-lp0uszh0u-ashutoshrath1612.vercel.app/" },
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/MedKit" }
-    ]
+      {
+        name: "Live Demo",
+        url: "https://medkit-lp0uszh0u-ashutoshrath1612.vercel.app/",
+      },
+      { name: "GitHub", url: "https://github.com/AshutoshRath1612/MedKit" },
+    ],
   },
   {
     name: "IoT Car Controller",
     tech: ["Flutter", "Flask", "Dart", "Python", "MicroPython"],
-    description: "A Flutter-based mobile app to remotely control an IoT car using Flask as the backend and MicroPython on hardware.",
+    description:
+      "A Flutter-based mobile app to remotely control an IoT car using Flask as the backend and MicroPython on hardware.",
     image: IOT_APP,
     links: [
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/IOT_APP" }
-    ]
+      { name: "GitHub", url: "https://github.com/AshutoshRath1612/IOT_APP" },
+    ],
   },
   {
     name: "Car Price Predictor",
     tech: ["HTML", "CSS", "JavaScript", "Flask", "Machine Learning"],
-    description: "A web app that predicts the resale value of a car based on user input features using a trained ML model in Flask.",
+    description:
+      "A web app that predicts the resale value of a car based on user input features using a trained ML model in Flask.",
     image: CarPrice,
     links: [
-      { name: "GitHub", url: "https://github.com/AshutoshRath1612/Car-Price-Predictor" }
-    ]
-  }
-]
+      {
+        name: "GitHub",
+        url: "https://github.com/AshutoshRath1612/Car-Price-Predictor",
+      },
+    ],
+  },
+];
+
+export const personalInfo = {
+  name: "Ashutosh Rath",
+  title: "Full Stack Developer",
+  location: "Bhubaneswar, India",
+  email: "ashutoshrath1612@gmail.com",
+  bio: [
+    "Full Stack Developer with hands-on experience across multiple tech-stacks such as Java, Angular, React, and Node.js. I work on scalable, cloud-native applications and modern GenAI integrations using LangChain, OpenSearch/Kendra, and RAG pipelines.",
+    "I'm passionate about building elegant solutions, from REST/GraphQL APIs to visually engaging frontends. I love clean code, CI/CD pipelines, and solving real-world problems through technology.",
+    "Outside of work, I mentor students, occasionally explore UI/UX, and stay curious about everything from DevOps to GenAI.",
+  ],
+  education: [
+    {
+      degree: "Bachelor of Technology (CSE)",
+      university:
+        "Institute of Technical Education and Research, SOA University",
+      year: "2020–2024",
+      details: ["Major in Computer Science and Engineering", "CGPA: 9.5/10"],
+    },
+    {
+      degree: "Higher Secondary Education",
+      university: "Delhi Public School, Dhenkanal",
+      year: "2018–2020",
+      details: ["Science Stream"],
+    },
+    {
+      degree: "Primary & Secondary Education",
+      university: "St. Xavier's High School, Dhenkanal",
+      year: "2009–2018",
+      details: ["Strong academic foundation in Science and Mathematics"],
+    },
+  ],
+  certifications: [
+    {
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      year: "2025",
+      image: AWSCertificate,
+      details: ["Validation of foundational AWS cloud knowledge"],
+    },
+    {
+      name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      issuer: "Microsoft",
+      year: "2024",
+      image: MicrosoftAZ900,
+      details: [
+        "Validated knowledge of Microsoft Azure services and cloud concepts",
+      ],
+    },
+    {
+      name: "Google Cloud Digital Leader",
+      issuer: "Google Cloud",
+      year: "2024",
+      image: GoogleCloudDigitalLeader,
+      details: [
+        "Demonstrated understanding of Google Cloud services and applications",
+      ],
+    },
+    {
+      name: "Java Full Stack",
+      issuer: "IBM",
+      year: "2024",
+      image: IBMTraining,
+      details: ["Completed enterprise-level full stack Java training"],
+    },
+    {
+      name: "Cybersecurity Certification",
+      issuer: "EY GDS",
+      year: "2023",
+      image: EYGDSCertificate,
+      details: [
+        "Fundamentals of cybersecurity and secure development practices",
+      ],
+    },
+    // {
+    //   name: "Android Application Development",
+    //   issuer: "Udemy",
+    //   year: "2023",
+    //   image: AWSCertificate,
+    //   details: ["Built native Android apps and explored Android SDK"],
+    // },
+    {
+      name: "Data Visualization Virtual Internship",
+      issuer: "TATA (Forage)",
+      year: "2022",
+      image: DataVisualisationTataForage,
+      details: ["Built dashboards and practiced real-world data visualization"],
+    },
+    {
+      name: "Data Science & Machine Learning",
+      issuer: "Google Cloud",
+      year: "2021",
+      image: GoogleCloudDatascienceAndMachineLearning,
+      details: ["Introduction to ML workflows, modeling, and cloud deployment"],
+    },
+  ],
+  skills: {
+    Frontend: [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux",
+    ],
+    Backend: [
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "Express",
+      "GraphQL",
+      "REST APIs",
+      "MongoDB",
+      "MySQL",
+      "DynamoDB",
+    ],
+    DevOps: ["AWS", "Docker", "CI/CD", "Kubernetes", "API Gateway", "Lambda"],
+    GenAI: ["LangChain", "OpenSearch", "Kendra", "Vector Embeddings", "RAG"],
+    Other: [
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "Figma",
+      "Git",
+      "Jenkins",
+      "Postman",
+    ],
+  },
+  experience: [
+    {
+      role: "Application Developer",
+      company: "IBM, India",
+      period: "Jul 2024 – Present",
+      achievements: [
+        "Developing enterprise apps using Java, Angular, React, and Node.js for a leading global tobacco client",
+        "Building AWS-native microservices with Lambda, S3, API Gateway, and DynamoDB",
+        "Implemented GenAI-based document processing using LangChain, OpenSearch/Kendra, and RAG architecture",
+        "Integrated REST/GraphQL APIs with responsive frontend modules",
+        "Contributed to CI/CD pipelines and code reviews in Agile sprints",
+        "Demonstrated strong adaptability and ownership across modules",
+      ],
+    },
+    {
+      role: "Application Developer Intern",
+      company: "IBM, India",
+      period: "Jan 2024 – Jun 2024",
+      achievements: [
+        "Trained in cloud full stack development, working on multiple web apps",
+        "Built REST APIs to enhance software communication and modularity",
+        "Led weekly debugging sessions and presented stakeholder updates",
+      ],
+    },
+    {
+      role: "React Developer Intern",
+      company: "XcitEducation Foundations (WFH)",
+      period: "Feb 2022 – Mar 2022",
+      achievements: [
+        "Developed UI components reducing load times by 25%",
+        "Conducted 40+ code corrections through detailed reviews",
+        "Built fully responsive pages with consistent cross-device experience",
+      ],
+    },
+  ],
+};
 
 // "Hi, I am Ashutosh Rath,
 // a passionate software engineer with a knack for creating innovative solutions.

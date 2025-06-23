@@ -47,9 +47,10 @@
 
 /* Main Container */
 .aboutContainer {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 2rem;
+  width: 80%;
 }
 
 /* Profile Section */
@@ -450,7 +451,7 @@
 }
 
 .contactButton {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: var(--btn-bg);
   color: white;
   border: none;
   padding: 0.8rem 2rem;
@@ -461,7 +462,7 @@
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 15px rgba(110, 142, 251, 0.3);
+  box-shadow: var(--btn-shadow);
 }
 
 .contactButton:hover {
