@@ -7,7 +7,7 @@ import { Project } from "@/app/models/project.model";
 const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(
   ({ project }, ref) => {
     return (
-      <div ref={ref} className={styles.card}>
+      <div ref={ref} className={`${styles.card} projects-card`}>
         <Image
           src={project.image}
           alt={project.name}

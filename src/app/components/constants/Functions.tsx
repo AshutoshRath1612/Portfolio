@@ -60,7 +60,6 @@ export const checkValidator = (
   const value = e.target.value;
   const inputType = e.target.type;
   const inputElement = e.target;
-  console.log(e.target.name);
   const containerElement: HTMLDivElement | null = inputElement.closest(".contactFormContainer");
   const errorTextElement = containerElement
     ? (containerElement.querySelector(".errorText") as HTMLElement | null)

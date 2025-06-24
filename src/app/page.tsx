@@ -67,17 +67,17 @@ export default function Home() {
   // Scroll trigger animation
   useEffect(() => {
     const handleScroll = () => {
-      const projectSection = document.getElementById('projects-section');
+      const projectSection = document.getElementsByClassName('projects-card');
       const scrollY = window.scrollY;
       const triggerHero = 150;
       const triggerAbout = 800;
       const triggerSkills = 1200;
-      const projectSectionScrollWidth = projectSection?.scrollWidth ?? 0;
+      const projectSectionScrollWidth = projectSection[0]?.scrollWidth ?? 0;
       const triggerProject = projectSectionScrollWidth === 0
         ? 1400 + window.innerHeight * projects.length
-        : (window.innerHeight + projectSectionScrollWidth);
-      console.log(scrollY, window.innerHeight);
-      console.log(projectSection?.scrollWidth)
+        : (projectSection[0].scrollWidth * projects.length + 1400);
+      // const triggerProject = projectSection[0].scrollWidth * projects.length + 1400;
+      console.log(projectSection[0].scrollWidth)
       
       if (scrollY > triggerHero && !scrollHero) {
         setscrollHero(true);
@@ -374,7 +374,6 @@ export default function Home() {
         ease: "inOut(4)",
         onComplete: () => {
           const footerEl = footerRef.current?.querySelector("div");
-          console.log(footerEl);
           if (!footerEl) return;
           animate(footerEl,{
               opacity: 1,

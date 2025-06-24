@@ -60,9 +60,9 @@ export default function Projects() {
       });
       ticking = true;
     }
+    console.log("Track ref:", trackRef.current?.scrollWidth);
   };
     // const handleResize = () => updateTrackPosition();
-
     window.addEventListener("scroll", handleScroll);
     // window.addEventListener("resize", handleResize);
 
