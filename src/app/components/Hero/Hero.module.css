@@ -9,10 +9,12 @@
 }
 
 .heroImage {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 2rem;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 55%;
+  border-radius: 12px;
+  z-index: 8;
   box-shadow: 0 0 10px rgba(25, 118, 210, 0.4), 0 0 20px rgba(25, 118, 210, 0.3);
   background: var(--bg-primary);
 }
@@ -43,7 +45,7 @@
     width: 80%;
     padding: 2rem;
   }
-  
+
   .heroImage {
     width: 30%;
     height: auto;
@@ -51,7 +53,7 @@
     border-radius: 12px;
     margin-bottom: 0;
   }
-  
+
   .heroTextContainer {
     width: 50%;
     text-align: left;
@@ -59,17 +61,32 @@
   }
 }
 
-@media (max-width: 480px) {
-  .heroSection {
-    padding: 1rem;
-    width: 95%;
+@media (max-width: 768px) {
+
+  .heroSection{
+    height: 5%;
+    justify-content: space-between;
   }
   
+  .heroTextHeadingContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 0 1rem;
+    height: 80vh;
+    justify-content: space-evenly;
+  }
+
   .heroImage {
     width: 180px;
     height: 180px;
   }
-  
+
   .heroTextContainer {
     font-size: 1.1rem;
   }

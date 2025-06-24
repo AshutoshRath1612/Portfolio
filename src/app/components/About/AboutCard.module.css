@@ -1,4 +1,5 @@
 .aboutCard {
+  /* background: rgba(255, 255, 255, 0.15); */
   background: rgb(255 255 255 / 52%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
@@ -11,45 +12,33 @@
   line-height: 1.8;
   transition: all 0.3s ease;
   position: fixed;
-  height: auto;
-  max-height: 80vh;
-  width: 80%;
-  max-width: 800px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  overflow-y: auto;
+  height: 30rem;
+  width: 100%;
 }
 
-/* Existing hover and text styles remain the same */
+.aboutCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
 
-@media (max-width: 1024px) {
-  .aboutCard {
-    width: 85%;
-    padding: 2rem;
-  }
+.aboutText {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.aboutFooter {
+  font-style: italic;
+  color: #007cf0;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .aboutCard {
-    width: 90%;
-    padding: 1.5rem;
-    max-height: 85vh;
+    padding: 2rem 1.5rem;
   }
-  
+
   .aboutText {
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .aboutCard {
-    padding: 1.2rem;
-    width: 95%;
-  }
-  
-  .aboutText {
-    font-size: 0.95rem;
-    line-height: 1.6;
   }
 }

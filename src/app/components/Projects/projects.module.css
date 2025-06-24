@@ -194,7 +194,9 @@
   }
   
   .projectName {
-    font-size: 1.5rem;
+    font-size: 1.2rem !important;
+    margin: 1rem 0;
+    text-align: center;
   }
   
   .links {
@@ -362,12 +364,19 @@
 @media (max-width: 767px) {
   .card {
     flex-direction: column;
-    height: min(40rem, 80vh);
+    height: min(40rem, 70vh);
   }
 
   .image {
-    width: 100%;
-    height: 180px;
-    margin-bottom: 1.5rem;
+    width: 80%;
+    height: 30%;
+    margin-bottom: 0;
+    object-fit: contain;
+  }
+  .projectInfo {
+    height: 80%;
+  }
+  .trackWrapper {
+    height: 80%;
   }
 }
