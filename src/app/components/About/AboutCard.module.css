@@ -36,6 +36,7 @@
 @media (max-width: 768px) {
   .aboutCard {
     padding: 2rem 1.5rem;
+    height: 40rem;
   }
 
   .aboutText {

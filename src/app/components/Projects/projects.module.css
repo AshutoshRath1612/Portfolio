@@ -31,6 +31,7 @@
   height: 100%;
   overflow: hidden;
   padding: 2rem;
+  background: transparent;
 }
 
 .track {
@@ -328,7 +329,7 @@
     padding: 2rem 0.5rem;
   }
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
   }
   .trackWrapper {
@@ -347,7 +348,7 @@
     height: 160px;
   }
   .potraitImageCard{
-    width: 45% !important;
+    width: 30% !important;
   }
   .projectName {
     font-size: 1.5rem;
@@ -369,14 +370,14 @@
 
   .image {
     width: 80%;
-    height: 30%;
+    height: 25%;
     margin-bottom: 0;
-    object-fit: contain;
+    object-fit: cover;
   }
   .projectInfo {
     height: 80%;
   }
   .trackWrapper {
-    height: 80%;
+    height: 90%;
   }
 }

@@ -4,8 +4,13 @@ import styles from "./Footer.module.css";
 import { socials } from "../constants/Info";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GiggleButton from "../GiggleButton/GiggleButton";
+import { useRouter } from "next/navigation";
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons/faAddressCard";
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons/faAddressBook";
 
 const Footer = () => {
+  const router = useRouter();
+
   const footerRef = useRef(null);
   const shapeRefs = useRef<(HTMLDivElement | null)[]>([]);
   const contentRef = useRef(null);
@@ -67,7 +72,7 @@ const Footer = () => {
 
       {/* Main content */}
       <div className={styles.content} ref={contentRef}>
-        <GiggleButton
+        {/* <GiggleButton
           text="Know More"
           name="footerKnowMore"
           name2="footerButtons"
@@ -75,13 +80,13 @@ const Footer = () => {
           isIcon={false}
           isIconAnimated={false}
           onClick={{ event: "navigate", data: "/about" }}
-        />
+        /> */}
         <h2 className={styles.title}>
           Let&apos;s create
           <br />
           something wonderful
         </h2>
-        <GiggleButton
+        {/* <GiggleButton
           text="Contact Me"
           name="footerContactMe"
           name2="footerButtons"
@@ -89,7 +94,59 @@ const Footer = () => {
           isIcon={false}
           isIconAnimated={false}
           onClick={{ event: "navigate", data: "/contact" }}
-        />
+        /> */}
+        <div className={styles.socialLinks}>
+          <button
+            onClick={() => router.push("/about")}
+            className={styles.socialLink}
+            aria-label="About Me"
+            onMouseEnter={(e) => {
+              animate(e.currentTarget, {
+                translateY: -5,
+                duration: 300,
+                easing: "easeOutExpo",
+              });
+            }}
+            onMouseLeave={(e) => {
+              animate(e.currentTarget, {
+                translateY: 0,
+                duration: 300,
+                easing: "easeOutExpo",
+              });
+            }}
+          >
+            <FontAwesomeIcon
+                className={`${styles.socialIcon}`}
+                icon={faAddressCard}
+              />
+            About Me
+          </button>
+          <button
+            onClick={() => router.push("/contact")}
+            className={styles.socialLink}
+            aria-label="Contact Me"
+            onMouseEnter={(e) => {
+              animate(e.currentTarget, {
+                translateY: -5,
+                duration: 300,
+                easing: "easeOutExpo",
+              });
+            }}
+            onMouseLeave={(e) => {
+              animate(e.currentTarget, {
+                translateY: 0,
+                duration: 300,
+                easing: "easeOutExpo",
+              });
+            }}
+          >
+             <FontAwesomeIcon
+                className={`${styles.socialIcon}`}
+                icon={faAddressBook}
+              />
+            Contact Me
+          </button>
+        </div>
         <div className={styles.socialLinks}>
           {socials.map((social, index) => (
             <a
