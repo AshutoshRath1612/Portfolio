@@ -173,8 +173,10 @@
   }
 
   .knowMore {
-    right: -3rem !important;
-    bottom: -10rem !important;
+    right: -5rem !important;
+    bottom: -17rem !important;
+    width: 8rem;
+    height: 8rem;
   }
 
   .footerKnowMore {
@@ -187,6 +189,9 @@
     right: 0rem !important;
     bottom: auto !important;
     top: -5rem !important;
+  }
+  .resumeBtn{
+    padding: 1rem !important;
   }
 /* 
   .circleNav {
@@ -222,9 +227,18 @@
     height: 1.8rem;
     width: 1.8rem;
   }
+  .resumeBtn {
+    padding: 0.8rem !important;
+    font-size: 0.8rem;
+    width: 5rem;
+    right: 0.5rem !important;
+  }
 
   .knowMore {
-    right: -2rem !important;
-    bottom: -8rem !important;
+    right: -3rem !important;
+    bottom: -22rem !important;
+    width: 6rem;
+    height: 6rem;
+    font-size: 0.8rem;
   }
 }

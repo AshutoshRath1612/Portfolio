@@ -230,4 +230,13 @@
   .contactTitle {
     max-width: 100%;
   }
+  .contactDetailsContainer{
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactDetailsContainer{
+    width: 100%;
+  }
 }

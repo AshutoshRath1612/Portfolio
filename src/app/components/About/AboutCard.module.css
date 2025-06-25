@@ -36,10 +36,22 @@
 @media (max-width: 768px) {
   .aboutCard {
     padding: 2rem 1.5rem;
-    height: 40rem;
+    height: 80vh;
   }
 
   .aboutText {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+ .aboutText {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  .aboutCard {
+    padding: 1.5rem;
+    height: 74vh;
   }
 }

@@ -360,6 +360,9 @@
     padding: 0.5rem;
     font-size: 0.9rem;
   }
+  .projectTechs {
+    margin-bottom: 0;
+  }
 }
 /* Mobile layout override */
 @media (max-width: 767px) {

@@ -69,3 +69,14 @@
   transform: translateY(-50%);
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .text {
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .text {
+    width: 85%;
+  }
+}

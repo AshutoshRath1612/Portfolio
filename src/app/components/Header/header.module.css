@@ -32,5 +32,6 @@
   .heading {
     width: 95%;
     font-size: clamp(1.2rem, 5vw, 1.5rem);
+    padding-left: 3rem;
   }
 }

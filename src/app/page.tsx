@@ -210,7 +210,7 @@ export default function Home() {
   };
 
   const animateToAbout = () => {
-    if (imageRef.current) {
+    if (imageRef.current && window.innerWidth > 768) {
       waapi.animate(imageRef.current, {
         translateX: ["0", "-40vw"],
         translateY: ["0", "-25vh"],
@@ -224,11 +224,14 @@ export default function Home() {
         delay: stagger(100),
       });
     }
+    else if(window.innerWidth <= 768 && imageRef.current) {
+      imageRef.current.style.setProperty("display", "none");
+    }
 
     if (textRef.current) {
       animate(textRef.current, {
         opacity: [0, 1],
-        translateX: ["100vw", "-30px"],
+        translateX: ["100vw", window.innerWidth > 768 ? "-30px" : window.innerWidth < 480 ? "10%" : "0px"],
         duration: 2000,
         display: "flex",
         delay: stagger(100),
@@ -256,6 +259,7 @@ export default function Home() {
         translateX: ["-40vw", "-100vw"],
         translateY: ["-20vh", "0"],
         position: "static",
+        display: "block",
         width: "20%",
         height: "55%",
         ease: "inOut(4)",
@@ -407,9 +411,9 @@ export default function Home() {
           onClick={() => setShowResumeModal(true)}
         >
           <GiggleButton
-            text="View Resume"
+            text={window.innerWidth > 425 ? "View Resume" : "View CV"}
             overlayname="contactOverlay"
-            isIcon={isResumeBtnNotHover}
+            isIcon={window.innerWidth > 768 ? isResumeBtnNotHover : false}
             icon={faFile}
             isIconAnimated={isResumeBtnNotHover}
             name="contactDetails"
