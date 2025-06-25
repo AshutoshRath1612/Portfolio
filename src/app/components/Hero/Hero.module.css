@@ -32,7 +32,7 @@
 }
 
 .heroTextHeadingName {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   margin: 0.5rem 0;
   font-weight: bolder;
   color: var(--btn-bg);
@@ -57,19 +57,19 @@
 @media (max-width: 768px) {
 
   .heroSection{
-    height: 5%;
+    /* height: 5%; */
     justify-content: space-between;
   }
   
   .heroTextHeadingContact {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .heroImage{
-    width: 45% !important;
-    height: 25% !important;
+    width: 35%;
+    height: 45%;
     top: 55%;
     left: 50%;
   }
@@ -89,5 +89,9 @@
 
   .heroTextContainer {
     font-size: 1.1rem;
+  }
+
+  .heroTextHeadingContact{
+    align-items: center;
   }
 }

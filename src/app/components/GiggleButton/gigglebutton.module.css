@@ -37,7 +37,7 @@
   font-weight: normal;
   border-radius: 2rem;
   width: auto;
-  padding: clamp(0.5rem, 1vw, 1rem) clamp(0.75rem, 1.5vw, 1.5rem);
+  padding: clamp(0.8rem, 1vw, 1rem) clamp(0.75rem, 1.5vw, 1.5rem);
   text-align: center;
   font-weight: bold;
 }
@@ -173,8 +173,8 @@
   }
 
   .knowMore {
-    right: -5rem !important;
-    bottom: -17rem !important;
+    right: -4rem !important;
+    bottom: -22rem !important;
     width: 8rem;
     height: 8rem;
   }

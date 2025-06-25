@@ -210,15 +210,15 @@ export default function Home() {
   };
 
   const animateToAbout = () => {
-    if (imageRef.current && window.innerWidth > 768) {
+    if (imageRef.current && window.innerWidth > 468) {
       waapi.animate(imageRef.current, {
-        translateX: ["0", "-40vw"],
+        translateX: ["0", window.innerWidth <= 768 ? "-45vw":"-40vw"],
         translateY: ["0", "-25vh"],
         opacity: [0, 1],
         position: "fixed",
         display: "block",
         width: "25%",
-        height: "50%",
+        height: window.innerWidth <= 768 ? "25%" : "50%",
         ease: "inOut(4)",
         duration: 2000,
         delay: stagger(100),
@@ -254,14 +254,16 @@ export default function Home() {
 
   const animateToHero = () => {
     const aboutTextEl = textRef.current?.querySelectorAll(".aboutText");
+    const imageWidth = window.innerWidth <= 768 ? "35%" : "20%";
+    const imageHeight = window.innerWidth <= 768 ? "45%" : "55%";
     if (imageRef.current) {
       waapi.animate(imageRef.current, {
         translateX: ["-40vw", "-100vw"],
         translateY: ["-20vh", "0"],
         position: "static",
         display: "block",
-        width: "20%",
-        height: "55%",
+        width: imageWidth,
+        height: imageHeight,
         ease: "inOut(4)",
         duration: 500,
       });

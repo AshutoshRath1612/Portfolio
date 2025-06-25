@@ -180,9 +180,9 @@
 }
 
 @media (max-width: 768px) {
-  .container {
+  /* .container {
     padding: 3rem 1rem;
-  }
+  } */
   
   .card {
     width: 320px;
@@ -300,11 +300,22 @@
   }
   .card {
     width: 300px;
-    height: 32rem;
+    height: 33rem;
     padding: 1.5rem;
   }
   .image {
-    height: 180px;
+    height: 30%;
+    width: 85%;
+    margin: 0;
+  }
+  .potraitImageCard{
+    width: 33% !important;
+  }
+  .projectTechs{
+    margin-bottom: 0;
+  }
+  .projectDescription{
+    margin-bottom: 1rem;
   }
 }
 
