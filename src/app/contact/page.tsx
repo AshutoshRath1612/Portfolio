@@ -7,8 +7,6 @@ import { checkValidator, sendFormData } from "../components/constants/Functions"
 import GiggleButton from "../components/GiggleButton/GiggleButton";
 import Socials from "../components/Socials/Socials";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDotCircle } from "@fortawesome/free-solid-svg-icons/faDotCircle";
 import { animate, stagger } from "animejs";
 import Navbar from "../components/Navbar/Navbar";
 import { motion } from "framer-motion";
@@ -113,6 +111,7 @@ const Contacts = () => {
                     name={question.name}
                     placeholder={question.placeholder}
                     className={style.contactInput}
+                    value={formData[question.name] || ""}
                     onBlur={(e) => checkValidator(e, question.validate)}
                     onChange={(e) =>handleChange(e, question.name)}
                   />
@@ -173,7 +172,7 @@ const Contacts = () => {
                 overlayname="sendOverlay"
                 isIcon={false}
                   isIconAnimated={false}
-                onClick={{ event: "function", data: {name: sendFormData , data: formData} }}
+                onClick={{ event: "function", data: {name: sendFormData , data: [formData,setFormData]} }}
               />
             </motion.div>
           </div>

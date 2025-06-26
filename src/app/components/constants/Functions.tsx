@@ -132,50 +132,50 @@ const validateFormData = (formData: FormData) => {
 }
 
 
-export const sendFormData = async (formData: FormData) => {
-  if(validateFormData(formData)) {
-  await toast.promise(fetch("/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    }),{
-      pending: 'Form is being submitted...',
-      success: 'Form submitted successfully!',
-      error: 'Form submission failed. Please try again.',
-    },{
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme: "light",
-      transition: Bounce,
-    });
-  } else {
+export const sendFormData = async (formData: FormData): Promise<boolean> => {
+  if (!validateFormData(formData)) {
     toast.error("Form data is invalid. Please check the fields.", {
       position: "top-center",
       autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
       theme: "light",
       transition: Bounce,
     });
+    return false;
+  }
+
+  try {
+    const result = await toast.promise(
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+        .then(async (response) => {
+          const data = await response.json();
+          if (!response.ok || !data.success) {
+            throw new Error(data.error || "Something went wrong");
+          }
+          return data;
+        }),
+      {
+        pending: "Sending your message...",
+        success: "Message sent successfully!",
+        error: "Failed to send message. Try again later.",
+      },
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+      }
+    );
+
+    return result.success;
+  } catch (error) {
+    console.log(error)
+    return false;
   }
 };

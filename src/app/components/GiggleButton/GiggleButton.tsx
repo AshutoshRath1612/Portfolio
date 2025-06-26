@@ -114,7 +114,7 @@ const GiggleButton = ({
     });
   };
 
-  const runEventHandler = () => {
+  const runEventHandler = async() => {
     if (onClick.event === "toggle") {
       // onClick.data.setState(() => !onClick.data.state);
       // // onClick.data.setState(toggle)
@@ -131,8 +131,17 @@ const GiggleButton = ({
       router.push(onClick.data);
     }
     else if (onClick.event === "function") {
-      const functionData = onClick.data as { name: (data: unknown) => void; data: unknown };
-      functionData.name(functionData.data);
+      const functionData = onClick.data as { name: (data: unknown) => boolean; data: unknown };
+      const result = await functionData.name(functionData.data[0]);
+      if(result) {
+        functionData.data[1]({
+            name: "",
+            email: "",
+            organization: "",
+            services: "",
+            message: "",
+          })
+      };
     } 
   };
 

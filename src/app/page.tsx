@@ -262,8 +262,8 @@ export default function Home() {
         translateY: ["-20vh", "0"],
         position: "static",
         display: "block",
-        width: imageWidth,
-        height: imageHeight,
+        width: window.innerWidth > 468 && imageWidth,
+        height: window.innerWidth > 468 &&imageHeight,
         ease: "inOut(4)",
         duration: 500,
       });
