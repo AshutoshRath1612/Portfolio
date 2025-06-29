@@ -1,0 +1,209 @@
+/* .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30vw;
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+  z-index: 9999;
+  overflow-y: none;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.navabr.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebarButtons {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebarHeading {
+  font-size: 1.5rem;
+}
+
+.sidebarSocialContainer {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: space-between;
+}
+.headerSocialsContainer {
+  gap: 1rem;
+  display: flex;
+}
+
+.navContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15vh 0;
+  height: 70vh;
+}
+
+
+.sidebarContainer {
+  position: fixed;
+  top: 20px; 
+  left: 20px;
+  z-index: 9999;
+}
+
+.sidebarButtons {
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebarNavigations {
+  width: 45%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sidebarButtons.active{
+  box-shadow: 0 0 4px 1px #00ffff;
+} */
+.menuButton {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.menuIcon {
+  font-size: 1.5rem;
+}
+
+/* Navbar Panel */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.navContent {
+   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10vh 0;
+  height: 75vh;
+}
+
+.navTitle {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.navDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 1rem 0;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  margin-top: 2rem;
+}
+
+.navLink {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navLink.active {
+  color: white;
+  font-weight: 500;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #6e8efb, #a777e3);
+  border-radius: 0 4px 4px 0;
+}
+
+.linkText {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  
+  .menuButton {
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+

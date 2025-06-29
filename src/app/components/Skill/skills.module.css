@@ -1,0 +1,59 @@
+
+.glassSection {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: -1px 2px 3px black;
+}
+
+.tileContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillTile {
+  background: var(--inner-card-bg);
+  border: 1px solid var(--inner-card-border);
+  backdrop-filter: var(--inner-card-blur);
+  color: var(--inner-card-text);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: -1px 2px 12px 0px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillTile:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skillIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(-2px 2px 1px #333);
+}
+
+.skillName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}

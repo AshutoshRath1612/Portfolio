@@ -1,0 +1,244 @@
+.giggleButton {
+  z-index: 1;
+  position: absolute;
+  right: clamp(1rem, 5vw, 5rem);
+  bottom: clamp(0.5rem, 1vh, 1rem);
+  width: clamp(7rem, 12vw, 10rem);
+  height: clamp(7rem, 12vw, 10rem);
+  display: flex;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: var(--btn-shadow);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-size: 100% 200%;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  backdrop-filter: blur(7px);
+}
+
+/* Responsive modifications for specific button types */
+.getintouch {
+  right: clamp(5vw, 20vw, 25vw) !important;
+  bottom: clamp(10vh, 40vh, 45vh) !important;
+  font-size: clamp(1rem, 1.2vw, 1.2rem) !important;
+}
+
+.contactDetails {
+  position: relative;
+  height: 100%;
+  right: 0 !important;
+  bottom: 0 !important;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  font-weight: normal;
+  border-radius: 2rem;
+  width: auto;
+  padding: clamp(0.8rem, 1vw, 1rem) clamp(0.75rem, 1.5vw, 1.5rem);
+  text-align: center;
+  font-weight: bold;
+}
+
+.iconButtons {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  height: clamp(3rem, 3vw, 2rem) !important;
+  width: clamp(3rem, 3vw, 2rem) !important;
+  font-size: 1.5rem !important;
+}
+
+.circleNav {
+  position: fixed;
+  top: clamp(1rem, 3vh, 2rem);
+  left: clamp(1rem, 3vw, 2rem);
+  z-index: 10;
+  width: clamp(3rem, 5vw, 4rem);
+  height: clamp(3rem, 5vw, 4rem);
+  padding: clamp(5px, 1vw, 10px) clamp(10px, 1.5vw, 15px);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+}
+
+/* The rest of your existing styles remain the same */
+.giggleButton .buttonOverlay {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--btn-bg-hover);
+  border-radius: 50%;
+  transform: translateY(100%);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow:
+    0 0 24px rgba(14, 118, 255, 0.8),
+    0 0 64px rgba(14, 118, 255, 0.6);
+}
+
+.giggleButtonText {
+  z-index: 3;
+  position: relative;
+}
+
+.giggleButton span {
+  position: relative;
+  z-index: 2;
+}
+
+.contactOverlay {
+  border-radius: 2rem !important;
+}
+
+.knowMore {
+  right: -6rem !important;
+  bottom: -19.5rem !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: black !important;
+}
+
+.knowMoreOverlay {
+  background-color: black !important;
+}
+
+.knowMore:hover {
+  color: white !important;
+}
+
+.sendButton {
+  position: relative;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: black !important;
+}
+
+.sendButton:hover {
+  color: white !important;
+}
+
+.sendOverlay {
+  background-color: black !important;
+}
+
+.resumeBtn {
+  right: 2rem !important;
+}
+
+.homeSocials {
+  border: none !important;
+}
+
+.footerButtons {
+  background-color: rgba(255, 255, 255, 0) !important;
+  width: 7rem !important;
+  height: 7rem !important;
+  color: black !important;
+}
+
+.footerKnowMore {
+  left: -15rem;
+  top: 5rem;
+}
+
+.footerContactMe {
+  right: -15rem;
+  top: 5rem;
+}
+
+.footerButtons:hover {
+  color: white !important;
+}
+
+.footerOverlay {
+  background-color: black !important;
+}
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  /* .giggleButton {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  } */
+
+  .getintouch {
+    right: 10vw !important;
+    bottom: 30vh !important;
+  }
+
+  .knowMore {
+    right: -4rem !important;
+    bottom: -22rem !important;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .footerKnowMore {
+    left: 0rem !important;
+    bottom: auto !important;
+    top: -5rem !important;
+  }
+
+  .footerContactMe {
+    right: 0rem !important;
+    bottom: auto !important;
+    top: -5rem !important;
+  }
+  .resumeBtn{
+    padding: 1rem !important;
+  }
+/* 
+  .circleNav {
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  } */
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  /* .giggleButton {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+  } */
+
+  .getintouch {
+    right: 5vw !important;
+    bottom: 25vh !important;
+    font-size: 0.8rem !important;
+  }
+
+  .contactDetails {
+    font-size: 1rem;
+    padding: 0.8rem 0.6rem;
+    box-shadow: var(--btn-shadow-mobile);
+  }
+
+  .iconButtons {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+  .resumeBtn {
+    padding: 0.8rem !important;
+    font-size: 0.8rem;
+    width: 5rem;
+    right: 0.5rem !important;
+  }
+
+  .knowMore {
+    right: -3rem !important;
+    bottom: -22rem !important;
+    width: 6rem;
+    height: 6rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,36 @@
+.contactBottomTitle {
+  font-size: 2rem;
+}
+
+.headerSocialsContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.socialsContainer {
+  gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.homeSocialContainer{
+  display: flex;
+  gap: 1rem;
+}
+
+.socials {
+  display: flex;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.socialsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}

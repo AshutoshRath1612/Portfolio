@@ -1,0 +1,141 @@
+.footer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffffff, #a7c7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  color: #2d3748;
+}
+
+.shapesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  mix-blend-mode: multiply;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  padding: 2rem;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--btn-border);
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: var(--btn-shadow);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.socialLink:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.copyright {
+  color: rgba(45, 55, 72, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem;
+  }
+  
+  .title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  
+  .socialLinks {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .socialLink {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .socialLinks {
+    gap: 0.8rem;
+  }
+  
+  .socialLink {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

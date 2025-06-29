@@ -1,0 +1,37 @@
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bolder;
+  color: var(--color-text-primary);
+  margin: auto;
+  padding: 1rem 0;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  text-shadow: -1px 2px 3px black;
+}
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (max-width: 768px) {
+  .heading {
+    width: 90%;
+    padding: 0.8rem 0;
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    width: 95%;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    padding-left: 3rem;
+  }
+}
