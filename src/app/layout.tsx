@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Portfolio",
     "Web Developer India",
   ],
-  authors: [{ name: "Ashutosh Rath", url: "https://your-portfolio-url.com" }],
+  authors: [{ name: "Ashutosh Rath", url: "https://ashutosh-portfolio.vercel.app/" }],
   creator: "Ashutosh Rath",
   publisher: "Ashutosh Rath",
 
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Ashutosh Rath | Full Stack & GenAI Developer",
     description:
       "Explore Ashutosh's portfolio featuring React, Node, GenAI (LangChain), and Cloud projects.",
-    url: "https://your-portfolio-url.com",
+    url: "https://ashutosh-portfolio.vercel.app/",
     siteName: "Ashutosh Rath Portfolio",
     images: [
       {
