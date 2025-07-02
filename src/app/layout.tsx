@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
 import RouteTransitionWrapper from "./components/RouteWrapper/RouteTransitionWrapper";
+import { Analytics } from "@vercel/analytics/next"
 
 // Font
 const ubuntu = Ubuntu({
@@ -76,6 +77,7 @@ export default function RootLayout({
       </head>
       <body className={ubuntu.className}>
         <RouteTransitionWrapper>{children}</RouteTransitionWrapper>
+        <Analytics />
       </body>
     </html>
   );
