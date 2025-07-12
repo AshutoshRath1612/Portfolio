@@ -46,6 +46,17 @@ export default function Home() {
 
   // Scroll trigger animation
   useEffect(() => {
+    let ticking = false;
+
+    const onScroll = () =>{
+      if(!ticking){
+        window.requestAnimationFrame(()=>{
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
     const handleScroll = () => {
       // setContainerHeight();
       const projectSection = document.getElementsByClassName("projects-card");
@@ -99,8 +110,8 @@ export default function Home() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, [scrollHero, scrollAbout, scrollProject, scrollFooter]);
 
   const buttonTransition = () => {

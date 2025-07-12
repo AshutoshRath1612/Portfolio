@@ -72,6 +72,7 @@ body {
   padding: 0;
   -ms-overflow-style: none;
   overflow-x: none;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
