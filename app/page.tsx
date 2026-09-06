@@ -1,69 +1,101 @@
-import Image from "next/image";
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import Header from "./components/header";
+import { useEffect, useRef } from "react";
+import Hero from "./sections/hero";
+import { setInitialState } from "./animations";
+import About from "./sections/about";
+import Experience from "./sections/experience";
+import Skills from "./sections/skills";
+import Projects from "./sections/projects";
+import Contact from "./sections/contact";
 
 export default function Home() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const navRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  // Pane refs
+  const paneHero = useRef<HTMLElement>(null);
+  const paneAbout = useRef<HTMLElement>(null);
+  const paneExp = useRef<HTMLElement>(null);
+  const paneSkills = useRef<HTMLElement>(null);
+  const paneProjects = useRef<HTMLElement>(null);
+  const paneContact = useRef<HTMLElement>(null);
+
+  // Horizontal wrappers
+  const expWrapper = useRef<HTMLDivElement>(null);
+  const projWrapper = useRef<HTMLDivElement>(null);
+
+  // Nav thresholds match the timeline's section boundaries (0–1 progress)
+  const NAV_THRESHOLDS = [0, 0.12, 0.26, 0.57, 0.68, 0.96];
+  
+  const setNav = (progress: number) => {
+    console.log(progress)
+    let active = 0;
+    for (let i = NAV_THRESHOLDS.length - 1; i >= 0; i--) {
+      if (progress >= NAV_THRESHOLDS[i]) { active = i; break; }
+    }
+    navRefs.current.forEach((el, i) => {
+      if (!el) return;
+      el.style.color = i === active ? "#818cf8" : "#404040";
+    });
+  };
+
+  const scrollToNavSection = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const progress = NAV_THRESHOLDS[index] ?? 0;
+    const trackTop = track.getBoundingClientRect().top + window.scrollY;
+    const scrollDistance = track.offsetHeight - window.innerHeight;
+
+    window.scrollTo({
+      top: trackTop + scrollDistance * progress,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const ctx = setInitialState(trackRef.current, 
+      paneHero.current, 
+      paneAbout.current, 
+      paneExp.current,
+      paneSkills.current, 
+      paneProjects.current,
+      paneContact.current,
+      expWrapper.current, 
+      projWrapper.current, 
+      setNav);
+
+    return ctx; // Cleanup GSAP context on unmount
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div style={{ background: "#050505", color: "#f3f4f6", fontFamily: "'Geist', sans-serif" }}>
+      {/* ── fixed backgrounds ─────────────────────────────────────────── */}
+      <div className="grid-bg" />
+      <div className="ambient-glow" />
+
+      <Header navRefs={navRefs} onNavClick={scrollToNavSection} />
+
+      <div ref={trackRef} style={{ position: "relative", width: "100%", height: "1600vh" }}>
+        <div ref={viewportRef} style={{
+          position: "sticky", top: 0, width: "100%", height: "100vh",
+          overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center",
+          zIndex: 10,
+        }}>
+          <Hero paneHero={paneHero} />
+          <About paneAbout={paneAbout} />
+          <Experience paneExp={paneExp} expWrapper={expWrapper} />
+          <Skills paneSkills={paneSkills} />
+          <Projects paneProjects={paneProjects} projWrapper={projWrapper} />
+          <Contact paneContact={paneContact} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
