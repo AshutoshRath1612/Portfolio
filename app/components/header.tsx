@@ -8,8 +8,8 @@ const Header = ({ navRefs, onNavClick }: { navRefs: React.RefObject<(HTMLSpanEle
         position: "fixed", top: 0, left: 0, width: "100%", zIndex: 50,
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "1.25rem 3rem",
-        borderBottom: "1px solid rgba(255,255,255,0.05)",
-        background: "rgba(5,5,5,0.8)",
+        borderBottom: "1px solid rgba(148,163,184,0.1)",
+        background: "rgba(15,23,42,0.85)",
         backdropFilter: "blur(12px)",
       }}>
         <div className="font-mono" style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#fff", display: "flex", alignItems: "center", gap: 8 }}>
@@ -23,7 +23,7 @@ const Header = ({ navRefs, onNavClick }: { navRefs: React.RefObject<(HTMLSpanEle
               key={label}
               ref={(el) => { navRefs.current[i] = el; }}
               className="font-mono"
-              style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: i === 0 ? "#818cf8" : "#404040", transition: "color 0.3s", cursor: "pointer" }}
+              style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: i === 0 ? "#818cf8" : "#64748b", transition: "color 0.3s", cursor: "pointer" }}
               onClick={() => onNavClick(i)}
             >
               //{label}

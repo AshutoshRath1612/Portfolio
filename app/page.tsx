@@ -41,7 +41,7 @@ export default function Home() {
     }
     navRefs.current.forEach((el, i) => {
       if (!el) return;
-      el.style.color = i === active ? "#818cf8" : "#404040";
+      el.style.color = i === active ? "#818cf8" : "#64748b";
     });
   };
 
@@ -75,7 +75,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ background: "#050505", color: "#f3f4f6", fontFamily: "'Geist', sans-serif" }}>
+    <div style={{ background: "#0f172a", color: "#f1f5f9", fontFamily: "'Geist', sans-serif" }}>
       {/* ── fixed backgrounds ─────────────────────────────────────────── */}
       <div className="grid-bg" />
       <div className="ambient-glow" />

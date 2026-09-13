@@ -17,16 +17,16 @@ const Hero = ({ paneHero }: { paneHero: React.RefObject<HTMLElement | null> }) =
                     </h1>
                 </div>
                 <div style={{ overflow: "hidden", marginBottom: "2rem" }}>
-                    <h2 className="hero-h2" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#2a2a2a", lineHeight: 1, margin: 0 }}>
+                    <h2 className="hero-h2" style={{ fontSize: "clamp(2rem, 6vw, 5rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#a5b4fc", lineHeight: 1, margin: 0 }}>
                         {metadata.skills}
                     </h2>
                 </div>
 
-                <div className="hero-footer" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "2rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-                    <p style={{ color: "#737373", fontSize: "1.1rem", fontWeight: 300, lineHeight: 1.7, maxWidth: 580, margin: 0 }}>
+                <div className="hero-footer" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "2rem", paddingTop: "2rem", borderTop: "1px solid rgba(148,163,184,0.2)" }}>
+                    <p style={{ color: "#cbd5e1", fontSize: "1.1rem", fontWeight: 300, lineHeight: 1.7, maxWidth: 580, margin: 0 }}>
                         {metadata.description}
                     </p>
-                    <div className="font-mono" style={{ fontSize: 11, color: "#404040", textAlign: "right" }}>
+                    <div className="font-mono" style={{ fontSize: 11, color: "#64748b", textAlign: "right" }}>
                         <div>{metadata.education}</div>
                     </div>
                     <div className='gap-4 flex mb-8'>

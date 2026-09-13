@@ -27,11 +27,11 @@ const About = ({paneAbout}: { paneAbout: React.RefObject<HTMLElement | null> }) 
                         ))}
                     </div>
 
-                    <div style={{ borderLeft: "1px solid rgba(255,255,255,0.08)", paddingLeft: "2rem", display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+                    <div style={{ borderLeft: "1px solid rgba(148,163,184,0.2)", paddingLeft: "2rem", display: "flex", flexDirection: "column", gap: "2.5rem" }}>
                         {aboutConfig.metadatas.map(({ val, label, accent }) => (
                             <div key={label} className="about-stat">
                                 <div style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 700, color: accent ? "#818cf8" : "#fff", marginBottom: 6 }}>{val}</div>
-                                <div className="font-mono" style={{ fontSize: 10, color: "#404040", letterSpacing: "0.12em" }}>{label}</div>
+                                <div className="font-mono" style={{ fontSize: 10, color: "#64748b", letterSpacing: "0.12em" }}>{label}</div>
                             </div>
                         ))}
                     </div>

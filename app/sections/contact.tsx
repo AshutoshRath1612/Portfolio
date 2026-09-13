@@ -83,7 +83,7 @@ const Contact = ({ paneContact }: { paneContact: React.RefObject<HTMLElement | n
               fontSize: 13,
               background: "transparent",
               color: "#fff",
-              border: "1px solid rgba(255,255,255,0.18)",
+              border: "1px solid rgba(148,163,184,0.3)",
               padding: "1.05rem 2.3rem",
               borderRadius: 999,
               fontWeight: 700,
@@ -92,12 +92,12 @@ const Contact = ({ paneContact }: { paneContact: React.RefObject<HTMLElement | n
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = "rgba(255,255,255,0.5)";
+              el.style.borderColor = "rgba(148,163,184,0.6)";
               el.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = "rgba(255,255,255,0.18)";
+              el.style.borderColor = "rgba(148,163,184,0.3)";
               el.style.transform = "translateY(0)";
             }}
           >
@@ -107,7 +107,7 @@ const Contact = ({ paneContact }: { paneContact: React.RefObject<HTMLElement | n
 
         <div
           className="contact-body font-mono"
-          style={{ paddingTop: "3.5rem", marginTop: "3.5rem", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "center", gap: "2.5rem", fontSize: 13, color: "#404040" }}
+          style={{ paddingTop: "3.5rem", marginTop: "3.5rem", borderTop: "1px solid rgba(148,163,184,0.2)", display: "flex", justifyContent: "center", gap: "2.5rem", fontSize: 13, color: "#64748b" }}
         >
           {contactConfig.socials.map((s) => (
             <a
@@ -118,7 +118,7 @@ const Contact = ({ paneContact }: { paneContact: React.RefObject<HTMLElement | n
               aria-label={`${s.label} (opens in a new tab)`}
               style={{ color: "inherit", textDecoration: "none", transition: "color 0.2s", display: "inline-flex", alignItems: "center", gap: 7 }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#404040"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#64748b"; }}
             >
               {s.icon}
               {s.label}

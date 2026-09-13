@@ -32,7 +32,7 @@ const Projects = ({ paneProjects, projWrapper }: {paneProjects: React.RefObject<
         >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <span>{projectConfig.title}</span>
-            <span style={{ color: "#404040" }}>Scroll to pan horizontally →</span>
+            <span style={{ color: "#64748b" }}>Scroll to pan horizontally →</span>
           </div>
         </div>
 
@@ -78,12 +78,12 @@ const ProjectCard = ({ index, title, desc, tags, hoverColor, highlights, metric,
         flexShrink: 0,
         display: "flex",
         flexDirection: "column",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
+        borderTop: "1px solid rgba(148,163,184,0.15)",
         paddingTop: "1.5rem",
         cursor: "pointer",
       }}
       onMouseEnter={() => { if (arrowRef.current) arrowRef.current.style.color = hoverColor; }}
-      onMouseLeave={() => { if (arrowRef.current) arrowRef.current.style.color = "#404040"; }}
+      onMouseLeave={() => { if (arrowRef.current) arrowRef.current.style.color = "#64748b"; }}
     >
       <div
         style={{
@@ -111,7 +111,7 @@ const ProjectCard = ({ index, title, desc, tags, hoverColor, highlights, metric,
         {metric && (
           <div>
             <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "#fff" }}>{metric.value}</div>
-            <div className="font-mono" style={{ fontSize: 10, color: "#a3a3a3", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            <div className="font-mono" style={{ fontSize: 10, color: "#94a3b8", letterSpacing: "0.08em", textTransform: "uppercase" }}>
               {metric.label}
             </div>
           </div>
@@ -120,24 +120,24 @@ const ProjectCard = ({ index, title, desc, tags, hoverColor, highlights, metric,
 
       <h3 style={{ fontSize: "1.75rem", fontWeight: 700, color: "#fff", marginBottom: 12, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {title}
-        {link && <span ref={arrowRef} style={{ color: "#404040", transform: "rotate(45deg)", display: "inline-block", transition: "color 0.25s", fontSize: "1.5rem" }}
+        {link && <span ref={arrowRef} style={{ color: "#64748b", transform: "rotate(45deg)", display: "inline-block", transition: "color 0.25s", fontSize: "1.5rem" }}
         onClick={handleNavigate(link)}
         >↑</span>}
       </h3>
 
-      <p style={{ color: "#737373", fontSize: "0.875rem", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>{desc}</p>
+      <p style={{ color: "#cbd5e1", fontSize: "0.875rem", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>{desc}</p>
 
       <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem", display: "flex", flexDirection: "column", gap: "0.6rem", flex: 1 }}>
         {highlights?.map((h, i) => (
-          <li key={i} style={{ display: "flex", gap: "0.6rem", fontSize: "0.82rem", color: "#a3a3a3", lineHeight: 1.5 }}>
+          <li key={i} style={{ display: "flex", gap: "0.6rem", fontSize: "0.82rem", color: "#94a3b8", lineHeight: 1.5 }}>
             <span style={{ color: hoverColor, flexShrink: 0 }}>▸</span>
             {h}
           </li>
         ))}
       </ul>
 
-      <div style={{ marginTop: "auto", paddingTop: "1rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div className="font-mono" style={{ fontSize: 10, color: "#404040", letterSpacing: "0.1em", marginBottom: "0.6rem" }}>{tags}</div>
+      <div style={{ marginTop: "auto", paddingTop: "1rem", borderTop: "1px solid rgba(148,163,184,0.15)" }}>
+        <div className="font-mono" style={{ fontSize: 10, color: "#64748b", letterSpacing: "0.1em", marginBottom: "0.6rem" }}>{tags}</div>
         {code && <span className="font-mono" style={{ fontSize: 11, color: hoverColor, letterSpacing: "0.06em", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
         onClick={handleNavigate(code)}>
           View code →

@@ -54,7 +54,7 @@ const Experience = ({ paneExp, expWrapper }: { paneExp: React.RefObject<HTMLElem
 
           <span
             style={{
-              color: "#404040",
+              color: "#64748b",
               letterSpacing: "0.12em",
             }}
           >
@@ -92,7 +92,7 @@ const Experience = ({ paneExp, expWrapper }: { paneExp: React.RefObject<HTMLElem
             width: "100%",
             height: 1,
 
-            background: "rgba(255,255,255,0.08)",
+            background: "rgba(148,163,184,0.1)",
 
             transform: "translateY(-50%)",
           }}
@@ -241,7 +241,7 @@ const Content = ({
         className="font-mono"
         style={{
           fontSize: 11,
-          color: accent === "#6366f1" ? "#818cf8" : "#525252",
+          color: accent === "#6366f1" ? "#818cf8" : "#94a3b8",
 
           marginBottom: 8,
 
@@ -270,7 +270,7 @@ const Content = ({
 
       <p
         style={{
-          color: "#737373",
+          color: "#cbd5e1",
 
           fontSize: "0.85rem",
           lineHeight: 1.65,
@@ -290,7 +290,7 @@ const Content = ({
         style={{
           fontSize: 10,
 
-          color: "#404040",
+          color: "#64748b",
 
           letterSpacing: "0.1em",
 
