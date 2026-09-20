@@ -16,7 +16,7 @@ const Home = () => {
   const order = getEnabledSectionIds();
 
   const registry: Record<string, ReactNode> = {
-    hero: <Hero hero={portfolio.hero} profile={portfolio.profile} social={portfolio.social} />,
+    hero: <Hero hero={portfolio.hero} profile={portfolio.profile} social={portfolio.social} contact={portfolio.contact}/>,
     about: <About about={portfolio.about} />,
     experience: <Experience experience={portfolio.experience} />,
     skills: <Skills skills={portfolio.skills} />,

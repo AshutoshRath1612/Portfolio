@@ -13,9 +13,10 @@ interface HeroProps {
   hero: Portfolio["hero"];
   profile: Portfolio["profile"];
   social: Portfolio["social"];
+  contact: Portfolio["contact"];
 }
 
-const Hero = ({ hero, profile, social }: HeroProps) => {
+const Hero = ({ hero, profile, social, contact }: HeroProps) => {
   return (
     <section
       id="hero"
@@ -88,7 +89,7 @@ const Hero = ({ hero, profile, social }: HeroProps) => {
 
             <Reveal delay={0.8}>
               <div className="mt-10 flex items-center gap-4">
-                <SocialLinks social={social} />
+                <SocialLinks social={social} emailBody={contact.emailBody}  emailSubject={contact.emailSubject} />
                 <span className="h-px w-8 bg-border" aria-hidden="true" />
                 <span className="font-mono text-xs text-muted-foreground">
                   {profile.location}

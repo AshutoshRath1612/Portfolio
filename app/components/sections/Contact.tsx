@@ -18,7 +18,6 @@ const Contact = ({ contact, social, resumeHref }: ContactProps) => {
   const mailto = email
     ? buildMailTo(email, contact.emailSubject, contact.emailBody)
     : undefined;
-
   return (
     <Section id="contact" flush className="py-section">
       <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-6 py-16 sm:px-12 sm:py-24">
@@ -89,7 +88,7 @@ const Contact = ({ contact, social, resumeHref }: ContactProps) => {
 
           <Reveal delay={0.25}>
             <div className="mt-8">
-              <SocialLinks social={social} />
+              <SocialLinks social={social} emailBody={contact.emailBody}  emailSubject={contact.emailSubject} />
             </div>
           </Reveal>
         </div>
