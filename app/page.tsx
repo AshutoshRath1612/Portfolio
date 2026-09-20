@@ -18,9 +18,9 @@ const Home = () => {
   const registry: Record<string, ReactNode> = {
     hero: <Hero hero={portfolio.hero} profile={portfolio.profile} social={portfolio.social} />,
     about: <About about={portfolio.about} />,
+    experience: <Experience experience={portfolio.experience} />,
     skills: <Skills skills={portfolio.skills} />,
     projects: <Projects projects={portfolio.projects} githubUrl={portfolio.social.github} />,
-    experience: <Experience experience={portfolio.experience} />,
     certifications: <Certification certifications={portfolio.certifications} />,
     engineering: <Engineering engineering={portfolio.engineering} />,
     contact: <Contact contact={portfolio.contact} social={portfolio.social} resumeHref={portfolio.profile.resume} />
