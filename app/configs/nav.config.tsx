@@ -1,1 +1,0 @@
-export const navConfig = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];

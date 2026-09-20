@@ -1,0 +1,1078 @@
+{
+  "seo": {
+    "title": "Ashutosh Rath — Software Engineer",
+    "description": "Full-stack software engineer building reliable systems, modern web applications, cloud infrastructure, and AI-enabled experiences.",
+    "url": "https://ashutosh-portfolio.vercel.app/",
+    "keywords": [
+      "Software Engineer",
+      "Full-Stack Developer",
+      "Next.js",
+      "NestJS",
+      "TypeScript",
+      "Cloud",
+      "AWS",
+      "System Design",
+      "AI",
+      "Java",
+      "Spring Boot",
+      "Generative AI"
+    ],
+    "ogImage": "/og.png"
+  },
+  "profile": {
+    "name": "Ashutosh Rath",
+    "title": "Software Engineer",
+    "tagline": "Building scalable systems and modern digital experiences.",
+    "description": "Full-stack engineer focused on building reliable systems, modern web applications, cloud infrastructure, and AI-enabled experiences.",
+    "location": "India",
+    "resume": "/resume/Ashutosh-Rath-Resume.pdf"
+  },
+  "social": {
+    "github": "https://github.com/AshutoshRath1612",
+    "linkedin": "https://www.linkedin.com/in/ashutosh-rath-52370621a/",
+    "email": "ashutoshrath1612@gmail.com"
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "#hero"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Certifications",
+      "href": "#certifications"
+    },
+    {
+      "label": "Engineering",
+      "href": "#engineering"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "enabled": true
+    },
+    {
+      "id": "about",
+      "enabled": true
+    },
+    {
+      "id": "skills",
+      "enabled": true
+    },
+    {
+      "id": "projects",
+      "enabled": true
+    },
+    {
+      "id": "experience",
+      "enabled": true
+    },
+    {
+      "id": "certifications",
+      "enabled": true
+    },
+    {
+      "id": "engineering",
+      "enabled": true
+    },
+    {
+      "id": "contact",
+      "enabled": true
+    }
+  ],
+  "hero": {
+    "eyebrow": "Software Engineer",
+    "headline": "I build web applications, backend services, and the infrastructure that runs them.",
+    "description": "I'm a software engineer working across frontend, backend, cloud, and AI-enabled applications. I enjoy taking a feature from its first design through implementation, deployment, and the details that make it reliable in production.",
+    "primaryCta": {
+      "label": "View Projects",
+      "href": "#projects"
+    },
+    "secondaryCta": {
+      "label": "View Resume",
+      "href": "/resume/Ashutosh-Rath-Resume.pdf",
+      "external": true
+    },
+    "codePanel": {
+      "filename": "ashutosh.ts",
+      "lines": [
+        [
+          {
+            "t": "const",
+            "k": "kw"
+          },
+          {
+            "t": " engineer "
+          },
+          {
+            "t": "= ",
+            "k": "punc"
+          },
+          {
+            "t": "{",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "  name",
+            "k": "prop"
+          },
+          {
+            "t": ": ",
+            "k": "punc"
+          },
+          {
+            "t": "\"Ashutosh Rath\"",
+            "k": "str"
+          },
+          {
+            "t": ",",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "  role",
+            "k": "prop"
+          },
+          {
+            "t": ": ",
+            "k": "punc"
+          },
+          {
+            "t": "\"Software Engineer\"",
+            "k": "str"
+          },
+          {
+            "t": ",",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "  builds",
+            "k": "prop"
+          },
+          {
+            "t": ": ",
+            "k": "punc"
+          },
+          {
+            "t": "\"end-to-end systems\"",
+            "k": "str"
+          },
+          {
+            "t": ",",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "  worksAcross",
+            "k": "prop"
+          },
+          {
+            "t": ": ",
+            "k": "punc"
+          },
+          {
+            "t": "[",
+            "k": "punc"
+          },
+          {
+            "t": "\"mobile\"",
+            "k": "str"
+          },
+          {
+            "t": ", ",
+            "k": "punc"
+          },
+          {
+            "t": "\"web\"",
+            "k": "str"
+          },
+          {
+            "t": ", ",
+            "k": "punc"
+          },
+          {
+            "t": "\"cloud\"",
+            "k": "str"
+          },
+          {
+            "t": ", ",
+            "k": "punc"
+          },
+          {
+            "t": "\"AI\"",
+            "k": "str"
+          },
+          {
+            "t": "]",
+            "k": "punc"
+          },
+          {
+            "t": ",",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "  ships",
+            "k": "prop"
+          },
+          {
+            "t": ": ",
+            "k": "punc"
+          },
+          {
+            "t": "\"from idea to production\"",
+            "k": "str"
+          },
+          {
+            "t": ",",
+            "k": "punc"
+          }
+        ],
+        [
+          {
+            "t": "}",
+            "k": "punc"
+          },
+          {
+            "t": ";",
+            "k": "punc"
+          }
+        ],
+        [],
+        [
+          {
+            "t": "export",
+            "k": "kw"
+          },
+          {
+            "t": " default",
+            "k": "kw"
+          },
+          {
+            "t": " engineer"
+          },
+          {
+            "t": ";",
+            "k": "punc"
+          }
+        ]
+      ]
+    }
+  },
+  "about": {
+    "heading": "Engineering with intent",
+    "lead": "I’m a software engineer who enjoys turning ideas into working products from the interface people use to the services, data, infrastructure, and systems behind them.",
+    "paragraphs": [
+      "My experience spans web and mobile applications, backend and API development, databases, cloud infrastructure, DevOps, and CI/CD. I enjoy working across the different parts of a product and understanding how they fit together in production.",
+      "I care about the details that make software dependable: clear architecture, well-designed APIs, sensible data models, reliable deployments, and systems that are straightforward to maintain.",
+      "Whether I’m building a product from scratch or improving an existing system, I focus on keeping the engineering practical, the experience thoughtful, and the result ready for real users."
+    ],
+    "highlights": [
+      "Web applications",
+      "Mobile applications",
+      "Backend & cloud systems",
+      "AI-powered applications",
+      "Application architecture"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Application Development",
+      "description": "Building web and mobile applications from interface to production.",
+      "skills": [
+        {
+          "name": "React",
+          "featured": true,
+          "related": [
+            "TypeScript",
+            "Next.js",
+            "JavaScript",
+            "React Native",
+            "REST APIs"
+          ]
+        },
+        {
+          "name": "Next.js",
+          "featured": true,
+          "related": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "NestJS",
+            "PostgreSQL",
+            "AWS"
+          ]
+        },
+        {
+          "name": "Angular",
+          "featured": true,
+          "related": [
+            "TypeScript",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "REST APIs"
+          ]
+        },
+        {
+          "name": "React Native",
+          "featured": true,
+          "related": ["React", "JavaScript", "TypeScript", "REST APIs"]
+        },
+        {
+          "name": "Flutter",
+          "featured": true,
+          "related": ["Dart", "REST APIs", "PostgreSQL"]
+        },
+        {
+          "name": "Tailwind CSS",
+          "related": ["React", "Next.js", "TypeScript"]
+        }
+      ]
+    },
+    {
+      "category": "Backend Engineering",
+      "description": "Designing APIs and services that power modern applications.",
+      "skills": [
+        {
+          "name": "Node.js",
+          "featured": true,
+          "related": [
+            "JavaScript",
+            "TypeScript",
+            "NestJS",
+            "React",
+            "Next.js",
+            "Angular",
+            "REST APIs"
+          ]
+        },
+        {
+          "name": "NestJS",
+          "featured": true,
+          "related": [
+            "Node.js",
+            "TypeScript",
+            "Next.js",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "REST APIs"
+          ]
+        },
+        {
+          "name": "Spring Boot",
+          "featured": true,
+          "related": ["Java", "Angular", "REST APIs", "PostgreSQL", "Redis"]
+        },
+        {
+          "name": "Flask",
+          "related": ["Python", "REST APIs", "PostgreSQL", "React"]
+        },
+        {
+          "name": "REST APIs",
+          "featured": true,
+          "related": [
+            "React",
+            "Angular",
+            "Next.js",
+            "React Native",
+            "Flutter",
+            "Node.js",
+            "NestJS",
+            "Spring Boot",
+            "Flask"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Languages",
+      "description": "Languages I use across application, backend, and data development.",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "featured": true,
+          "related": [
+            "React",
+            "Next.js",
+            "Angular",
+            "NestJS",
+            "Node.js",
+            "React Native"
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "featured": true,
+          "related": ["React", "React Native", "Node.js", "Next.js"]
+        },
+        {
+          "name": "Java",
+          "featured": true,
+          "related": [
+            "Spring Boot",
+            "Angular",
+            "REST APIs",
+            "PostgreSQL",
+            "Redis"
+          ]
+        },
+        {
+          "name": "Python",
+          "featured": true,
+          "related": [
+            "Flask",
+            "REST APIs",
+            "PostgreSQL",
+            "Generative AI",
+            "RAG"
+          ]
+        },
+        {
+          "name": "Dart",
+          "featured": true,
+          "related": ["Flutter", "REST APIs"]
+        },
+        {
+          "name": "SQL",
+          "featured": true,
+          "related": ["PostgreSQL", "Prisma", "NestJS", "Spring Boot"]
+        }
+      ]
+    },
+    {
+      "category": "Data & Persistence",
+      "description": "Designing and working with the data layer behind applications.",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "featured": true,
+          "related": [
+            "SQL",
+            "Prisma",
+            "NestJS",
+            "Spring Boot",
+            "Flask",
+            "Supabase"
+          ]
+        },
+        {
+          "name": "Prisma",
+          "featured": true,
+          "related": ["PostgreSQL", "NestJS", "Node.js", "TypeScript", "SQL"]
+        },
+        {
+          "name": "Redis",
+          "related": ["Node.js", "NestJS", "Spring Boot", "PostgreSQL"]
+        },
+        {
+          "name": "Supabase",
+          "related": ["PostgreSQL", "Next.js", "React", "REST APIs"]
+        }
+      ]
+    },
+    {
+      "category": "Cloud & Infrastructure",
+      "description": "Taking applications from a codebase to reliable cloud environments.",
+      "skills": [
+        {
+          "name": "AWS",
+          "featured": true,
+          "related": [
+            "Docker",
+            "Nginx",
+            "Linux",
+            "GitHub Actions",
+            "Next.js",
+            "Node.js"
+          ]
+        },
+        {
+          "name": "Docker",
+          "featured": true,
+          "related": [
+            "AWS",
+            "Linux",
+            "Nginx",
+            "GitHub Actions",
+            "Node.js",
+            "NestJS"
+          ]
+        },
+        {
+          "name": "Nginx",
+          "related": ["Docker", "AWS", "Linux", "Node.js", "NestJS"]
+        },
+        {
+          "name": "Linux",
+          "related": ["Docker", "AWS", "Nginx", "Node.js"]
+        }
+      ]
+    },
+    {
+      "category": "Delivery & Automation",
+      "description": "Automating the path from code changes to deployed applications.",
+      "skills": [
+        {
+          "name": "GitHub Actions",
+          "featured": true,
+          "related": ["Docker", "AWS", "CI/CD"]
+        },
+        {
+          "name": "CI/CD",
+          "featured": true,
+          "related": ["GitHub Actions", "Docker", "AWS"]
+        },
+        {
+          "name": "Docker",
+          "related": ["GitHub Actions", "AWS", "Nginx", "Linux"]
+        }
+      ]
+    },
+    {
+      "category": "AI Engineering",
+      "description": "Building applications that make practical use of modern AI capabilities.",
+      "skills": [
+        {
+          "name": "Generative AI",
+          "featured": true,
+          "related": ["Python", "RAG", "Vector Databases", "Prompt Engineering"]
+        },
+        {
+          "name": "RAG",
+          "featured": true,
+          "related": ["Generative AI", "Vector Databases", "Python"]
+        },
+        {
+          "name": "Vector Databases",
+          "featured": true,
+          "related": ["RAG", "Generative AI"]
+        },
+        {
+          "name": "Prompt Engineering",
+          "related": ["Generative AI", "RAG"]
+        }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "whats-next",
+      "title": "What's Next",
+      "category": "Full-Stack Application",
+      "featured": true,
+      "year": "2026",
+
+      "description": "A full-stack productivity application built across the frontend, backend, database, authentication, and deployment layers.",
+
+      "longDescription": "What's Next is a full-stack productivity application designed as a real product rather than a simple CRUD project. I built the application across the frontend, backend API, relational data layer, authentication, containerized infrastructure, and automated deployment workflow.",
+
+      "problem": "I wanted to build a complete product that covered the engineering lifecycle beyond application code, including data modeling, authentication, deployment, infrastructure, and continuous delivery.",
+
+      "solution": "Built a complete web application with a Next.js frontend, NestJS backend, PostgreSQL database, authentication, Docker-based deployment, reverse proxy configuration, and automated CI/CD.",
+
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "NestJS",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "Supabase",
+        "Docker",
+        "Nginx",
+        "GitHub Actions",
+        "GitHub Container Registry",
+        "Watchtower",
+        "Linux"
+      ],
+
+      "architecture": {
+        "frontend": "Next.js application using the App Router.",
+        "backend": "NestJS REST API organized into modular services with authentication and validation.",
+        "database": "PostgreSQL with Prisma for schema management, queries, and migrations.",
+        "authentication": "Supabase Auth integrated into the application.",
+        "containerization": "Docker used to package and run the application services.",
+        "reverseProxy": "Nginx configured as the reverse proxy in front of the backend.",
+        "ciCd": "GitHub Actions builds and publishes container images to GitHub Container Registry.",
+        "deployment": "Cloud-hosted deployment with Watchtower automatically pulling updated container images and restarting the application."
+      },
+
+      "work": [
+        "Designed and developed the frontend application.",
+        "Built the backend REST API using NestJS.",
+        "Designed the PostgreSQL data model.",
+        "Used Prisma for database schema management, queries, and migrations.",
+        "Integrated authentication.",
+        "Containerized application services using Docker.",
+        "Configured Nginx as a reverse proxy.",
+        "Created the CI/CD workflow using GitHub Actions.",
+        "Published Docker images through GitHub Container Registry.",
+        "Configured Watchtower for automated container updates.",
+        "Worked through deployment, environment configuration, database migration, and infrastructure issues."
+      ],
+
+      "engineeringFocus": [
+        "Full-stack architecture",
+        "API design",
+        "Relational data modeling",
+        "Authentication",
+        "Containerization",
+        "CI/CD",
+        "Cloud deployment",
+        "Infrastructure configuration"
+      ],
+
+      "challenges": [
+        "Keeping the frontend, API, and database layers consistent as the application evolved.",
+        "Managing database schema changes and migrations.",
+        "Keeping local, CI, and production environments consistent.",
+        "Creating a repeatable deployment process without manually rebuilding the server for every release.",
+        "Managing application configuration across multiple environments."
+      ],
+
+      "solutions": [
+        "Used Prisma for structured database schema management and migrations.",
+        "Structured the backend using NestJS modules and services.",
+        "Used Docker to provide a consistent application environment.",
+        "Automated image builds and publishing through GitHub Actions.",
+        "Used Nginx to handle reverse proxying.",
+        "Used Watchtower to automate container updates after new images were published."
+      ],
+
+      "highlights": [
+        "End-to-end full-stack development.",
+        "Typed frontend and backend development.",
+        "Relational database architecture using PostgreSQL and Prisma.",
+        "Authentication integrated into the application.",
+        "Dockerized application deployment.",
+        "Automated CI/CD workflow.",
+        "Cloud-hosted production environment."
+      ],
+
+      "outcome": "A complete full-stack product with a repeatable development and deployment workflow spanning application code, database, authentication, containers, infrastructure, and CI/CD.",
+
+      "links": {
+        "github": "https://github.com/AshutoshRath1612/Whats-Next",
+        "live": "https://whats-next-pi.vercel.app/"
+      }
+    },
+
+    {
+      "id": "hungry-hub",
+      "title": "Hungry Hub",
+      "category": "Mobile Application",
+      "featured": true,
+      "year": "2024",
+
+      "description": "A college cafeteria ordering application built to simplify food ordering and management through a mobile interface.",
+
+      "longDescription": "Hungry Hub was a college cafeteria ordering application built as a mobile-first product. The project involved developing the mobile application, backend API, database integration, and the application workflow required to place and manage cafeteria orders.",
+
+      "problem": "The project was designed to make college cafeteria ordering more convenient by moving the ordering workflow into a dedicated mobile application.",
+
+      "solution": "Built a React Native mobile application backed by a Node.js and Express API with MongoDB for application data.",
+
+      "technologies": [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+
+      "architecture": {
+        "mobile": "React Native application developed with Expo.",
+        "backend": "Node.js and Express.js backend providing application APIs.",
+        "database": "MongoDB used for application data.",
+        "communication": "Mobile application communicates with the backend through APIs."
+      },
+
+      "work": [
+        "Developed the mobile application using React Native and Expo.",
+        "Built backend APIs using Node.js and Express.js.",
+        "Worked with MongoDB for application data.",
+        "Connected the mobile application with backend services.",
+        "Implemented the core cafeteria ordering workflow."
+      ],
+
+      "engineeringFocus": [
+        "Mobile application development",
+        "REST API development",
+        "Backend integration",
+        "Database integration",
+        "Product workflow design"
+      ],
+
+      "challenges": [
+        "Connecting the mobile application with backend services.",
+        "Designing the application workflow around cafeteria ordering.",
+        "Managing application data between the mobile client, API, and database."
+      ],
+
+      "solutions": [
+        "Used React Native and Expo to build the mobile client.",
+        "Created a Node.js and Express.js API layer between the application and database.",
+        "Used MongoDB as the persistence layer.",
+        "Separated the mobile interface from backend application logic."
+      ],
+
+      "highlights": [
+        "Mobile application built with React Native.",
+        "Expo-based development workflow.",
+        "Node.js and Express.js backend.",
+        "MongoDB data layer.",
+        "End-to-end mobile-to-backend integration."
+      ],
+
+      "outcome": "A complete mobile ordering application connecting a React Native client with backend APIs and a MongoDB data layer.",
+
+      "links": {
+        "github": "https://github.com/AshutoshRath1612/Hungry-Hub"
+      }
+    },
+
+    {
+      "id": "portfolio-website",
+      "title": "Ashutosh Rath - Portfolio",
+      "category": "Web Application",
+      "featured": true,
+      "year": "2026",
+
+      "description": "A personal engineering portfolio designed to present my work, technical capabilities, experience, and projects through an interactive web experience.",
+
+      "longDescription": "My portfolio website is a custom web experience built to represent how I approach software engineering. Rather than using a static resume-style layout, the site is designed around interactive sections, project storytelling, technical capabilities, experience, and reusable content structures.",
+
+      "problem": "I wanted a portfolio that represented the breadth of my engineering work across mobile, web, backend, cloud, infrastructure, and AI without turning the site into a simple list of technologies.",
+
+      "solution": "Built a custom portfolio experience with reusable components, structured content, responsive layouts, animations, and a data-driven approach that allows the site's content to evolve independently from its presentation.",
+
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "JSON",
+        "Responsive Design"
+      ],
+
+      "architecture": {
+        "framework": "Next.js with React and TypeScript.",
+        "components": "Reusable UI components organized around portfolio sections and content types.",
+        "content": "Portfolio content structured through JSON/schema-driven data rather than being tightly coupled to individual UI components.",
+        "animation": "GSAP used for interactive transitions, scroll-driven effects, and motion.",
+        "styling": "Tailwind CSS and custom design tokens used for the visual system.",
+        "responsive": "Responsive layouts designed to work across desktop and mobile screen sizes."
+      },
+
+      "work": [
+        "Designed the overall portfolio information architecture.",
+        "Built reusable React components for portfolio sections.",
+        "Created the project presentation and case-study structure.",
+        "Built the experience timeline.",
+        "Created interactive skills and technology relationships.",
+        "Implemented scroll-based animations and transitions using GSAP.",
+        "Implemented custom cursor and interaction effects.",
+        "Designed responsive layouts for different screen sizes.",
+        "Structured portfolio content using JSON/schema-driven configuration.",
+        "Worked on accessibility and reduced-motion considerations."
+      ],
+
+      "engineeringFocus": [
+        "Frontend architecture",
+        "Component reusability",
+        "Responsive design",
+        "Interaction design",
+        "Animation",
+        "Content architecture",
+        "Schema-driven UI"
+      ],
+
+      "designPrinciples": [
+        "Content should be separated from presentation where practical.",
+        "Components should be reusable rather than duplicated across sections.",
+        "Animations should support the experience rather than interfere with usability.",
+        "The interface should remain responsive across screen sizes.",
+        "Reduced-motion preferences should be respected.",
+        "The portfolio should communicate engineering work through projects and systems rather than only through a technology list."
+      ],
+
+      "highlights": [
+        "Custom portfolio experience rather than a template-based resume page.",
+        "Reusable React component architecture.",
+        "Schema-driven portfolio content.",
+        "GSAP-powered interactions and scroll animations.",
+        "Responsive design.",
+        "Interactive project and experience sections.",
+        "Custom visual system and interaction details."
+      ],
+
+      "outcome": "A personal engineering portfolio that presents projects, experience, capabilities, and technical work through a custom interactive web experience.",
+
+      "links": {
+        "github": "https://github.com/AshutoshRath1612/Portfolio",
+        "live": "https://ashutosh-portfolio.vercel.app/"
+      }
+    }
+  ],
+
+  "experience": [
+    {
+      "id": "ibm",
+      "company": "IBM",
+      "role": "Applied AI Specialist - Cloud FullStack",
+      "period": "2024 — Present",
+      "location": "India",
+      "current": true,
+      "summary": "Engineering enterprise applications for a multinational tobacco company, working across full-stack development, cloud infrastructure, databases, CI/CD, production support, and AI-assisted engineering.",
+      "highlights": [
+        "Develop and maintain enterprise web applications across frontend, backend, database, and integration layers for a multinational tobacco company.",
+        "Work across Angular, Java, Spring Boot, PostgreSQL, React, Node.js, and REST APIs to deliver application features and resolve production issues.",
+        "Contribute to both web applications and Excel-based enterprise solutions, including Office.js integrations and data-driven workflows.",
+        "Design and work with SQL queries, database views, and relational data models to investigate issues, implement business logic, and support enterprise planning workflows.",
+        "Work with AWS-hosted applications and cloud environments, contributing to deployment, troubleshooting, monitoring, and production reliability.",
+        "Work within CI/CD and DevOps workflows using tools such as Jenkins, Docker, SonarQube, Git, and automated build and deployment pipelines.",
+        "Investigate production incidents, perform root-cause analysis, implement fixes, and document technical findings and resolution steps.",
+        "Collaborate with cross-functional teams to analyze requirements, troubleshoot application behavior, and deliver changes across development and production environments.",
+        "Use AI-assisted engineering tools and modern AI development practices to improve development workflows, troubleshooting, code analysis, and delivery efficiency.",
+        "Contribute to the adoption of cloud and AI capabilities as part of the transition into an Applied AI and Cloud FullStack engineering role."
+      ],
+      "technologies": [
+        "Angular",
+        "React",
+        "Java",
+        "Spring Boot",
+        "Node.js",
+        "REST APIs",
+        "PostgreSQL",
+        "SQL",
+        "Office.js",
+        "AWS",
+        "Docker",
+        "Jenkins",
+        "SonarQube",
+        "Git",
+        "CI/CD",
+        "DevOps",
+        "Generative AI"
+      ]
+    },
+    {
+      "id": "ibm-application-developer",
+      "company": "IBM",
+      "role": "Application Developer",
+      "period": "2024 — 2026",
+      "location": "India",
+      "current": false,
+      "summary": "Developed and supported enterprise web and Excel-based applications for a multinational tobacco company, working across frontend, backend, databases, integrations, and production operations.",
+      "highlights": [
+        "Developed enterprise web application features using Angular and Java-based backend services.",
+        "Worked with PostgreSQL and SQL for data retrieval, analysis, business logic, database views, and production issue investigation.",
+        "Contributed to an Excel add-in using Office.js, extending enterprise application workflows into Microsoft Excel.",
+        "Worked across frontend, backend, database, and integration layers to implement features and resolve defects.",
+        "Investigated production incidents and application issues through log analysis, database investigation, code analysis, and root-cause analysis.",
+        "Worked with AWS-hosted enterprise applications and supported deployment and production troubleshooting activities.",
+        "Participated in CI/CD workflows and application quality processes using Jenkins, Git, SonarQube, and related DevOps tooling.",
+        "Collaborated with developers, analysts, and other stakeholders to understand requirements, troubleshoot issues, and deliver application changes.",
+        "Created technical investigation notes, root-cause analyses, and production closure documentation for application incidents and operational issues."
+      ],
+      "technologies": [
+        "Angular",
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "SQL",
+        "Office.js",
+        "AWS",
+        "Jenkins",
+        "SonarQube",
+        "Git",
+        "CI/CD",
+        "DevOps"
+      ]
+    },
+    {
+      "id": "ibm-intern",
+      "company": "IBM",
+      "role": "Software Engineer Intern",
+      "period": "2024",
+      "location": "India",
+      "current": false,
+      "summary": "Worked on web application development for a multinational tobacco company, gaining hands-on experience across frontend development, backend services, APIs, and application integrations.",
+      "highlights": [
+        "Contributed to development of a web-based consumer response workflow using React.",
+        "Worked with Node.js and REST APIs to support backend application functionality.",
+        "Implemented and integrated application features as part of a larger enterprise web platform.",
+        "Worked with third-party libraries and application integrations to support business workflows.",
+        "Collaborated with the development team to understand requirements, implement changes, and troubleshoot application issues."
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "REST APIs",
+        "JavaScript",
+        "Web Development"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": "aws-ai-practitioner",
+      "type": "certification",
+      "name": "AWS Certified AI Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2026",
+      "image": "/certifications/AWS_certified_AI_practitioner.jpeg",
+      "skills": [
+        "Artificial Intelligence",
+        "Generative AI",
+        "Machine Learning",
+        "AWS"
+      ]
+    },
+    {
+      "id": "claude-developer-foundation",
+      "type": "badge",
+      "name": "Claude Developer - Foundation",
+      "issuer": "Anthropic",
+      "date": "2026",
+      "image": "/certifications/claude-certified-developer-foundations.png",
+      "skills": ["Claude", "Generative AI", "AI Development"]
+    },
+    {
+      "id": "ibm-delivery-exemplar",
+      "type": "award",
+      "name": "IBM Delivery Exemplar Recognition",
+      "issuer": "IBM",
+      "date": "2025",
+      "image": "/certifications/IBM Delivery Examplar.jpeg"
+    },
+    {
+      "id": "aws-cloud-practitioner",
+      "type": "certification",
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2025",
+      "image": "/certifications/aws-certified-cloud-practitioner.png",
+      "skills": ["AWS", "Cloud Computing", "Cloud Fundamentals"]
+    },
+    {
+      "id": "google-cloud-digital-leader",
+      "type": "certification",
+      "name": "Google Cloud Digital Leader",
+      "issuer": "Google Cloud",
+      "date": "2024",
+      "image": "/certifications/cloud-digital-leader-certification.png",
+      "skills": ["Google Cloud", "Cloud Computing", "Cloud Fundamentals"]
+    },
+    {
+      "id": "az-900",
+      "type": "certification",
+      "name": "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      "issuer": "Microsoft",
+      "date": "2024",
+      "image": "/certifications/Microsoft-AZ900.png",
+      "skills": ["Microsoft Azure", "Cloud Computing", "Cloud Fundamentals"]
+    },
+    {
+      "id": "ibm-training-completion",
+      "type": "certification",
+      "name": "IBM Training Completion",
+      "issuer": "IBM",
+      "date": "2024",
+      "image": "/certifications/IBM Training.jpeg"
+    }
+  ],
+  "engineering": {
+    "codeToCloud": {
+      "heading": "From code to cloud",
+      "description": "A practical engineering workflow that brings together application development, data, cloud infrastructure, automation, and AI.",
+      "stages": [
+        {
+          "number": "01",
+          "label": "Build",
+          "description": "Develop web and mobile applications with reusable components, clear application structure, and maintainable code."
+        },
+        {
+          "number": "02",
+          "label": "Connect",
+          "description": "Build APIs and integrate frontend, backend, databases, and external services into complete application workflows."
+        },
+        {
+          "number": "03",
+          "label": "Model",
+          "description": "Design data models, write SQL, manage database schemas, and build reliable data flows that support application requirements."
+        },
+        {
+          "number": "04",
+          "label": "Collaborate",
+          "description": "Use Git-based workflows, code reviews, and engineering practices that make changes easier to understand, review, and maintain."
+        },
+        {
+          "number": "05",
+          "label": "Automate",
+          "description": "Use CI/CD pipelines and engineering tools to automate builds, quality checks, and application delivery."
+        },
+        {
+          "number": "06",
+          "label": "Package",
+          "description": "Use Docker and consistent application configuration to create reproducible environments across development and deployment."
+        },
+        {
+          "number": "07",
+          "label": "Deploy",
+          "description": "Take applications into cloud-hosted environments and work with infrastructure, networking, and deployment workflows needed to run them."
+        },
+        {
+          "number": "08",
+          "label": "Operate",
+          "description": "Support applications in production through monitoring, troubleshooting, incident investigation, root-cause analysis, and reliability improvements."
+        },
+        {
+          "number": "09",
+          "label": "Apply AI",
+          "description": "Build AI-powered capabilities and use modern AI tools to augment applications, automate workflows, and improve the software engineering process."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Have an interesting problem to solve?",
+    "description": "I’m always interested in building useful things, solving engineering problems, and exploring how software, cloud, and AI can come together. Let’s talk.",
+    "emailSubject": "Hello Ashutosh - let's talk",
+    "emailBody": "Hi Ashutosh,\n\nI came across your portfolio and wanted to get in touch.\n\nI’d love to discuss an engineering opportunity, project, or idea with you.\n\nBest,"
+  }
+}
