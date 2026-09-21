@@ -42,16 +42,16 @@
       "href": "#about"
     },
     {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
       "label": "Skills",
       "href": "#skills"
     },
     {
       "label": "Projects",
       "href": "#projects"
-    },
-    {
-      "label": "Experience",
-      "href": "#experience"
     },
     {
       "label": "Certifications",
@@ -76,15 +76,15 @@
       "enabled": true
     },
     {
+      "id": "experience",
+      "enabled": true
+    },
+    {
       "id": "skills",
       "enabled": true
     },
     {
       "id": "projects",
-      "enabled": true
-    },
-    {
-      "id": "experience",
       "enabled": true
     },
     {
